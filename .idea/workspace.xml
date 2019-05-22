@@ -2,21 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7c9cb9b-94a3-49cb-b96e-35101caaf7c1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_39.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contract/contract.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/controller.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/entity/entity.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/masterpom.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/model.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/view.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/src/main/java/model/DBProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/DBProperties.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
@@ -47,8 +32,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/model/src/main/java/model/DBProperties.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="23" column="91" selection-start-line="23" selection-start-column="91" selection-end-line="23" selection-end-column="91" />
+            <state relative-caret-position="306">
+              <caret line="20" column="126" selection-start-line="20" selection-start-column="126" selection-end-line="20" selection-end-column="126" />
             </state>
           </provider>
         </entry>
@@ -158,12 +143,12 @@
       <option name="presentableId" value="Default" />
       <updated>1558513276255</updated>
       <workItem from="1558513278293" duration="280000" />
-      <workItem from="1558513632307" duration="52000" />
+      <workItem from="1558513632307" duration="680000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="332000" />
+    <option name="totallyTimeSpent" value="960000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -219,8 +204,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/model/src/main/java/model/DBProperties.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" column="91" selection-start-line="23" selection-start-column="91" selection-end-line="23" selection-end-column="91" />
+        <state relative-caret-position="306">
+          <caret line="20" column="126" selection-start-line="20" selection-start-column="126" selection-end-line="20" selection-end-column="126" />
         </state>
       </provider>
     </entry>

@@ -1,6 +1,8 @@
 package model;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import entity.Entity;
@@ -15,16 +17,16 @@ import entity.Entity;
  */
 abstract class DAOEntity<E extends Entity> {
 
-	/** The connection. */
+	/**
+	 * The connection.
+	 */
 	private final Connection connection;
 
 	/**
 	 * Instantiates a new DAO entity.
 	 *
-	 * @param connection
-	 *          the connection
-	 * @throws SQLException
-	 *           the SQL exception
+	 * @param connection the connection
+	 * @throws SQLException the SQL exception
 	 */
 	public DAOEntity(final Connection connection) throws SQLException {
 		this.connection = connection;
@@ -42,8 +44,7 @@ abstract class DAOEntity<E extends Entity> {
 	/**
 	 * Creates the.
 	 *
-	 * @param entity
-	 *          the entity
+	 * @param entity the entity
 	 * @return true, if successful
 	 */
 	public abstract boolean create(E entity);
@@ -51,8 +52,7 @@ abstract class DAOEntity<E extends Entity> {
 	/**
 	 * Delete.
 	 *
-	 * @param entity
-	 *          the entity
+	 * @param entity the entity
 	 * @return true, if successful
 	 */
 	public abstract boolean delete(E entity);
@@ -60,8 +60,7 @@ abstract class DAOEntity<E extends Entity> {
 	/**
 	 * Update.
 	 *
-	 * @param entity
-	 *          the entity
+	 * @param entity the entity
 	 * @return true, if successful
 	 */
 	public abstract boolean update(E entity);
@@ -69,8 +68,7 @@ abstract class DAOEntity<E extends Entity> {
 	/**
 	 * Find.
 	 *
-	 * @param id
-	 *          the id
+	 * @param id the id
 	 * @return the e
 	 */
 	public abstract E find(int id);
@@ -78,10 +76,20 @@ abstract class DAOEntity<E extends Entity> {
 	/**
 	 * Find.
 	 *
-	 * @param code
-	 *          the code
+	 * @param code the code
 	 * @return the e
 	 */
 	public abstract E find(String code);
 
+	protected static ResultSet executeQuery(final String query) {
+		return DBConnection.getInstance().executeQuery(query);
+	}
+
+	protected static int executeUpdate(final String query) {
+		return DBConnection.getInstance().executeUpdate(query);
+	}
+
+	protected static CallableStatement prepareCall(final String query) {
+		return DBConnection.getInstance().prepareCall(query);
+	}
 }

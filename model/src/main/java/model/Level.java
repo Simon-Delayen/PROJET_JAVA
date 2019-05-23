@@ -1,15 +1,18 @@
 package model;
 
 import contract.model.IElement;
+import contract.model.ILevel;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Observable;
 
-public class Level Implements ILevel {
+public class Level extends Observable implements ILevel {
 
     public int width = 16;
     public int height = 14;
     private IElement wall;
+    private IElement[][] onTheLevel;
 
     Level(final int idlevel) throws IOException, SQLException {
         super();

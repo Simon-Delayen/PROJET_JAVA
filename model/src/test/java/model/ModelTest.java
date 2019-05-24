@@ -12,7 +12,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class ModelTest {
-    private Model model;
+    private ModelFacade model;
 
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
@@ -24,7 +24,7 @@ public class ModelTest {
 
     @Before
     public void setUp() throws Exception {
-        this.model = new Model();
+        this.model = new ModelFacade();
     }
 
     @After
@@ -37,7 +37,7 @@ public class ModelTest {
     }
 
     /**
-     * Test method for {@link model.Model#loadHelloWorld(java.lang.String)}.
+     * Test method for {@link model.ModelFacade#loadHelloWorld(java.lang.String)}.
      */
     @Test
     public void testGetMessageString() {

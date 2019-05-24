@@ -13,14 +13,14 @@ import entity.HelloWorld;
  *
  * @author Jean-Aymeric Diet
  */
-public final class Model extends Observable implements IModel {
+public final class ModelFacade extends Observable implements IModel {
 
 	/** The helloWorld. */
 	private HelloWorld helloWorld;
 	private ILevel level;
 
 
-	public Model(final int idlevel) throws IOException, SQLException {
+	public ModelFacade(final int idlevel) throws IOException, SQLException {
 		this.setLevel(new Level(idlevel));
 	}
 
@@ -35,7 +35,7 @@ public final class Model extends Observable implements IModel {
 	/**
 	 * Instantiates a new model.
 	 */
-	public Model() {
+	public ModelFacade() {
 		this.helloWorld = new HelloWorld();
 	}
 

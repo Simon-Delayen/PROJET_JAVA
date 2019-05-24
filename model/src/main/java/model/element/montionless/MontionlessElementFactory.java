@@ -1,7 +1,5 @@
 package model.element.montionless;
 
-import model.element.fix.Wall;
-
 public abstract class MontionlessElementFactory {
     private static final Wall wall = new Wall();
     private static final Tile tile = new Tile();

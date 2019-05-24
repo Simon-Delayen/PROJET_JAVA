@@ -1,8 +1,10 @@
 package contract.model;
 
+import contract.IModel;
+
 import java.util.Observable;
 
-public interface ILevel {
+public interface ILevel extends IModel {
     int getWidth();
     int getHeight();
 
@@ -10,5 +12,4 @@ public interface ILevel {
 
     Observable getObservable();
 
-    IElement getWall();
 }

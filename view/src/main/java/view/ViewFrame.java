@@ -151,7 +151,7 @@ class ViewFrame extends JFrame implements KeyListener {
 		this.addKeyListener(this);
 		this.setContentPane(new ViewPanel(this));
 		//32 Sprites de larges et 28 de long
-		this.setSize(256 + this.getInsets().left + this.getInsets().right, 224 + this.getInsets().top + this.getInsets().bottom);
+		this.setSize(256 + this.getInsets().left + this.getInsets().right, 256 + this.getInsets().top + this.getInsets().bottom);
 		this.setLocationRelativeTo(null);
 	}
 

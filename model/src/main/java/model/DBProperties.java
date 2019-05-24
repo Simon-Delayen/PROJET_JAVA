@@ -18,7 +18,7 @@ class DBProperties extends Properties {
 	private final static String	PROPERTIES_FILE_NAME	= "model.properties";
 
 	/** The url. */
-	private String							url										= "jdbc:mysql://localhost:3306/boulderdash?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+	private String							url										= "jdbc:mysql://localhost:3306/jpublankproject?useSSL=false";//Unicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
 
 	/** The login. */
 	private String							login									= "root";

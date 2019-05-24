@@ -22,24 +22,4 @@ public class Mobil {
 		
 	}
 	
-	public void moveUP() {
-		
-	}
-	
-	public void moveDOWN() {
-		
-	}
-	
-	public void moveLEFT() {
-		
-	}
-	
-	public void moveRIGHT() {
-		
-	}
-	
-	public void alive() {
-		
-	}
-
 }

@@ -6,10 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+      </profile>
+      <profile name="Désactivé">
         <module name="entity" />
         <module name="contract" />
         <module name="model" />
         <module name="view" />
+        <module name="masterpom" />
         <module name="main" />
         <module name="controller" />
       </profile>

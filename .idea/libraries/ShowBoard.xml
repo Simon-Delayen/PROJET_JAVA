@@ -4,6 +4,8 @@
       <root url="jar://$PROJECT_DIR$/../ShowBoard/out/artifacts/ShowBoard_jar/ShowBoard.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../ShowBoard/out/artifacts/ShowBoard_jar/ShowBoard.jar!/" />
+    </SOURCES>
   </library>
 </component>

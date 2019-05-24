@@ -1,10 +1,12 @@
 package model.element.mobil;
 
 import model.element.Element;
+import model.element.Permeability;
+import model.element.Sprite;
 
-public class Mobil extends Element{
-	protected int x;
-	protected int y;
+public class Mobil {
+	public int x;
+	public int y;
 	
 	public int getx() {
 		return this.x;

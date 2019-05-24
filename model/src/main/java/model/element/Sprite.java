@@ -11,5 +11,25 @@ public class Sprite {
 	public Sprite(char charactere, String imageName) {
 		
 	}
+	
+	public Image getImage() {
+		return image;
+		
+	}
+	
+	public void setImage(Image image) {
+		this.image = image;
+	}
+	
+	public void loadimage() {
+		
+	}
+	
+	public char getConsoleImage() {
+		return consoleImage;
+		
+	}
+	
+	
 
 }

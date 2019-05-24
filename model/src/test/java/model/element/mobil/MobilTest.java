@@ -46,29 +46,4 @@ public class MobilTest {
 		fail("Not yet implemented");
 	}
 
-	@Test
-	public void testMoveUP() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testMoveDOWN() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testMoveLEFT() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testMoveRIGHT() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testAlive() {
-		fail("Not yet implemented");
-	}
-
 }

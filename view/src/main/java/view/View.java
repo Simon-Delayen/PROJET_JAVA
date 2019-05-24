@@ -1,7 +1,6 @@
 package view;
 
 import java.awt.event.KeyEvent;
-
 import javax.swing.SwingUtilities;
 
 import contract.ControllerOrder;
@@ -37,21 +36,28 @@ public final class View implements IView, Runnable {
 	 *          the key code
 	 * @return the controller order
 	 */
-	protected static ControllerOrder keyCodeToControllerOrder(final int keyCode) {
+protected static ControllerOrder keyCodeToControllerOrder(final int keyCode) {
 		switch (keyCode) {
-			case KeyEvent.VK_G:
+			case KeyEvent.VK_UP:
 				return ControllerOrder.English;
-			case KeyEvent.VK_F:
+			case KeyEvent.VK_DOWN:
 				return ControllerOrder.Francais;
-			case KeyEvent.VK_D:
+			case KeyEvent.VK_LEFT:
 				return ControllerOrder.Deutsch;
-			case KeyEvent.VK_I:
+			case KeyEvent.VK_RIGHT:
 				return ControllerOrder.Indonesia;
 			default:
 				return ControllerOrder.English;
 		}
 	}
 
+	
+	
+	public void keyRealeased(KeyEvent e) {
+		
+	}
+	
+	public void keyTyped(KeyEvent e) {}
 	/*
 	 * (non-Javadoc)
 	 *

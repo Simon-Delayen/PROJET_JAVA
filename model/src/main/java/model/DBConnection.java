@@ -1,8 +1,6 @@
 package model;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 /**
  * The Class DBConnection.
@@ -15,6 +13,7 @@ final class DBConnection {
 
 	/** The connection. */
 	private Connection					connection;
+	private Statement 					statement;
 
 	/**
 	 * Instantiates a new DB connection.
@@ -60,5 +59,44 @@ final class DBConnection {
 	 */
 	public Connection getConnection() {
 		return this.connection;
+	}
+
+	public int executeUpdate(final String query) {
+		try {
+			return this.statement.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
+		} catch (final SQLException e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
+	public CallableStatement prepareCall(final String query) {
+		try {
+			return this.getConnection().prepareCall(query);
+		} catch (final SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public void setConnection(final Connection connection) {
+		this.connection = connection;
+	}
+
+	public ResultSet executeQuery(final String query) {
+		try {
+			return this.getStatement().executeQuery(query);
+		} catch (final SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public Statement getStatement() {
+		return this.statement;
+	}
+
+	public void setStatement(final Statement statement) {
+		this.statement = statement;
 	}
 }

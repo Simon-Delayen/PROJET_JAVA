@@ -1,9 +1,11 @@
 package model;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Observable;
 
 import contract.IModel;
+import contract.model.ILevel;
 import entity.HelloWorld;
 
 /**
@@ -15,6 +17,20 @@ public final class Model extends Observable implements IModel {
 
 	/** The helloWorld. */
 	private HelloWorld helloWorld;
+	private ILevel level;
+
+
+	public Model(final int idlevel) throws IOException, SQLException {
+		this.setLevel(new Level(idlevel));
+	}
+
+	public final ILevel getLevel() {
+		return this.level;
+	}
+
+	private void setLevel(final ILevel level) {
+		this.level = level;
+	}
 
 	/**
 	 * Instantiates a new model.

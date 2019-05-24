@@ -1,7 +1,8 @@
 package contract.model;
 
 import fr.exia.showboard.ISquare;
+import model.element.Sprite;
 
 public interface IElement extends ISquare {
-    ISprite getSprite();
+    Sprite getSprite();
 }

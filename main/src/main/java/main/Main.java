@@ -5,9 +5,13 @@
 package main;
 
 import contract.ControllerOrder;
+import contract.IModel;
 import controller.Controller;
-import model.ModelFacade;
+import model.Model;
 import view.View;
+
+import java.io.IOException;
+import java.sql.SQLException;
 
 /**
  * The Class Main.
@@ -22,13 +26,12 @@ public abstract class Main {
      * @param args
      *            the arguments
      */
-    public static void main(final String[] args) {
-        final ModelFacade model = new ModelFacade();
-        final View view = new View(model);
+    public static void main(final String[] args) throws IOException, InterruptedException, SQLException {
+        final Model model = new Model(1);
+        final View view = new View((IModel) model.getLevel());
         final Controller controller = new Controller(view, model);
-        view.setController(controller);
+        view.setController(controller.getOrderPeformer());
 
-        controller.control();
-        controller.orderPerform(ControllerOrder.English);
+        //controller.play();
+        }
     }
-}

@@ -1,4 +1,4 @@
-package model;
+package model.element;
 
 import contract.model.IElement;
 import contract.model.ISprite;
@@ -6,19 +6,19 @@ import contract.model.ISprite;
 import java.awt.*;
 
 public class Element implements IElement {
-    private ISprite       sprite;
+    private Sprite       sprite;
 
 
-    public Element(final ISprite sprite) {
+    public Element(final Sprite sprite) {
         this.setSprite(sprite);
     }
 
     @Override
-    public final ISprite getSprite() {
+    public final Sprite getSprite() {
         return this.sprite;
     }
 
-    protected final void setSprite(final ISprite sprite2) {
+    protected final void setSprite(final Sprite sprite2) {
         this.sprite = sprite2;
     }
 

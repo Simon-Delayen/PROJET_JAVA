@@ -1,12 +1,12 @@
-package model.element.montionless;
+package model.element.motionless;
 
-public abstract class MontionlessElementFactory {
+public abstract class MotionlessFactory {
     private static final Wall wall = new Wall();
-    private static final Tile tile = new Tile();
+    private static final Back back = new Back();
 
     private static MotionlessElement[]       motionlessElements  = {
             wall,
-            tile,
+            back,
     };
 
     public static MotionlessElement createWall() {
@@ -20,6 +20,6 @@ public abstract class MontionlessElementFactory {
                 return motionlessElement;
             }
         }
-        return tile;
+        return back;
     }
 }

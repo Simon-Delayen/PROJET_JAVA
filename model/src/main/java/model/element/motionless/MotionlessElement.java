@@ -1,8 +1,9 @@
-package model.element.montionless;
+package model.element.motionless;
 
 
 import contract.model.ISprite;
-import model.Element;
+import model.element.Element;
+import model.element.Sprite;
 
 public class MotionlessElement extends Element {
 
@@ -13,7 +14,7 @@ public class MotionlessElement extends Element {
      *            the sprite
      */
 
-    public MotionlessElement(ISprite sprite) {
+    public MotionlessElement(Sprite sprite) {
         super(sprite);
     }
 }

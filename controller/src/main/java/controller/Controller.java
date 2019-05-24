@@ -6,7 +6,7 @@ import contract.IModel;
 import contract.IView;
 
 /**
- * The Class Controller.
+ * The Class controller.
  */
 public final class Controller implements IController {
 
@@ -15,6 +15,8 @@ public final class Controller implements IController {
 
 	/** The model. */
 	private IModel	model;
+
+	private ControllerOrder stackOrder;
 
 	/**
 	 * Instantiates a new controller.
@@ -27,6 +29,7 @@ public final class Controller implements IController {
 	public Controller(final IView view, final IModel model) {
 		this.setView(view);
 		this.setModel(model);
+		this.clearStackOrder();
 	}
 
 	/**
@@ -73,22 +76,24 @@ public final class Controller implements IController {
 	 * @see contract.IController#orderPerform(contract.ControllerOrder)
 	 */
 	public void orderPerform(final ControllerOrder controllerOrder) {
-		switch (controllerOrder) {
-			case English:
-				this.model.loadHelloWorld("GB");
-				break;
-			case Francais:
-				this.model.loadHelloWorld("FR");
-				break;
-			case Deutsch:
-				this.model.loadHelloWorld("DE");
-				break;
-			case Indonesia:
-				this.model.loadHelloWorld("ID");
-				break;
-			default:
-				break;
-		}
+			this.setStackOrder(controllerOrder);
+
+	}
+
+	private ControllerOrder getStackOrder() {
+		return this.stackOrder;
+	}
+
+	private void setStackOrder(final ControllerOrder stackOrder) {
+		this.stackOrder = stackOrder;
+	}
+
+	private void clearStackOrder() {
+		this.stackOrder = ControllerOrder.NOP;
+	}
+
+	public Controller getOrderPeformer() {
+		return this;
 	}
 
 }

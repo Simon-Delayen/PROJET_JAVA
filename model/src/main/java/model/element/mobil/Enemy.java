@@ -1,6 +1,6 @@
 package model.element.mobil;
 
-public class Enemy {
+public class Enemy extends Mobil {
 	public Enemy(int x, int y) {
 		
 	}

@@ -1,6 +1,6 @@
 package model.element.mobil;
 
-public class MobilElement {
+public class MobilElement extends Mobil {
 	public MobilElement(int x, int y) {
 		
 	}

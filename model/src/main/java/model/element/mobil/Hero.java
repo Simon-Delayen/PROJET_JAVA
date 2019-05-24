@@ -1,12 +1,12 @@
 package model.element.mobil;
 
-public class Hero extends Mobil {
-	public Hero(int x, int y) {
+public class Hero extends Mobil{
+	Hero(int x, int y) {
 		
 	}
 	
 	public void displayHero() {
-		
+	
 	}
 	
 	public void moveHero() {
@@ -20,4 +20,8 @@ public class Hero extends Mobil {
 	public void take() {
 		
 	}
+	
+	
+
 }
+	

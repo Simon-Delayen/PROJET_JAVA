@@ -17,17 +17,41 @@ public final class Model extends Observable implements IModel {
 
 	/** The helloWorld. */
 	private HelloWorld helloWorld;
+
+	/** The level. */
 	private ILevel level;
 
-
+	/**
+	 * Instantiates a new model.
+	 * this load and stored the level from the DB
+	 * this load the player and monsters
+	 *
+	 * @param idlevel
+	 *            the idlevel to know the level to load
+	 *
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred.
+	 * @throws SQLException
+	 * 			the SQL exception
+	 */
 	public Model(final int idlevel) throws IOException, SQLException {
 		this.setLevel(new Level(idlevel));
 	}
 
+	/**
+	 * get level
+	 * @return level
+	 */
 	public final ILevel getLevel() {
 		return this.level;
 	}
 
+	/**
+	 * Sets the level.
+	 *
+	 * @param level
+	 *
+	 */
 	private void setLevel(final ILevel level) {
 		this.level = level;
 	}

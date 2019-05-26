@@ -16,6 +16,12 @@ public interface IModel {
 	 *
 	 * @return the observable
 	 */
-	ILevel getLevel();
 	Observable getObservable();
+
+	/**
+	 * Gets Level.
+	 *
+	 * @return Level
+	 */
+	ILevel getLevel();
 }

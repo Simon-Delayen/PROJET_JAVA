@@ -4,11 +4,12 @@ import contract.ControllerOrder;
 import contract.IController;
 import contract.IModel;
 import contract.IView;
+import contract.controller.IOrderPerformer;
 
 /**
  * The Class controller.
  */
-public final class Controller implements IController {
+public final class Controller implements IOrderPerformer {
 
 	/** The view. */
 	private IView		view;
@@ -16,6 +17,7 @@ public final class Controller implements IController {
 	/** The model. */
 	private IModel	model;
 
+	/** The stack order. */
 	private ControllerOrder stackOrder;
 
 	/**
@@ -29,7 +31,7 @@ public final class Controller implements IController {
 	public Controller(final IView view, final IModel model) {
 		this.setView(view);
 		this.setModel(model);
-		this.clearStackOrder();
+		this.clearStackOrder(); 			//set the user order to NOP so we are sure that the player do not move on spawn
 	}
 
 	/**
@@ -40,9 +42,9 @@ public final class Controller implements IController {
 	 *
 	 * @see contract.IController#control()
 	 */
-	public void control() {
+	/*public void control() {
 		this.view.printMessage("Appuyer sur les touches 'E', 'F', 'D' ou 'I', pour afficher Hello world dans la langue d votre choix.");
-	}
+	}*/
 
 	/**
      * Sets the view.
@@ -80,19 +82,36 @@ public final class Controller implements IController {
 
 	}
 
+	/**
+	 * Gets the stack order.
+	 *
+	 * @return the stack order
+	 */
 	private ControllerOrder getStackOrder() {
 		return this.stackOrder;
 	}
 
+	/**
+	 * Sets the stack order.
+	 *
+	 * @param stackOrder
+	 *            the new stack order
+	 */
 	private void setStackOrder(final ControllerOrder stackOrder) {
 		this.stackOrder = stackOrder;
 	}
 
+	/**
+	 * Clear stack order.
+	 */
 	private void clearStackOrder() {
 		this.stackOrder = ControllerOrder.NOP;
 	}
 
-	public Controller getOrderPeformer() {
+	/**
+	 * Get the order to perform
+	 */
+	public IOrderPerformer getOrderPerformer() {
 		return this;
 	}
 

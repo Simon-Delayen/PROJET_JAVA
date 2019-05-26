@@ -1,5 +1,7 @@
 package contract;
 
+import contract.controller.IOrderPerformer;
+
 /**
  * The Interface IView.
  *
@@ -14,4 +16,6 @@ public interface IView {
 	 *          the message
 	 */
 	void printMessage(final String message);
+
+	void setOrderPerformer(IOrderPerformer orderPeformer);
 }

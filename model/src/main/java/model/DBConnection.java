@@ -8,11 +8,14 @@ import java.sql.*;
  * @author Jean-Aymeric Diet
  */
 final class DBConnection {
+
 	/** The instance. */
 	private static DBConnection	INSTANCE	= null;
 
 	/** The connection. */
 	private Connection					connection;
+
+	/** The statement. */
 	private Statement 					statement;
 
 	/**
@@ -53,14 +56,12 @@ final class DBConnection {
 	}
 
 	/**
-	 * Gets the connection.
+	 * Execute update.
 	 *
-	 * @return the connection
+	 * @param query
+	 *            the query
+	 * @return the int
 	 */
-	public Connection getConnection() {
-		return this.connection;
-	}
-
 	public int executeUpdate(final String query) {
 		try {
 			return this.statement.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
@@ -70,6 +71,13 @@ final class DBConnection {
 		return 0;
 	}
 
+	/**
+	 * Prepare call.
+	 *
+	 * @param query
+	 *            the query
+	 * @return the java.sql. callable statement
+	 */
 	public CallableStatement prepareCall(final String query) {
 		try {
 			return this.getConnection().prepareCall(query);
@@ -79,10 +87,32 @@ final class DBConnection {
 		return null;
 	}
 
+	/**
+	 * Gets the connection.
+	 *
+	 * @return the connection
+	 */
+	public Connection getConnection() {
+		return this.connection;
+	}
+
+	/**
+	 * Sets the connection.
+	 *
+	 * @param connection
+	 *            the new connection
+	 */
 	public void setConnection(final Connection connection) {
 		this.connection = connection;
 	}
 
+	/**
+	 * Execute query.
+	 *
+	 * @param query
+	 *            the query
+	 * @return the result set
+	 */
 	public ResultSet executeQuery(final String query) {
 		try {
 			return this.getStatement().executeQuery(query);
@@ -92,10 +122,21 @@ final class DBConnection {
 		return null;
 	}
 
+	/**
+	 * Gets the statement.
+	 *
+	 * @return the statement
+	 */
 	public Statement getStatement() {
 		return this.statement;
 	}
 
+	/**
+	 * Sets the statement.
+	 *
+	 * @param statement
+	 *            the new statement
+	 */
 	public void setStatement(final Statement statement) {
 		this.statement = statement;
 	}

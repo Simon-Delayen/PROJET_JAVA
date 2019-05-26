@@ -1,5 +1,7 @@
 package contract;
 
+import contract.controller.IOrderPerformer;
+
 /**
  * The Interface IController.
  *
@@ -19,4 +21,11 @@ public interface IController {
 	 *          the controller order
 	 */
 	public void orderPerform(ControllerOrder controllerOrder);
+
+	/**
+	 * Gets the order peformer.
+	 *
+	 * @return the order peformer
+	 */
+	IOrderPerformer getOrderPeformer();
 }

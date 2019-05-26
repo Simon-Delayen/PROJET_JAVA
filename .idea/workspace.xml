@@ -2,34 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7c9cb9b-94a3-49cb-b96e-35101caaf7c1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/model/src/test/java/model/element/motionless/BackTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/test/java/model/element/motionless/MotionlessElementTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/test/java/model/element/motionless/MotionlessFactoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/test/java/model/element/motionless/WallTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract/src/main/java/contract/ControllerOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract/src/main/java/contract/ControllerOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract/src/main/java/contract/IController.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract/src/main/java/contract/IController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract/src/main/java/contract/IModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract/src/main/java/contract/IModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract/src/main/java/contract/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract/src/main/java/contract/IView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract/src/main/java/contract/controller/IOrderPerformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract/src/main/java/contract/controller/IOrderPerformer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract/src/main/java/contract/model/IElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract/src/main/java/contract/model/IElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract/src/main/java/contract/model/ILevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract/src/main/java/contract/model/ILevel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract/src/main/java/contract/model/ISprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract/src/main/java/contract/model/ISprite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/src/main/java/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/controller/src/main/java/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/DAOEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/DAOEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/DAOHelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/DAOHelloWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/DBConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/Level.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/element/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/element/Element.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/src/main/java/model/element/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/element/Sprite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/element/motionless/Back.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/element/motionless/Back.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/element/motionless/MotionlessFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/element/motionless/MotionlessFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/element/motionless/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/element/motionless/Wall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/src/main/java/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/view/src/main/java/view/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/src/main/java/view/ViewFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/view/src/main/java/view/ViewFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/src/main/java/view/ViewPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/view/src/main/java/view/ViewPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/74336.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/74359.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/diamond.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/ground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/noimage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/rock.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/wall.png" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/controller/target/" />
@@ -115,6 +95,36 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/model/src/main/java/model/element/Sprite.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#898#899#0" expanded="true" />
+                <element signature="e#944#945#0" expanded="true" />
+                <element signature="e#1052#1053#0" expanded="true" />
+                <element signature="e#1085#1086#0" expanded="true" />
+                <element signature="e#1547#1548#0" expanded="true" />
+                <element signature="e#1587#1588#0" expanded="true" />
+                <element signature="e#1732#1733#0" expanded="true" />
+                <element signature="e#1766#1767#0" expanded="true" />
+                <element signature="e#1950#1951#0" expanded="true" />
+                <element signature="e#1998#1999#0" expanded="true" />
+                <element signature="e#2120#2121#0" expanded="true" />
+                <element signature="e#2157#2158#0" expanded="true" />
+                <element signature="e#2328#2329#0" expanded="true" />
+                <element signature="e#2370#2371#0" expanded="true" />
+                <element signature="e#2511#2512#0" expanded="true" />
+                <element signature="e#2550#2551#0" expanded="true" />
+                <element signature="e#2739#2740#0" expanded="true" />
+                <element signature="e#2787#2788#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/src/test/java/model/element/motionless/BackTest.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -133,11 +143,42 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/src/main/java/view/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+            <state relative-caret-position="629">
+              <caret line="162" column="26" lean-forward="true" selection-start-line="162" selection-start-column="26" selection-end-line="162" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4539#4540#0" expanded="true" />
+                <element signature="e#4563#4564#0" expanded="true" />
+                <element signature="e#5201#5202#0" expanded="true" />
+                <element signature="e#5229#5230#0" expanded="true" />
+                <element signature="e#5380#5381#0" expanded="true" />
+                <element signature="e#5413#5414#0" expanded="true" />
+                <element signature="e#5537#5538#0" expanded="true" />
+                <element signature="e#5570#5571#0" expanded="true" />
+                <element signature="e#5757#5758#0" expanded="true" />
+                <element signature="e#5800#5801#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/src/test/java/model/ModelTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="25" column="38" lean-forward="true" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_202/src.zip!/javax/imageio/ImageIO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="1300" column="18" selection-start-line="1300" selection-start-column="18" selection-end-line="1300" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -193,11 +234,11 @@
         <option value="$PROJECT_DIR$/model/src/main/java/model/DAOHelloWorld.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/model/Level.java" />
         <option value="$PROJECT_DIR$/controller/src/main/java/controller/Controller.java" />
-        <option value="$PROJECT_DIR$/model/src/main/java/model/element/Sprite.java" />
         <option value="$PROJECT_DIR$/model/src/test/java/model/element/motionless/MotionlessFactoryTest.java" />
         <option value="$PROJECT_DIR$/model/src/test/java/model/element/motionless/WallTest.java" />
         <option value="$PROJECT_DIR$/model/src/test/java/model/element/motionless/MotionlessElementTest.java" />
         <option value="$PROJECT_DIR$/model/src/test/java/model/element/motionless/BackTest.java" />
+        <option value="$PROJECT_DIR$/model/src/main/java/model/element/Sprite.java" />
       </list>
     </option>
   </component>
@@ -234,7 +275,7 @@
     <option name="height" value="1008" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="PackagesPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -249,6 +290,12 @@
               <item name="masterpom" type="b2602c69:ProjectViewProjectNode" />
               <item name="PROJET_JAVA" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="masterpom" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PROJET_JAVA" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="sprites" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="masterpom" type="b2602c69:ProjectViewProjectNode" />
@@ -285,34 +332,7 @@
           <expand>
             <path>
               <item name="masterpom" type="58d84e3e:PackageViewProjectNode" />
-              <item name="model" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="masterpom" type="58d84e3e:PackageViewProjectNode" />
-              <item name="model" type="616d4139:PackageViewModuleNode" />
-              <item name="model" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="masterpom" type="58d84e3e:PackageViewProjectNode" />
-              <item name="model" type="616d4139:PackageViewModuleNode" />
-              <item name="model" type="1f31426a:PackageElementNode" />
-              <item name="element" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="masterpom" type="58d84e3e:PackageViewProjectNode" />
-              <item name="model" type="616d4139:PackageViewModuleNode" />
-              <item name="model" type="1f31426a:PackageElementNode" />
-              <item name="element" type="1f31426a:PackageElementNode" />
-              <item name="motionless" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="masterpom" type="58d84e3e:PackageViewProjectNode" />
-              <item name="view" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="masterpom" type="58d84e3e:PackageViewProjectNode" />
-              <item name="view" type="616d4139:PackageViewModuleNode" />
-              <item name="view" type="1f31426a:PackageElementNode" />
+              <item name="main" type="616d4139:PackageViewModuleNode" />
             </path>
           </expand>
           <select />
@@ -393,12 +413,12 @@
       <workItem from="1558701823371" duration="305000" />
       <workItem from="1558702241384" duration="96000" />
       <workItem from="1558702537387" duration="6749000" />
-      <workItem from="1558853973926" duration="10802000" />
+      <workItem from="1558853973926" duration="14016000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50438000" />
+    <option name="totallyTimeSpent" value="53652000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -450,13 +470,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/test/java/model/ModelTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -694,41 +707,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/element/Sprite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="59" column="30" selection-start-line="59" selection-start-column="30" selection-end-line="59" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#898#899#0" expanded="true" />
-            <element signature="e#944#945#0" expanded="true" />
-            <element signature="e#1052#1053#0" expanded="true" />
-            <element signature="e#1085#1086#0" expanded="true" />
-            <element signature="e#1547#1548#0" expanded="true" />
-            <element signature="e#1587#1588#0" expanded="true" />
-            <element signature="e#1732#1733#0" expanded="true" />
-            <element signature="e#1766#1767#0" expanded="true" />
-            <element signature="e#1950#1951#0" expanded="true" />
-            <element signature="e#1998#1999#0" expanded="true" />
-            <element signature="e#2120#2121#0" expanded="true" />
-            <element signature="e#2157#2158#0" expanded="true" />
-            <element signature="e#2328#2329#0" expanded="true" />
-            <element signature="e#2370#2371#0" expanded="true" />
-            <element signature="e#2511#2512#0" expanded="true" />
-            <element signature="e#2550#2551#0" expanded="true" />
-            <element signature="e#2739#2740#0" expanded="true" />
-            <element signature="e#2787#2788#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_202/src.zip!/javax/imageio/ImageIO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="1300" column="18" selection-start-line="1300" selection-start-column="18" selection-end-line="1300" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/src/main/java/model/element/motionless/MotionlessFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -821,8 +799,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/view/src/main/java/view/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+        <state relative-caret-position="629">
+          <caret line="162" column="26" lean-forward="true" selection-start-line="162" selection-start-column="26" selection-end-line="162" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4539#4540#0" expanded="true" />
+            <element signature="e#4563#4564#0" expanded="true" />
+            <element signature="e#5201#5202#0" expanded="true" />
+            <element signature="e#5229#5230#0" expanded="true" />
+            <element signature="e#5380#5381#0" expanded="true" />
+            <element signature="e#5413#5414#0" expanded="true" />
+            <element signature="e#5537#5538#0" expanded="true" />
+            <element signature="e#5570#5571#0" expanded="true" />
+            <element signature="e#5757#5758#0" expanded="true" />
+            <element signature="e#5800#5801#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/test/java/model/ModelTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="25" column="38" lean-forward="true" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_202/src.zip!/javax/imageio/ImageIO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="1300" column="18" selection-start-line="1300" selection-start-column="18" selection-end-line="1300" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/element/Sprite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#898#899#0" expanded="true" />
+            <element signature="e#944#945#0" expanded="true" />
+            <element signature="e#1052#1053#0" expanded="true" />
+            <element signature="e#1085#1086#0" expanded="true" />
+            <element signature="e#1547#1548#0" expanded="true" />
+            <element signature="e#1587#1588#0" expanded="true" />
+            <element signature="e#1732#1733#0" expanded="true" />
+            <element signature="e#1766#1767#0" expanded="true" />
+            <element signature="e#1950#1951#0" expanded="true" />
+            <element signature="e#1998#1999#0" expanded="true" />
+            <element signature="e#2120#2121#0" expanded="true" />
+            <element signature="e#2157#2158#0" expanded="true" />
+            <element signature="e#2328#2329#0" expanded="true" />
+            <element signature="e#2370#2371#0" expanded="true" />
+            <element signature="e#2511#2512#0" expanded="true" />
+            <element signature="e#2550#2551#0" expanded="true" />
+            <element signature="e#2739#2740#0" expanded="true" />
+            <element signature="e#2787#2788#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

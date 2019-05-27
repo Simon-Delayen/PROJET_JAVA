@@ -1,8 +1,9 @@
 package model.element.mobil;
 
 import java.awt.Point;
+
+import contract.model.Permeability;
 import model.element.Element;
-import model.element.Permeability;
 import model.element.Sprite;
 
 public class Mobil extends Element {

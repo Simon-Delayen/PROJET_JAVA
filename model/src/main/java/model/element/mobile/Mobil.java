@@ -1,6 +1,7 @@
 package model.element.mobile;
 
 import contract.model.ILevel;
+import contract.model.ISprite;
 import contract.model.Permeability;
 import fr.exia.showboard.IBoard;
 import model.element.Element;
@@ -24,14 +25,38 @@ public class Mobil extends Element {
     /** The board. */
     private IBoard  board;
 
-    public Mobil(Sprite sprite, Permeability permeability) {
+    /**
+     * Instantiates a new mobile.
+     *
+     * @param sprite
+     *            the sprite
+     * @param level
+     *            the level
+     * @param permeability
+     *            the permeability
+     */
+    public Mobil(final Sprite sprite, final ILevel level, final Permeability permeability) {
         super(sprite, permeability);
-        this.setLevel(level);
+        this.setLevel(this.level);
         this.position = new Point();
     }
 
-    public Mobil(int x, int y, Sprite sprite, Permeability permeability) {
-        this(sprite, permeability);
+    /**
+     * Instantiates a new mobile.
+     *
+     * @param x
+     *            the x
+     * @param y
+     *            the y
+     * @param sprite
+     *            the sprite
+     * @param level
+     *            the level
+     * @param permeability
+     *            the permeability
+     */
+    Mobil(final int x, final int y, final Sprite sprite, final ILevel level, final Permeability permeability) {
+        this(sprite, level, permeability);
         this.setX(x);
         this.setY(y);
     }
@@ -137,5 +162,13 @@ public class Mobil extends Element {
      */
     public void alive() {
         this.alive = true;
+    }
+
+    /**
+     * Dies.
+     */
+    public void die() {
+        this.alive = false;
+        this.setHasMoved();
     }
 }

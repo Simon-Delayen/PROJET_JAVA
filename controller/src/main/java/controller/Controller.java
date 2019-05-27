@@ -69,7 +69,7 @@ public final class Controller implements IOrderPerformer {
 		//		This part prepare the variable and element of the level depending on each level
 		//---------------------------------------------------------------------------------------------------
 		// when the player lorann is load on the map is not alive so we set it alive after everything is load
-		hero = getModel().getLevel().getLorann();
+		hero = getModel().getLevel().getHero();
 		hero.alive();
 
 		//Store the gate and crystal in the controller

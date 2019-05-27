@@ -49,7 +49,7 @@ public interface ILevel extends IModel {
      *
      * @return the lorann
      */
-    IMobile getLorann();
+    IMobile getHero();
 
 
     /**

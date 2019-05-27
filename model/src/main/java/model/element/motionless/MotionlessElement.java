@@ -2,10 +2,11 @@ package model.element.motionless;
 
 
 import contract.model.ISprite;
+import contract.model.Permeability;
 import model.element.Element;
 import model.element.Sprite;
 
-public class MotionlessElement extends Element {
+public abstract class MotionlessElement extends Element {
 
     /**
      * Instantiates a new motionless element.
@@ -14,7 +15,7 @@ public class MotionlessElement extends Element {
      *            the sprite
      */
 
-    public MotionlessElement(Sprite sprite) {
-        super(sprite);
+    MotionlessElement(final Sprite sprite, final Permeability permeability) {
+        super(sprite, permeability);
     }
 }

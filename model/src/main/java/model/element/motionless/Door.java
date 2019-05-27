@@ -1,5 +1,6 @@
 package model.element.motionless;
 
+import contract.model.Permeability;
 import model.element.Sprite;
 
 public class Door extends MotionlessElement{
@@ -10,6 +11,6 @@ public class Door extends MotionlessElement{
      * Instantiates a new tile.
      */
     Door() {
-        super(SPRITE);
+        super(SPRITE, Permeability.PENETRABLE);
     }
 }

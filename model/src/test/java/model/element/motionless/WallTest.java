@@ -1,6 +1,5 @@
 package model.element.motionless;
 
-import model.element.Permeability;
 import org.junit.Before;
 import org.junit.Test;
 

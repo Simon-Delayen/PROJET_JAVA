@@ -115,6 +115,15 @@ public class Level extends Observable implements ILevel{
     }
 
     /**
+     * Notify view of change
+     */
+    @Override
+    public void setMobilHasChanged() {
+        this.setChanged();
+        this.notifyObservers();
+    }
+
+    /**
      * Sets the on the level XY.
      *
      * @param element
@@ -143,14 +152,6 @@ public class Level extends Observable implements ILevel{
         return this;
     }
 
-    /**
-     * Notify view of change
-     */
-    public final void setMobileHasChanged() {
-        this.setChanged();
-        this.notifyObservers();
-    }
-
 
     /**
      * All getters and setter for element of the map that need to be update during the game
@@ -162,6 +163,7 @@ public class Level extends Observable implements ILevel{
     public void setHero(IMobile hero) {
         this.hero = hero;
     }
+
     public IElement getEarth() {
         return earth;
     }

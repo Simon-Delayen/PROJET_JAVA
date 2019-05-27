@@ -16,16 +16,16 @@ public final class Controller implements IController, IOrderPerformer {
 
 	public static final int speed = 16;
 	private UserOrder stackOrder;
-	/*private IModelFacade model;*/
-	
-	/** The view. */
 	private IView view;
+<<<<<<< HEAD
 
 	/** The model. */
 	private IModelFacade model;
 	
+=======
+	private IModel model;
+>>>>>>> 8ee99f7e63c49157ada6a57a3e2bad991effb6cf
 	private IMobile Hero;
-	
 	private UserOrder lastHeroOrder;
 	
 	
@@ -42,8 +42,18 @@ public final class Controller implements IController, IOrderPerformer {
 		this.clearStackOrder();
 	}
 	
+<<<<<<< HEAD
+=======
+	public void ControllerFacade(IView view, IModelFacade model) {
+		
+	}
 	
-	public void orderPerform(UserOrder userOrder) throws IOException{
+	public void play() {
+		
+	}
+>>>>>>> 8ee99f7e63c49157ada6a57a3e2bad991effb6cf
+	
+	public void orderPerform(UserOrder userOrder) throws IOException {
 		this.setStackOrder(userOrder);
 		}
 	
@@ -67,6 +77,14 @@ public final class Controller implements IController, IOrderPerformer {
 		return this.stackOrder;
 	}
 	
+<<<<<<< HEAD
+=======
+	
+	private void clearStackOrder() {
+		
+	}
+	
+>>>>>>> 8ee99f7e63c49157ada6a57a3e2bad991effb6cf
 	public boolean CheckCollision(String direction) {
 		
 	}

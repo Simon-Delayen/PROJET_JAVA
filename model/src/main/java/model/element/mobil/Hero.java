@@ -119,7 +119,13 @@ public class Hero extends Mobil implements ISprite{
 		return counter;
 	}
 	
+<<<<<<< HEAD
 	public void setCounter(int counter) {
 		this.counter = counter;
+=======
+	public boolean alive() {
+		return false;
+		
+>>>>>>> 8ee99f7e63c49157ada6a57a3e2bad991effb6cf
 	}
 }

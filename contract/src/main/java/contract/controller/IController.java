@@ -1,5 +1,6 @@
 package contract.controller;
 
+import java.io.IOException;
 
 public interface IController {
 
@@ -10,7 +11,7 @@ public interface IController {
 }
 */
 	
-	public void play();
+	public void play() throws InterruptedException, IOException;
 
-	public IOrderperformer getOrderPerformer();
+	IOrderPerformer getOrderPerformer();
 }

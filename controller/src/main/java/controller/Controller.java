@@ -2,6 +2,7 @@ package controller;
 
 import contract.controller.ControllerOrder;
 import contract.controller.IController;
+import contract.controller.IOrderPerformer;
 import contract.model.IModel;
 import contract.view.IView;
 
@@ -127,6 +128,12 @@ public final class Controller implements IController {
 	 */
 	private void setModel(final IModel model) {
 		this.model = model;
+	}
+
+	@Override
+	public IOrderPerformer getOrderPerformer() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	/**

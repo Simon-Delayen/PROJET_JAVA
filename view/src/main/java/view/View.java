@@ -142,7 +142,6 @@ public final class View implements IView, Runnable {
 		boardFrame.setDimension(new Dimension(squareNumberWidth, squareNumberHeight)); // set the dimension of the panel to the level (square unity)
 		boardFrame.setDisplayFrame(this.getCloseView()); //say what to display in the frame
 		boardFrame.setSize(squareNumberWidth * squareSize, squareNumberHeight * squareSize); //set the size of there frame (pixel unity)
-		//boardFrame.addKeyListener(this); //the window can listen to keyboard entry
 
 		for (int x = 0; x < squareNumberWidth; x++) { //this double for set each square to his sprite picture
 			for (int y = 0; y < squareNumberHeight; y++) {

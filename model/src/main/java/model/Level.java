@@ -2,6 +2,8 @@ package model;
 
 import contract.model.IElement;
 import contract.model.ILevel;
+import contract.model.IMobile;
+import model.element.mobile.Hero;
 import model.element.motionless.MotionlessFactory;
 
 import java.io.IOException;
@@ -19,7 +21,14 @@ public class Level extends Observable implements ILevel{
 
     /** The on the level. */
     private IElement[][] onTheLevel;
+
+    /** The lorann. */
+    private IMobile hero;
+
+    /** The earth */
     private IElement earth;
+
+    /** The door */
     private IElement door;
 
     /**
@@ -62,12 +71,15 @@ public class Level extends Observable implements ILevel{
         while(result.next()) { //while there is element for this level then we overwrite the default background
 
             switch (result.getString(DAOHelloWorld.getColumnSprite()).charAt(0)) {
-                case 'H'://if character correspond to the door we put the door in the variable gate
+                case '@'://if character correspond to hero (@) then we create hero
+                    setHero(new Hero(result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY()),this));
+                    break;
+                case 'H'://if character correspond to the door we put the door in the variable door
                     this.setOnTheLevelXY(MotionlessFactory.getFromFileSymbol(
                             result.getString(DAOHelloWorld.getColumnSprite()).charAt(0)),result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY()));
                     setDoor(this.getOnTheLevelXY(result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY())));
                     break;
-                case ':'://if character correspond to the earth we put it in the variable EARTH
+                case ':'://if character correspond to the earth we put it in the variable earth
                     this.setOnTheLevelXY(MotionlessFactory.getFromFileSymbol(
                             result.getString(DAOHelloWorld.getColumnSprite()).charAt(0)),result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY()));
                     setEarth(this.getOnTheLevelXY(result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY())));
@@ -102,6 +114,19 @@ public class Level extends Observable implements ILevel{
         return this.onTheLevel[x][y];
     }
 
+    /**
+     * Sets the on the level XY.
+     *
+     * @param element
+     *            the element
+     * @param x
+     *            the x
+     * @param y
+     *            the y
+     */
+    private void setOnTheLevelXY(final IElement element, final int x, final int y) {
+        this.onTheLevel[x][y] = element;
+    }
 
     /**
      * Get the level
@@ -119,19 +144,24 @@ public class Level extends Observable implements ILevel{
     }
 
     /**
-     * Sets the on the level XY.
-     *
-     * @param element
-     *            the element
-     * @param x
-     *            the x
-     * @param y
-     *            the y
+     * Notify view of change
      */
-    private void setOnTheLevelXY(final IElement element, final int x, final int y) {
-        this.onTheLevel[x][y] = element;
+    public final void setMobileHasChanged() {
+        this.setChanged();
+        this.notifyObservers();
     }
 
+
+    /**
+     * All getters and setter for element of the map that need to be update during the game
+     */
+    public IMobile getHero() {
+        return hero;
+    }
+
+    public void setHero(IMobile hero) {
+        this.hero = hero;
+    }
     public IElement getEarth() {
         return earth;
     }

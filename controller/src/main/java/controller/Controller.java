@@ -6,6 +6,7 @@ import contract.IModel;
 import contract.IView;
 import contract.controller.IOrderPerformer;
 import contract.model.IElement;
+import contract.model.IMobile;
 import model.Model;
 
 import java.io.IOException;
@@ -14,6 +15,9 @@ import java.io.IOException;
  * The Class controller.
  */
 public final class Controller implements IOrderPerformer {
+
+	/** The game-thread refresh speed. */
+	private static final int speed = 50;
 
 	/** The view. */
 	private IView		view;
@@ -24,11 +28,17 @@ public final class Controller implements IOrderPerformer {
 	/** The stack order. */
 	private ControllerOrder stackOrder;
 
+	/** The Lorann. */
+	private IMobile hero;
+
 	/** The Earth. */
 	private IElement earth;
 
 	/** The Door. */
 	private IElement door;
+
+	/** Store the lastLorannOrder */
+	private ControllerOrder lastHeroOrder;
 
 	/** take the value of the lastLorannOrder to know in which direction the power must go */
 	private ControllerOrder powerOrder;
@@ -46,7 +56,27 @@ public final class Controller implements IOrderPerformer {
 		this.setModel(model);
 		this.clearStackOrder(); 			//set the user order to NOP so we are sure that the player do not move on spawn
 	}
-	
+
+	/**
+	 * Drive the game element movement, behavior and threading
+	 * @throws IOException
+	 */
+	@SuppressWarnings("unchecked")
+
+	public void play() throws InterruptedException, IOException {
+
+		//---------------------------------------------------------------------------------------------------
+		//		This part prepare the variable and element of the level depending on each level
+		//---------------------------------------------------------------------------------------------------
+		// when the player lorann is load on the map is not alive so we set it alive after everything is load
+		hero = getModel().getLevel().getLorann();
+		hero.alive();
+
+		//Store the gate and crystal in the controller
+		door = getModel().getLevel().getDoor();
+		earth = getModel().getLevel().getEarth();
+	}
+
 	/**
      * Control.
      */
@@ -143,7 +173,7 @@ public final class Controller implements IOrderPerformer {
 	 *
 	 * @return the model
 	 */
-	private IModel getModel() {
+	private IModel getModel(){
 		return this.model;
 	}
 

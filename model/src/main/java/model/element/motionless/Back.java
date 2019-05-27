@@ -1,6 +1,7 @@
 package model.element.motionless;
 
 import contract.model.ISprite;
+import contract.model.Permeability;
 import model.element.Sprite;
 
 public class Back extends MotionlessElement {
@@ -12,6 +13,6 @@ public class Back extends MotionlessElement {
      * Instantiates a new back.
      */
     Back() {
-        super(SPRITE);
+        super( SPRITE, Permeability.PENETRABLE);
     }
 }

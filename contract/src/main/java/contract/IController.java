@@ -2,6 +2,8 @@ package contract;
 
 import contract.controller.IOrderPerformer;
 
+import java.io.IOException;
+
 /**
  * The Interface IController.
  *
@@ -13,6 +15,15 @@ public interface IController {
 	 * Control.
 	 */
 	public void control();
+
+	/**
+	 * Play.
+	 *
+	 * @throws InterruptedException
+	 *             the interrupted exception
+	 * @throws IOException
+	 */
+	void play() throws InterruptedException, IOException;
 
 	/**
 	 * Order perform.

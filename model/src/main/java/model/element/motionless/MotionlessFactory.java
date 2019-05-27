@@ -8,12 +8,16 @@ public abstract class MotionlessFactory {
     /** The Constant Back(black background). */
     private static final Back back = new Back();
 
-    /** The Constant Back(black background). */
+    /** The Constant Earth. */
     private static final Earth earth = new Earth();
+
+    /** The Constant Door. */
+    private static final Door door = new Door();
 
     private static MotionlessElement[] motionlessElements  = {
             wall,
             back,
+            door,
             earth
     };
 
@@ -26,8 +30,17 @@ public abstract class MotionlessFactory {
         return wall;
     }
 
+    /**
+     * Creates a new door MotionlessElements object.
+     *
+     * @return the motionless element
+     */
+    public static MotionlessElement createDoor() {
+        return door;
+    }
+
 /**
- * Creates a new wall MotionlessElements object.
+ * Creates a new earth MotionlessElements object.
  *
  * @return the motionless element
  */

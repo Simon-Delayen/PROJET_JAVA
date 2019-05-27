@@ -32,5 +32,6 @@ public abstract class Main {
         final Controller controller = new Controller(view, model);        // le contrôleur a la vue et le modèle pour les contrôler
         view.setOrderPerformer(controller.getOrderPerformer());          // cela permet à la vue d'être mise à jour lorsqu'il y a un mouvement de joueur depuis le contrôleur
 
-        }
+        controller.play();
     }
+}

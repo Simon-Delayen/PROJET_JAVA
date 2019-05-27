@@ -32,6 +32,12 @@ public interface ILevel extends IModel {
     IElement getOnTheLevelXY(int x, int y);
 
     /**
+     * Sets the mobile has changed.
+     */
+    void setMobilHasChanged();
+
+
+    /**
      * Gets the observable.
      *
      * @return the observable
@@ -39,10 +45,19 @@ public interface ILevel extends IModel {
     Observable getObservable();
 
     /**
+     * Gets the lorann.
+     *
+     * @return the lorann
+     */
+    IMobile getLorann();
+
+
+    /**
      * Get Elements that need to be update during the game
      *
      * @return Elements
      */
     IElement getEarth();
+    IElement getDoor();
 
 }

@@ -1,5 +1,6 @@
 package model.element.motionless;
 
+import contract.model.Permeability;
 import model.element.Sprite;
 
 public class Earth extends MotionlessElement {
@@ -11,6 +12,6 @@ public class Earth extends MotionlessElement {
      * Instantiates a new earth.
      */
     Earth() {
-        super(SPRITE);
+        super(SPRITE, Permeability.PENETRABLE);
     }
 }

@@ -1,6 +1,8 @@
 package view;
 
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
 import javax.swing.SwingUtilities;
 
 import contract.controller.ControllerOrder;
@@ -13,7 +15,7 @@ import contract.controller.UserOrder;
  *
  * @author Jean-Aymeric Diet
  */
-public final class View implements IView, Runnable {
+public final class View implements IView, Runnable, KeyListener {
 
 	/** The frame. */
 	private final ViewFrame viewFrame;

@@ -1,11 +1,14 @@
 package controller;
 
+import java.io.IOException;
+
 /*import contract.controller.ControllerOrder;*/
 import contract.controller.IController;
 import contract.controller.UserOrder;
 import contract.model.IModel;
+import contract.model.IModelFacade;
 import contract.view.IView;
-
+import contract.model.IMobile;
 
 /**
  * The Class Controller.
@@ -22,45 +25,56 @@ public final class Controller implements IController {
 	/** The model. */
 	private IModel model;
 	private IModelFacade model;
-	private Mobil Hero;
+	private IMobile Hero;
 	
 	private UserOrder lastHeroOrder;
 	
 	
 	
-	public ControllerFacade(IViewFacade view, IModelFacade model) {}
+	public void ControllerFacade(IView view, IModelFacade model) {}
 	
 	public void play() {}
 	
-	public void orderPerform(UserOrder userOrder) {}
+	public void orderPerform(UserOrder userOrder) throws IOException{
+		this.setStackOrder(userOrder);
+		}
 	
-	private IViewFacade getView() {}
-	
-	private void setView(IViewFacade view) {}
-	
-	private IModelFacade getModel() {}
-	
-	private void setModel (IModelFacade model) {}
-	
-	private UserOrder getStackOrder() {/*
-	return this.stackOrder;*/}
-	
-	/*private void setStackOrder(UserOrder stackOrder) {}*/
-	
-	private void clear StackOtder() {}
-	
-	public boolean CheckCollision(String direction) {}
-	
-	
-	@Override
-	public void orderPerform(UserOrder userOrder) throws IOExecption{/*
-		this.setStackOrder(userOrder);*/}
+	private IView getView() {
 		
-	public void setStackOrder(final UserOrder stackOrder) {}/*
-		this.stackOrder = stackOrder;*/
+	}
 	
-	switch (this.getStackOrder()) { //this case execute the method associated to the user order (move, shot, nothing)
-    case UP:
+	private void setView(IView view) {
+		
+	}
+	
+	private IModelFacade getModel() {
+		
+	}
+	
+	private void setModel (IModelFacade model) {
+		
+	}
+	
+	private UserOrder getStackOrder() {
+		return this.stackOrder;
+	}
+	
+	
+	private void clear StackOrder() {
+		
+	}
+	
+	public boolean CheckCollision(String direction) {
+		
+	}
+			
+	public void setStackOrder(final UserOrder stackOrder) {
+		this.stackOrder = stackOrder;
+	}
+
+	
+	switch (this.getStackOrder()) {
+	case UP:
         this.Hero.moveUp();
         lastHeroOrder=UserOrder.UP;
         break;
@@ -77,13 +91,6 @@ public final class Controller implements IController {
         lastHeroOrder=UserOrder.LEFT;
         break;
 	}
-    /*case NOP:
-    	default:
-    	this.Hero.doNothing();
-    	break;*/
-
-    
-	
 	
 
 	/**
@@ -117,9 +124,9 @@ public final class Controller implements IController {
      * @param pview
      *            the new view
      */
-	private void setView(final IView pview) {
+	/*private void setView(final IView pview) {
 		this.view = pview;
-	}
+	}*/
 
 	/**
 	 * Sets the model.
@@ -159,26 +166,5 @@ public final class Controller implements IController {
 			default:
 				break;
 		}*/
-	
-	/*public void keyPressed(KeyEvent e) {
-	int keyCode = e.getKeyCode();
 		
-	switch (keyCode)
-	{
-	case KeyEvent.VK_UP:
-		break;
-		
-	case KeyEvent.VK_DOWN:
-		break;
-		
-	case KeyEvent.VK_LEFT:
-		break;
-		
-	case KeyEvent.VK_RIGHT:
-		break;
-		
-		default:
-		}
-	}*/
-		
-	}
+}

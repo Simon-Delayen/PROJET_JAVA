@@ -73,4 +73,8 @@ public class Hero extends Mobil implements ISprite{
 		return 0;
 	}
 	
+	
+	public boolean alive() {
+		
+	}
 }

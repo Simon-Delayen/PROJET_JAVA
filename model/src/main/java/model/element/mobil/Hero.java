@@ -1,10 +1,12 @@
 package model.element.mobil;
 
 import java.io.IOException;
-import model.element.Permeability;
+
+import contract.model.ISprite;
+import contract.model.Permeability;
 import model.element.Sprite;
 
-public class Hero extends Mobil{
+public class Hero extends Mobil implements ISprite{
 	
 	
 	private static final Sprite sprite = new Sprite('@', "pause.png");
@@ -57,6 +59,18 @@ public class Hero extends Mobil{
 	public void moveDown() {
 		super.moveDown();
 		this.setSprite(spriteMoveDown);
+	}
+
+	@Override
+	public void loadImage() throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public char getConsoleImage() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 }

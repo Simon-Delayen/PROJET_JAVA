@@ -1,7 +1,6 @@
 package model.element;
 
 import java.awt.Image;
-
 import contract.model.*;
 
 public class Element implements IElement{
@@ -16,7 +15,7 @@ public class Element implements IElement{
 	}
 	
 	
-	public Sprite getSprite() {
+	public ISprite getSprite() {
 		return this.sprite;
 	}
 	

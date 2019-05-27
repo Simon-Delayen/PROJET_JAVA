@@ -3,8 +3,7 @@ package controller;
 import java.io.IOException;
 
 /*import contract.controller.ControllerOrder;*/
-import contract.controller.IController;
-import contract.controller.UserOrder;
+import contract.controller.*;
 import contract.model.IModel;
 import contract.model.IModelFacade;
 import contract.view.IView;
@@ -136,6 +135,12 @@ public final class Controller implements IController {
 	 */
 	private void setModel(final IModel model) {
 		this.model = model;
+	}
+
+	@Override
+	public IOrderPerformer getOrderPerformer() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	/**

@@ -63,7 +63,7 @@ public class Sprite implements ISprite {
      */
     public final void loadImage() throws IOException {
     	
-        this.setImage(ImageIO.read(new File("C:\\Users\\User\\git\\Lorann-Remastered\\main\\sprites\\" + this.getImageName())));
+        this.setImage(ImageIO.read(new File("C:\\Users\\Draknays\\Documents\\CESI\\Projet\\Projet_5\\Sprite" + this.getImageName())));
     }
 
     /**

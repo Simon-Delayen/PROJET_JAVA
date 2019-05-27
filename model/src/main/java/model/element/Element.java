@@ -1,33 +1,43 @@
 package model.element;
 
-public class Element {
+import java.awt.Image;
+
+import contract.model.*;
+
+public class Element implements IElement{
+	
 	private Sprite sprite;
+	
 	private Permeability permeability;
 	
-	public Element(Sprite sprite, Permeability permeability) {
-		
+	public Element (Sprite sprite, Permeability permeability) {
+		this.setSprite(sprite);
+		this.setPermeability(permeability);
 	}
+	
 	
 	public Sprite getSprite() {
 		return this.sprite;
 	}
 	
+	
 	public void setSprite(Sprite sprite) {
 		this.sprite = sprite;
 	}
+	
 	
 	public Permeability getPermeability() {
 		return this.permeability;
 	}
 	
+	
 	public void setPermeability(Permeability permeability) {
 		this.permeability = permeability;
 	}
 	
-	public void destroy() {
 		
-		
-		
+	public Image getImage() {
+		return this.getSprite().getImage();		
 	}
 	
 }

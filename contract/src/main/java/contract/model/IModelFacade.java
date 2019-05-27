@@ -1,4 +1,4 @@
-package contract;
+package contract.model;
 
 public interface IModelFacade {
 

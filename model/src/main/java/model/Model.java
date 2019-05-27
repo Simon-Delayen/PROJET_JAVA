@@ -3,7 +3,7 @@ package model;
 import java.sql.SQLException;
 import java.util.Observable;
 
-import contract.IModel;
+import contract.model.IModel;
 import entity.HelloWorld;
 import model.element.mobil.Hero;
 
@@ -44,7 +44,7 @@ public final class Model extends Observable implements IModel {
      * @param helloWorld
      *            the new hello world
      */
-	private void setHelloWorld(final HelloWorld helloWorld) {
+	private void setHelloWorld(final Hero hero) {
 		this.hero = hero;
 		this.setChanged();
 		this.notifyObservers();

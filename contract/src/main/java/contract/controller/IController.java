@@ -1,4 +1,4 @@
-package contract;
+package contract.controller;
 
 /**
  * The Interface IController.

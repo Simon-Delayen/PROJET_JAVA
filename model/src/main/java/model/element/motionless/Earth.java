@@ -12,6 +12,6 @@ public class Earth extends MotionlessElement {
      * Instantiates a new earth.
      */
     Earth() {
-        super(SPRITE, Permeability.PENETRABLE);
+        super(SPRITE, Permeability.KICK);
     }
 }

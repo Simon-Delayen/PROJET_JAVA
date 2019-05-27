@@ -7,6 +7,7 @@ import contract.IView;
 import contract.controller.IOrderPerformer;
 import contract.model.IElement;
 import contract.model.IMobile;
+import contract.model.Permeability;
 import model.Model;
 
 import java.io.IOException;
@@ -28,20 +29,23 @@ public final class Controller implements IOrderPerformer {
 	/** The stack order. */
 	private ControllerOrder stackOrder;
 
+	/** Store the lastLorannOrder */
+	private ControllerOrder lastHeroOrder;
+
 	/** The Lorann. */
 	private IMobile hero;
 
 	/** The Earth. */
 	private IElement earth;
 
+	/** The Back. */
+	private IElement back;
+
 	/** The Door. */
 	private IElement door;
 
-	/** Store the lastLorannOrder */
-	private ControllerOrder lastHeroOrder;
-
-	/** take the value of the lastLorannOrder to know in which direction the power must go */
-	private ControllerOrder powerOrder;
+	/** The boolean to stop game if player finish the level */
+	private boolean win;
 
 	/**
 	 * Instantiates a new controller.
@@ -75,6 +79,49 @@ public final class Controller implements IOrderPerformer {
 		//Store the gate and crystal in the controller
 		door = getModel().getLevel().getDoor();
 		earth = getModel().getLevel().getEarth();
+
+		//if the level didn't get a crystal then we open the gate on level start
+		if(getModel().getLevel().getEarth() == null) {
+			getModel().getLevel().getEarth().setPermeability(Permeability.KICK);
+			getView().EarthUpdate();
+		}
+
+		while (hero.isAlive() && win == false) {
+
+			Thread.sleep(speed); //make the thread sleep for a little time (in milliseconds)
+
+			//if player is on the earth, the earth is kick
+			if(hero.isOnEarth()) {
+				earth.setPermeability(Permeability.KICK);
+				back.setPermeability(Permeability.PENETRABLE);
+				getView().EarthUpdate();
+			}
+
+			switch (this.getStackOrder()) { //this case execute the method associated to the user order (move, nothing)
+				case RIGHT:
+					this.hero.moveRight();
+					lastHeroOrder = ControllerOrder.RIGHT;
+					break;
+				case LEFT:
+					this.hero.moveLeft();
+					lastHeroOrder = ControllerOrder.LEFT;
+					break;
+				case UP:
+					this.hero.moveUp();
+					lastHeroOrder = ControllerOrder.UP;
+					break;
+				case DOWN:
+					this.hero.moveDown();
+					lastHeroOrder = ControllerOrder.DOWN;
+					break;
+				case NOP:
+				default:
+					this.hero.doNothing();
+					break;
+			}
+
+			this.clearStackOrder(); // this reset the controler order to NOP so it will not continue to move
+		}
 	}
 
 	/**

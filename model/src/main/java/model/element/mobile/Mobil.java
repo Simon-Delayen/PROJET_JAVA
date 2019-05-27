@@ -1,6 +1,7 @@
 package model.element.mobile;
 
 import contract.model.ILevel;
+import contract.model.IMobile;
 import contract.model.ISprite;
 import contract.model.Permeability;
 import fr.exia.showboard.IBoard;
@@ -9,7 +10,7 @@ import model.element.Sprite;
 
 import java.awt.*;
 
-public class Mobil extends Element {
+public class Mobil extends Element implements IMobile {
 
     /**
      * The x.
@@ -86,7 +87,8 @@ public class Mobil extends Element {
     }
 
     public void doNothing() {
-        this.setHasMoved();
+        this.setY(getY());
+        this.setX(getX());
     }
 
     /*
@@ -170,5 +172,10 @@ public class Mobil extends Element {
     public void die() {
         this.alive = false;
         this.setHasMoved();
+    }
+
+    @Override
+    public Boolean isOnEarth() {
+        return this.getLevel().getOnTheLevelXY(this.getX(), this.getY()).getPermeability() == Permeability.KICK;
     }
 }

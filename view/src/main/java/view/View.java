@@ -3,8 +3,10 @@ package view;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
 import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 import contract.ControllerOrder;
@@ -107,6 +109,9 @@ public final class View implements IView, Runnable {
 
 	BoardFrame boardFrame;
 
+	Image Earth;
+	ImageIcon iEarth;
+
 	/**
 	 * Instantiates a new View.
 	 * It will create the window, a frame and a kind of plate with square to place element of the level
@@ -149,8 +154,81 @@ public final class View implements IView, Runnable {
 			}
 		}
 
+		boardFrame.addPawn(getLevel().getHero()); //this place ('spawn') the mobile element Lorann over a square
+
 		this.getLevel().getObservable().addObserver(boardFrame.getObserver()); //the view is registered to be observed by the level
 		boardFrame.setVisible(true); //make the game appear in first plan
+	}
+
+	public void EarthUpdate() {
+		try {
+			getLevel().getEarth().getImage().getGraphics().drawImage(ImageIO.read(new File("C:\\Users\\KAWAK\\Documents\\GitHub\\PROJET_JAVA\\model\\src\\main\\resources\\Background.png")),0,0, null); //this update the picture of the gate from close to open
+			} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+
+	/**
+	 * Key code to user order.
+	 * It choose the right user order in function of the keycode
+	 *
+	 * @param keyCode
+	 *            the key code
+	 * @return the user order
+	 */
+	static ControllerOrder keyCodeToUserOrder(final int keyCode) {
+		ControllerOrder userOrder;
+
+		switch (keyCode) {
+			case KeyEvent.VK_RIGHT:
+			case KeyEvent.VK_D:
+				userOrder = ControllerOrder.RIGHT;
+				break;
+			case KeyEvent.VK_LEFT:
+			case KeyEvent.VK_Q:
+				userOrder = ControllerOrder.LEFT;
+				break;
+			case KeyEvent.VK_UP:
+			case KeyEvent.VK_Z:
+				userOrder = ControllerOrder.UP;
+				break;
+			case KeyEvent.VK_DOWN:
+			case KeyEvent.VK_S:
+				userOrder = ControllerOrder.DOWN;
+				break;
+			default:
+				userOrder = ControllerOrder.NOP;
+				break;
+		}
+		return userOrder;
+	}
+
+	/**
+	 * Not used
+	 */
+	public void keyTyped(final KeyEvent keyEvent) {
+		// Not used
+	}
+
+	/**
+	 * Catch the user keyPressed, convert it and send it to the controller
+	 */
+	public final void keyPressed(final KeyEvent keyEvent) {
+		try {
+			//we get the keycode and send it to keycodeUserOrder to transform it into a ControllerOrder
+			//then we send the userOrder to orderPerform who will stack the order in stackOrder
+			this.getOrderPerformer().orderPerform(keyCodeToUserOrder(keyEvent.getKeyCode()));
+		} catch (final IOException exception) {
+			exception.printStackTrace();
+		}
+	}
+
+	/**
+	 * Not used
+	 */
+	public void keyReleased(final KeyEvent keyEvent) {
+		// Not used
 	}
 
 	/**

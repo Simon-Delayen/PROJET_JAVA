@@ -58,6 +58,8 @@ public interface IMobile extends IPawn, IElement{
     @Override
     int getY();
 
+    Boolean isOnEarth();
+
     /**
      * GetPosition
      */

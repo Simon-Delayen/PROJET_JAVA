@@ -36,7 +36,6 @@ public interface ILevel extends IModel {
      */
     void setMobilHasChanged();
 
-
     /**
      * Gets the observable.
      *

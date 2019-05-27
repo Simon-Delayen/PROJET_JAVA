@@ -17,5 +17,7 @@ public interface IView {
 	 */
 	void printMessage(final String message);
 
+	void EarthUpdate();
+
 	void setOrderPerformer(IOrderPerformer orderPeformer);
 }

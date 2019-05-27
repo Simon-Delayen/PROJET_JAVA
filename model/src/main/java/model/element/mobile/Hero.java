@@ -31,9 +31,6 @@ public class Hero extends Mobil implements ISprite, IMobile {
     /** The Constant spriteDie. */
     private static final Sprite spriteDie  = new Sprite('@', "tomber.png");
 
-    /** Counter for Hero picture state */
-    private int counter = 1;
-
     /** Delay to change the hero picture less rapidly than the thread is executed */
     private int delay = 1;
 
@@ -90,36 +87,9 @@ public class Hero extends Mobil implements ISprite, IMobile {
         this.setSprite(spriteDie);
     }
 
-    /*
-     * (non-Javadoc)
-     * @see fr.exia.insanevehicles.model.element.mobile.Mobile#doNothing()
-     */
     public final void doNothing() {
         super.doNothing();
-        if(delay == 6) {
-            delay=0;
-            switch ( getCounter() ) { //this switch is used to change the player picture when he didn't move
-                case 1:
-                    this.setSprite(spriteMoveLeft); //first picture load, next time we do the while the second will be load
-                    setCounter(2);
-                    break;
-                case 2:
-                    this.setSprite(spriteMoveUp); //third picture load, next time we do the while the fourth will be load
-                    setCounter(3);
-                    break;
-                case 3:
-                    this.setSprite(spriteMoveRight); //first picture load, next time we do the while the second will be load
-                    setCounter(4);
-                    break;
-                case 4:
-                    this.setSprite(spriteMoveDown); //third picture load, next time we do the while the fourth will be load
-                    setCounter(1);
-                    break;
-            }
-        }
-        else{
-            delay++;
-        }
+        this.setSprite(sprite);
     }
 
     @Override
@@ -132,14 +102,6 @@ public class Hero extends Mobil implements ISprite, IMobile {
     public char getImageWindows() {
         // TODO Auto-generated method stub
         return 0;
-    }
-
-    public int getCounter() {
-        return counter;
-    }
-
-    public void setCounter(int counter) {
-        this.counter = counter;
     }
 
 

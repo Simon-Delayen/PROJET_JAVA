@@ -1,15 +1,13 @@
 package model.element;
 
 import java.awt.Image;
-
 import java.io.File;
 import java.io.IOException;
-
 import javax.imageio.ImageIO;
 
-import contract.model.ISprite;
 
-public class Sprite implements ISprite {
+
+public class Sprite {
 
     /** The image. */
     private Image   image;

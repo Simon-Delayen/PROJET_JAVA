@@ -1,12 +1,12 @@
 package model.element.mobil;
 
 import java.awt.Point;
-
 import model.element.Element;
 import model.element.Permeability;
 import model.element.Sprite;
 
 public class Mobil extends Element {
+	
 	private Point position;
 	
 	public Mobil(Sprite sprite, Permeability permeability) {
@@ -40,7 +40,7 @@ public class Mobil extends Element {
 		this.setX(getX() + 1);
 	}
 	
-	
+
 	public int getX() {
 		return this.getPosition().x;
 	}

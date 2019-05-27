@@ -10,8 +10,31 @@ import contract.IView;
  */
 public final class Controller implements IController {
 
-	/*public static int speed = 16;*/
+	public static int speed = 16;
 	private UserOrder stackOrder;
+	private IModelFacade model;
+	
+	public ControllerFacade(IViewFacade view, IModelFacade model) {}
+	
+	public void play() {}
+	
+	public void orderPerform(UserOrder userOrder) {}
+	
+	private IViewFacade getView() {}
+	
+	private void setView(IViewFacade view) {}
+	
+	private IModelFacade getModel() {}
+	
+	private void setModel (IModelFacade model) {}
+	
+	private UserOrder getStackOrder() {}
+	
+	private void setStackOrder(UserOrder stackOrder) {}
+	
+	private void clear StackOtder() {}
+	
+	public boolean CheckCollision(String direction) {}
 	
 	private UserOrder getStackOrder() {
 		return this.stackOrder;}
@@ -22,28 +45,28 @@ public final class Controller implements IController {
 	public void setStackOrder(final UserOrder stackOrder) {
 		this.stackOrder = stackOrder;}
 	
-	/*switch (this.getStackOrder()) { //this case execute the method associated to the user order (move, shot, nothing)
+	switch (this.getStackOrder()) { //this case execute the method associated to the user order (move, shot, nothing)
     case RIGHT:
-        this.heros.moveRight();
-        lastHerosOrder=UserOrder.RIGHT;
+        /*this.heros.moveRight();
+        lastHerosOrder=UserOrder.RIGHT;*/
         break;
     case LEFT:
-        this.heros.moveLeft();
-        lastHerosOrder=UserOrder.LEFT;
+       /* this.heros.moveLeft();
+        lastHerosOrder=UserOrder.LEFT;*/
         break;
     case UP:
-        this.heros.moveUp();
-        lastHerosOrder=UserOrder.UP;
+       /* this.heros.moveUp();
+        lastHerosOrder=UserOrder.UP;*/
         break;
     case DOWN:
-        this.heros.moveDown();
-        lastHerosOrder=UserOrder.DOWN;
+       /* this.heros.moveDown();
+        lastHerosOrder=UserOrder.DOWN;*/
         break;
     case NOP:
-    	default:
-    	this.heros.doNothing();
+    	/*default:
+    	this.heros.doNothing();*/
     	break;
-}*/
+}
     
 	
 	/** The view. */

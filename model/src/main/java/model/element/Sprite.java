@@ -57,7 +57,7 @@ public class Sprite implements ISprite {
      */
     public final void loadImage() throws IOException {
 
-        this.setImage(ImageIO.read(new File("C:\\Users\\KAWAK\\Documents\\GitHub\\PROJET_JAVA\\main\\sprites" + this.getImageName())));
+        this.setImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream(this.getImageName())));
     }
 
     /**

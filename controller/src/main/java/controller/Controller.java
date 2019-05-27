@@ -89,6 +89,28 @@ public final class Controller implements IController {
 			default:
 				break;
 		}
+	
+	/*public void keyPressed(KeyEvent e) {
+	int keyCode = e.getKeyCode();
+		
+	switch (keyCode)
+	{
+	case KeyEvent.VK_UP:
+		break;
+		
+	case KeyEvent.VK_DOWN:
+		break;
+		
+	case KeyEvent.VK_LEFT:
+		break;
+		
+	case KeyEvent.VK_RIGHT:
+		break;
+		
+		default:
+		}
+	}*/
+		
 	}
 
 }

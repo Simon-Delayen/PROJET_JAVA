@@ -1,25 +1,27 @@
 package model.element.mobil;
 
+import model.element.Element;
+import model.element.Permeability;
+import model.element.Sprite;
+
 public class Mobil {
-	
-	protected int x;
-	protected int y;
-	protected boolean dead;
+	public int x;
+	public int y;
 	
 	public int getx() {
 		return this.x;
 	}
 	
 	public void setx(int x) {
-		
+		this.x = x;
 	}
 	
-	public int  gety() {
+	public int gety() { 
 		return this.y;
 	}
 	
 	public void sety(int y) {
-		
+		this.y = y;
 	}
-	
+
 }

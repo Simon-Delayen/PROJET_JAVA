@@ -1,4 +1,4 @@
-package model.element.mobil;
+package view;
 
 import static org.junit.Assert.*;
 
@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class MobilTest {
+public class ViewTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -27,22 +27,7 @@ public class MobilTest {
 	}
 
 	@Test
-	public void testGetx() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetx() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGety() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSety() {
+	public void test() {
 		fail("Not yet implemented");
 	}
 

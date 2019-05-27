@@ -8,9 +8,13 @@ public abstract class MotionlessFactory {
     /** The Constant Back(black background). */
     private static final Back back = new Back();
 
+    /** The Constant Back(black background). */
+    private static final Earth earth = new Earth();
+
     private static MotionlessElement[] motionlessElements  = {
             wall,
             back,
+            earth
     };
 
     /**
@@ -21,6 +25,15 @@ public abstract class MotionlessFactory {
     public static MotionlessElement createWall() {
         return wall;
     }
+
+/**
+ * Creates a new wall MotionlessElements object.
+ *
+ * @return the motionless element
+ */
+public static MotionlessElement createEarth() {
+        return earth;
+        }
 
     /**
      * Gets the good MotionlessElement from file symbol.

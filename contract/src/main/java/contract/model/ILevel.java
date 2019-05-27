@@ -38,4 +38,11 @@ public interface ILevel extends IModel {
      */
     Observable getObservable();
 
+    /**
+     * Get Elements that need to be update during the game
+     *
+     * @return Elements
+     */
+    IElement getEarth();
+
 }

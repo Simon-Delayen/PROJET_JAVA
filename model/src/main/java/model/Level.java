@@ -19,6 +19,8 @@ public class Level extends Observable implements ILevel{
 
     /** The on the level. */
     private IElement[][] onTheLevel;
+    private IElement earth;
+    private IElement door;
 
     /**
      * Instantiates a new level with the content of the db.
@@ -55,7 +57,27 @@ public class Level extends Observable implements ILevel{
             }
         }
 
-    ResultSet result = DAOHelloWorld.getLevelCompById(idlevel); //
+    ResultSet result = DAOHelloWorld.getLevelCompById(idlevel);     //this will stored the result return by the stored procedure
+
+        while(result.next()) { //while there is element for this level then we overwrite the default background
+
+            switch (result.getString(DAOHelloWorld.getColumnSprite()).charAt(0)) {
+                case 'H'://if character correspond to the door we put the door in the variable gate
+                    this.setOnTheLevelXY(MotionlessFactory.getFromFileSymbol(
+                            result.getString(DAOHelloWorld.getColumnSprite()).charAt(0)),result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY()));
+                    setDoor(this.getOnTheLevelXY(result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY())));
+                    break;
+                case ':'://if character correspond to the earth we put it in the variable EARTH
+                    this.setOnTheLevelXY(MotionlessFactory.getFromFileSymbol(
+                            result.getString(DAOHelloWorld.getColumnSprite()).charAt(0)),result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY()));
+                    setEarth(this.getOnTheLevelXY(result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY())));
+                    break;
+                default:
+                    this.setOnTheLevelXY(MotionlessFactory.getFromFileSymbol(
+                            result.getString(DAOHelloWorld.getColumnSprite()).charAt(0)), result.getInt(DAOHelloWorld.getColumnX()), result.getInt(DAOHelloWorld.getColumnY()));
+                    break;
+            }
+        }
         result.close();
 }
 
@@ -110,4 +132,19 @@ public class Level extends Observable implements ILevel{
         this.onTheLevel[x][y] = element;
     }
 
+    public IElement getEarth() {
+        return earth;
+    }
+
+    public void setEarth(IElement earth) {
+        this.earth = earth;
+    }
+
+    public IElement getDoor() {
+        return door;
+    }
+
+    public void setDoor(IElement door) {
+        this.door = door;
+    }
 }

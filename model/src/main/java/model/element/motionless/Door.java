@@ -4,7 +4,7 @@ import model.element.Sprite;
 
 public class Door extends MotionlessElement{
     /** The Constant SPRITE. */
-    private static final Sprite SPRITE = new Sprite(' ', "door.png");
+    private static final Sprite SPRITE = new Sprite('H', "door.png");
 
     /**
      * Instantiates a new tile.

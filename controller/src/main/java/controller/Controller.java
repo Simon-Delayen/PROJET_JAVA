@@ -5,7 +5,10 @@ import contract.IController;
 import contract.IModel;
 import contract.IView;
 import contract.controller.IOrderPerformer;
+import contract.model.IElement;
 import model.Model;
+
+import java.io.IOException;
 
 /**
  * The Class controller.
@@ -20,6 +23,12 @@ public final class Controller implements IOrderPerformer {
 
 	/** The stack order. */
 	private ControllerOrder stackOrder;
+
+	/** The Earth. */
+	private IElement earth;
+
+	/** The Door. */
+	private IElement door;
 
 	/** take the value of the lastLorannOrder to know in which direction the power must go */
 	private ControllerOrder powerOrder;
@@ -37,7 +46,7 @@ public final class Controller implements IOrderPerformer {
 		this.setModel(model);
 		this.clearStackOrder(); 			//set the user order to NOP so we are sure that the player do not move on spawn
 	}
-
+	
 	/**
      * Control.
      */

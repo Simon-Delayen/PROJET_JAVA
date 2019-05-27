@@ -5,7 +5,7 @@ import model.element.Sprite;
 public class Earth extends MotionlessElement {
 
     /** The Constant SPRITE. */
-    private static final Sprite SPRITE = new Sprite(' ', "earth.png");
+    private static final Sprite SPRITE = new Sprite(':', "earth.png");
 
     /**
      * Instantiates a new earth.

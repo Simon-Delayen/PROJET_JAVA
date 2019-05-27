@@ -1,9 +1,10 @@
-package controller;
+package contract.controller;
 
 public enum UserOrder {
+
 	UP,
-	RIGHT,
 	DOWN,
 	LEFT,
+	RIGHT,
 	PAUSE,
 }

@@ -1,9 +1,11 @@
 package controller;
 
-import contract.controller.ControllerOrder;
+/*import contract.controller.ControllerOrder;*/
 import contract.controller.IController;
+import contract.controller.UserOrder;
 import contract.model.IModel;
 import contract.view.IView;
+
 
 /**
  * The Class Controller.
@@ -19,7 +21,7 @@ public final class Controller implements IController {
 
 	/** The model. */
 	private IModel model;
-	
+	private IModelFacade model;
 	private Mobil Hero;
 	
 	private UserOrder lastHeroOrder;

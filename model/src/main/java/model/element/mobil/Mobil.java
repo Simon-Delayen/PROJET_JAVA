@@ -18,7 +18,6 @@ public class Mobil extends Element {
 		this.setX(x);
 		this.setY(y);
 	}
-	
 
 	public void moveUp() {
 		this.setY(getY() - 1);
@@ -68,14 +67,4 @@ public class Mobil extends Element {
 	public void setPosition(final Point position) {
 		this.position = position;
 	}
-
-	public void moveUP() {}
-	
-	public void moveRIGHT() {}
-	
-	public void moveDOWN() {}
-	
-	public void moveLEFT() {}
-	
-	public void alive() {}
 }

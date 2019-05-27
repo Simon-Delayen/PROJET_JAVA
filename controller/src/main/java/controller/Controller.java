@@ -12,7 +12,7 @@ import contract.model.IMobile;
 /**
  * The Class Controller.
  */
-public final class Controller implements IController {
+public final class Controller implements IController, IOrderPerformer {
 
 	public static final int speed = 16;
 	private UserOrder stackOrder;
@@ -22,17 +22,26 @@ public final class Controller implements IController {
 	private IView view;
 
 	/** The model. */
-	private IModel model;
 	private IModelFacade model;
+	
 	private IMobile Hero;
 	
 	private UserOrder lastHeroOrder;
 	
 	
+	/**
+	 * 
+	 * @param view
+	 * 			  the view
+	 * @param model
+	 * 			  the model
+	 */
+	public void ControllerFacade(final IView view, final IModelFacade model) {
+		this.setView(view);
+		this.setModel(model);
+		this.clearStackOrder();
+	}
 	
-	public void ControllerFacade(IView view, IModelFacade model) {}
-	
-	public void play() {}
 	
 	public void orderPerform(UserOrder userOrder) throws IOException{
 		this.setStackOrder(userOrder);
@@ -58,11 +67,6 @@ public final class Controller implements IController {
 		return this.stackOrder;
 	}
 	
-	
-	private void clear StackOrder() {
-		
-	}
-	
 	public boolean CheckCollision(String direction) {
 		
 	}
@@ -70,27 +74,34 @@ public final class Controller implements IController {
 	public void setStackOrder(final UserOrder stackOrder) {
 		this.stackOrder = stackOrder;
 	}
-
 	
-	switch (this.getStackOrder()) {
-	case UP:
-        this.Hero.moveUp();
-        lastHeroOrder=UserOrder.UP;
-        break;
-    case RIGHT:
-        this.Hero.moveRight();
-        lastHeroOrder=UserOrder.RIGHT;
-        break;
-    case DOWN:
-        this.Hero.moveDown();
-        lastHeroOrder=UserOrder.DOWN;
-        break;
-    case LEFT:
-        this.Hero.moveLeft();
-        lastHeroOrder=UserOrder.LEFT;
-        break;
+	private void clearStackOrder() {
+		this.stackOrder = UserOrder.NOP;
 	}
-	
+	public void play() throws InterruptedException, IOException{
+		switch (this.getStackOrder()) {
+		case UP:
+			this.Hero.moveUp();
+			lastHeroOrder=UserOrder.UP;
+			break;
+		case RIGHT:
+			this.Hero.moveRight();
+			lastHeroOrder=UserOrder.RIGHT;
+			break;
+		case DOWN:
+			this.Hero.moveDown();
+			lastHeroOrder=UserOrder.DOWN;
+			break;
+		case LEFT:
+			this.Hero.moveLeft();
+			lastHeroOrder=UserOrder.LEFT;
+			break;
+		 case NOP:
+         default:
+         	this.Hero.doNothing();
+         	break;
+		}
+	}
 
 	/**
 	 * Instantiates a new controller.

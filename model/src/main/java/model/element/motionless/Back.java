@@ -6,7 +6,7 @@ import model.element.Sprite;
 public class Back extends MotionlessElement {
 
     /** The Constant SPRITE. */
-    private static final Sprite SPRITE = new Sprite(' ', "Diamond.png");
+    private static final Sprite SPRITE = new Sprite(' ', "Background.png");
 
     /**
      * Instantiates a new back.

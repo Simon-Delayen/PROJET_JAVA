@@ -10,6 +10,42 @@ import contract.IView;
  */
 public final class Controller implements IController {
 
+	/*public static int speed = 16;*/
+	private UserOrder stackOrder;
+	
+	private UserOrder getStackOrder() {
+		return this.stackOrder;}
+	@Override
+	public void orderPerform(UserOrder userOrder) throws IOExecption{
+		this.setStackOrder(userOrder);}
+		
+	public void setStackOrder(final UserOrder stackOrder) {
+		this.stackOrder = stackOrder;}
+	
+	/*switch (this.getStackOrder()) { //this case execute the method associated to the user order (move, shot, nothing)
+    case RIGHT:
+        this.heros.moveRight();
+        lastHerosOrder=UserOrder.RIGHT;
+        break;
+    case LEFT:
+        this.heros.moveLeft();
+        lastHerosOrder=UserOrder.LEFT;
+        break;
+    case UP:
+        this.heros.moveUp();
+        lastHerosOrder=UserOrder.UP;
+        break;
+    case DOWN:
+        this.heros.moveDown();
+        lastHerosOrder=UserOrder.DOWN;
+        break;
+    case NOP:
+    	default:
+    	this.heros.doNothing();
+    	break;
+}*/
+    
+	
 	/** The view. */
 	private IView		view;
 
@@ -72,7 +108,7 @@ public final class Controller implements IController {
 	 *
 	 * @see contract.IController#orderPerform(contract.ControllerOrder)
 	 */
-	public void orderPerform(final ControllerOrder controllerOrder) {
+	/*public void orderPerform(final ControllerOrder controllerOrder) {
 		switch (controllerOrder) {
 			case English:
 				this.model.loadHelloWorld("GB");
@@ -88,7 +124,7 @@ public final class Controller implements IController {
 				break;
 			default:
 				break;
-		}
+		}*/
 	
 	/*public void keyPressed(KeyEvent e) {
 	int keyCode = e.getKeyCode();

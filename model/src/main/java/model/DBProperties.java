@@ -2,6 +2,7 @@ package model;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.*;
 import java.util.Properties;
 
 /**
@@ -9,98 +10,154 @@ import java.util.Properties;
  *
  * @author Jean-Aymeric Diet
  */
-class DBProperties extends Properties {
+class DBProperties {
 
-	/** The Constant serialVersionUID. */
-	private static final long		serialVersionUID			= 5289057445894568927L;
-
-	/** The Constant PROPERTIES_FILE_NAME. */
-	private final static String	PROPERTIES_FILE_NAME	= "model.properties";
-
-	/** The url. */
-	private String							url										= "jdbc:mysql://localhost:3306/jpublankproject?useSSL=false";//Unicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+	/** The instance. */
+	private static DBProperties instance;
 
 	/** The login. */
-	private String							login									= "root";
+	private static String                  user     = "root";
 
 	/** The password. */
-	private String							password							= "";
+	private static String                  password = "";
+
+	/** The url. */
+	private static String                  url      = "jdbc:mysql://localhost:3306/jpublankproject?useSSL=false";
+
+	/** The connection. */
+	private Connection connection;
+
+	/** The statement. */
+	private Statement statement;
 
 	/**
-	 * Instantiates a new DB properties.
+	 * Instantiates a new boulder dash BDD connector.
 	 */
-	public DBProperties() {
-		InputStream inputStream;
+	private DBProperties() {
+		this.open();
+	}
 
-		inputStream = this.getClass().getClassLoader().getResourceAsStream(DBProperties.PROPERTIES_FILE_NAME);
-
-		if (inputStream != null) {
-			try {
-				this.load(inputStream);
-			} catch (final IOException e) {
-				e.printStackTrace();
-			}
-			this.setUrl(this.getProperty("url"));
-			this.setLogin(this.getProperty("login"));
-			this.setPassword(this.getProperty("password"));
+	/**
+	 * Gets the single instance of BoulderDashBDDConnector.
+	 *
+	 * @return single instance of BoulderDashBDDConnector
+	 */
+	public static DBProperties getInstance() {
+		if (instance == null) {
+			setInstance(new DBProperties());
 		}
+		return instance;
 	}
 
 	/**
-	 * Gets the url.
+	 * Sets the instance.
 	 *
-	 * @return the url
+	 * @param instance
+	 *            the new instance
 	 */
-	public String getUrl() {
-		return this.url;
+	private static void setInstance(final DBProperties instance) {
+		DBProperties.instance = instance;
 	}
 
 	/**
-	 * Sets the url.
+	 * Open.
 	 *
-	 * @param url
-	 *          the new url
+	 * @return true, if successful
 	 */
-	private void setUrl(final String url) {
-		this.url = url;
+	private boolean open() {
+		try {
+			this.connection = DriverManager.getConnection(DBProperties.url, DBProperties.user,DBProperties.password);
+			this.statement = this.connection.createStatement();
+			return true;
+		} catch (final SQLException exception) {
+			exception.printStackTrace();
+		}
+		return false;
 	}
 
 	/**
-	 * Gets the login.
+	 * Execute query.
 	 *
-	 * @return the login
+	 * @param query
+	 *            the query
+	 * @return the result set
 	 */
-	public String getLogin() {
-		return this.login;
+	public ResultSet executeQuery(final String query) {
+		try {
+			return this.getStatement().executeQuery(query);
+		} catch (final SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	/**
-	 * Sets the login.
+	 * Prepare call.
 	 *
-	 * @param login
-	 *          the new login
+	 * @param query
+	 *            the query
+	 * @return the java.sql. callable statement
 	 */
-	private void setLogin(final String login) {
-		this.login = login;
+	public CallableStatement prepareCall(final String query) {
+		try {
+			return this.getConnection().prepareCall(query);
+		} catch (final SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	/**
-	 * Gets the password.
+	 * Execute update.
 	 *
-	 * @return the password
+	 * @param query
+	 *            the query
+	 * @return the int
 	 */
-	public String getPassword() {
-		return this.password;
+	public int executeUpdate(final String query) {
+		try {
+			return this.statement.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
+		} catch (final SQLException e) {
+			e.printStackTrace();
+		}
+		return 0;
 	}
 
 	/**
-	 * Sets the password.
+	 * Gets the connection.
 	 *
-	 * @param password
-	 *          the new password
+	 * @return the connection
 	 */
-	private void setPassword(final String password) {
-		this.password = password;
+	public Connection getConnection() {
+		return this.connection;
 	}
 
+	/**
+	 * Sets the connection.
+	 *
+	 * @param connection
+	 *            the new connection
+	 */
+	public void setConnection(final Connection connection) {
+		this.connection = connection;
+	}
+
+	/**
+	 * Gets the statement.
+	 *
+	 * @return the statement
+	 */
+	public Statement getStatement() {
+		return this.statement;
+	}
+
+	/**
+	 * Sets the statement.
+	 *
+	 * @param statement
+	 *            the new statement
+	 */
+	public void setStatement(final Statement statement) {
+		this.statement = statement;
+	}
 }

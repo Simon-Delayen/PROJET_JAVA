@@ -88,10 +88,10 @@ public final class View implements IView, Runnable {
 
 
 	/** The Constant width square number of the levels. */
-	private static final int squareNumberWidth = 24;
+	private static final int squareNumberWidth = 16;
 
 	/** The Constant height square number of the levels. */
-	private static final int squareNumberHeight = 12;
+	private static final int squareNumberHeight = 16;
 
 	/** The Constant squareSize to make the window bigger or smaller but keeping the proportions . */
 	private static final int squareSize = 50;
@@ -137,11 +137,11 @@ public final class View implements IView, Runnable {
 	/**
 	 * Thread that run the window
 	 */
-	public final void run() { //this create a new BoardFrame its simply a panel in the window named Lorann
+	public final void run() { //this create a new BoardFrame its simply a panel in the window named Boulderdash
 		boardFrame = new BoardFrame("Boulderdash");
 		boardFrame.setDimension(new Dimension(squareNumberWidth, squareNumberHeight)); // set the dimension of the panel to the level (square unity)
 		boardFrame.setDisplayFrame(this.getCloseView()); //say what to display in the frame
-		boardFrame.setSize(squareNumberWidth * squareSize, squareNumberHeight * squareSize); //set the size of thre frame (pixel unity)
+		boardFrame.setSize(squareNumberWidth * squareSize, squareNumberHeight * squareSize); //set the size of there frame (pixel unity)
 		//boardFrame.addKeyListener(this); //the window can listen to keyboard entry
 
 		for (int x = 0; x < squareNumberWidth; x++) { //this double for set each square to his sprite picture

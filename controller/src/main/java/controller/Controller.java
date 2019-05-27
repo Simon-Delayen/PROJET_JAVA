@@ -5,6 +5,7 @@ import contract.IController;
 import contract.IModel;
 import contract.IView;
 import contract.controller.IOrderPerformer;
+import model.Model;
 
 /**
  * The Class controller.
@@ -19,6 +20,9 @@ public final class Controller implements IOrderPerformer {
 
 	/** The stack order. */
 	private ControllerOrder stackOrder;
+
+	/** take the value of the lastLorannOrder to know in which direction the power must go */
+	private ControllerOrder powerOrder;
 
 	/**
 	 * Instantiates a new controller.
@@ -46,15 +50,6 @@ public final class Controller implements IOrderPerformer {
 		this.view.printMessage("Appuyer sur les touches 'E', 'F', 'D' ou 'I', pour afficher Hello world dans la langue d votre choix.");
 	}*/
 
-	/**
-     * Sets the view.
-     *
-     * @param pview
-     *            the new view
-     */
-	private void setView(final IView pview) {
-		this.view = pview;
-	}
 
 	/**
 	 * Sets the model.
@@ -113,6 +108,34 @@ public final class Controller implements IOrderPerformer {
 	 */
 	public IOrderPerformer getOrderPerformer() {
 		return this;
+	}
+
+	/**
+	 * Gets the view.
+	 *
+	 * @return the view
+	 */
+	private IView getView() {
+		return this.view;
+	}
+
+	/**
+	 * Sets the view.
+	 *
+	 * @param view
+	 *            the view to set
+	 */
+	private void setView(final IView view) {
+		this.view = view;
+	}
+
+	/**
+	 * Gets the model.
+	 *
+	 * @return the model
+	 */
+	private IModel getModel() {
+		return this.model;
 	}
 
 }

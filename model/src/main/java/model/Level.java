@@ -47,7 +47,7 @@ public class Level extends Observable implements ILevel{
 
         this.onTheLevel = new IElement[this.getWidth()][this.getHeight()]; //create a 16/14 board and set all compartement to null
 
-        for (int n=0; n<height; n++) //now set all compartment to the default square 'blacktile' (background)
+        for (int n=0; n<height; n++) //now set all compartment to the default square 'background' (background)
         {
             for (int i=0; i < width;i++)
             {

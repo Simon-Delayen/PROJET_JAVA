@@ -6,10 +6,10 @@ import model.element.Sprite;
 public class Back extends MotionlessElement {
 
     /** The Constant SPRITE. */
-    private static final Sprite SPRITE = new Sprite(' ', "Background.jpg");
+    private static final Sprite SPRITE = new Sprite(' ', "Diamond.png");
 
     /**
-     * Instantiates a new tile.
+     * Instantiates a new back.
      */
     Back() {
         super(SPRITE);

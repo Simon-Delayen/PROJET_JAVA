@@ -1,18 +1,18 @@
-package contract.controller;
+//package contract.controller;
 
 /**
  * The Enum ControllerOrder.
  *
  * @author Jean-Aymeric Diet
  */
-public enum ControllerOrder {
+/*public enum ControllerOrder {*/
 
 	/** The English. */
-	English,
+	/*English,*/
 	/** The French. */
-	Francais,
+	//Francais,
 	/** The Deutch. */
-	Deutsch,
+	//Deutsch,
 	/** The Indonesia. */
-	Indonesia
-}
+	//Indonesia
+//}

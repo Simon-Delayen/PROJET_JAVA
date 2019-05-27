@@ -7,7 +7,7 @@ import contract.controller.ControllerOrder;
 import contract.controller.IController;
 import contract.model.IModel;
 import contract.view.IView;
-
+import contract.controller.UserOrder;
 /**
  * The Class View.
  *
@@ -30,33 +30,26 @@ public final class View implements IView, Runnable {
 	}
 
 	/**
-	 * Key code to controller order.
+	 * Key code to user order.
 	 *
 	 * @param keyCode
 	 *          the key code
-	 * @return the controller order
 	 */
-static UserOrder keyCodeToUserOrder(final int keyCode) {
-	UserOrder userOrder;
-		switch (keyCode) {
-			case KeyEvent.VK_UP:
-				userOrder = UserOrder.UP;
-				/*return ControllerOrder.English;*/
-				break;
+	public static void keyCodeToUserOrder(final int keyCode) {
+		UserOrder userOrder;
+			switch (keyCode) {
+				case KeyEvent.VK_UP:
+					userOrder = UserOrder.UP;
+					break;
 			case KeyEvent.VK_DOWN:
 				userOrder = UserOrder.DOWN;
-				/*return ControllerOrder.Francais;*/
 				break;
 			case KeyEvent.VK_LEFT:
 				userOrder = UserOrder.LEFT;
-				/*return ControllerOrder.Deutsch;*/
 				break;
 			case KeyEvent.VK_RIGHT:
 				userOrder = UserOrder.RIGHT;
-				/*return ControllerOrder.Indonesia;*/
 				break;
-			/*default:
-				return ControllerOrder.English;*/
 		}
 	}
 

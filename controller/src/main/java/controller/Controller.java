@@ -12,29 +12,26 @@ import contract.model.IMobile;
 /**
  * The Class Controller.
  */
-public final class Controller implements IController {
+public final class Controller implements IController, IOrderPerformer {
 
 	public static final int speed = 16;
 	private UserOrder stackOrder;
-	/*private IModelFacade model;*/
-	
-	/** The view. */
 	private IView view;
-
-	/** The model. */
 	private IModel model;
-	private IModelFacade model;
 	private IMobile Hero;
-	
 	private UserOrder lastHeroOrder;
 	
 	
 	
-	public void ControllerFacade(IView view, IModelFacade model) {}
+	public void ControllerFacade(IView view, IModelFacade model) {
+		
+	}
 	
-	public void play() {}
+	public void play() {
+		
+	}
 	
-	public void orderPerform(UserOrder userOrder) throws IOException{
+	public void orderPerform(UserOrder userOrder) throws IOException {
 		this.setStackOrder(userOrder);
 		}
 	
@@ -59,7 +56,7 @@ public final class Controller implements IController {
 	}
 	
 	
-	private void clear StackOrder() {
+	private void clearStackOrder() {
 		
 	}
 	

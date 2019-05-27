@@ -3,10 +3,10 @@ package view;
 import java.awt.event.KeyEvent;
 import javax.swing.SwingUtilities;
 
-import contract.ControllerOrder;
-import contract.IController;
-import contract.IModel;
-import contract.IView;
+import contract.controller.ControllerOrder;
+import contract.controller.IController;
+import contract.model.IModel;
+import contract.view.IView;
 
 /**
  * The Class View.

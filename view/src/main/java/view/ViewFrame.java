@@ -8,8 +8,8 @@ import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import contract.IController;
-import contract.IModel;
+import contract.controller.IController;
+import contract.model.IModel;
 
 /**
  * The Class ViewFrame.

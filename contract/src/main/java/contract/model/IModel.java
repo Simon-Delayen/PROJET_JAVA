@@ -1,4 +1,4 @@
-package contract;
+package contract.model;
 
 import java.util.Observable;
 

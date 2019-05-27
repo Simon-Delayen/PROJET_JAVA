@@ -5,6 +5,7 @@ import java.util.Observable;
 
 import contract.IModel;
 import entity.HelloWorld;
+import model.element.mobil.Hero;
 
 /**
  * The Class Model.
@@ -14,13 +15,13 @@ import entity.HelloWorld;
 public final class Model extends Observable implements IModel {
 
 	/** The helloWorld. */
-	private HelloWorld helloWorld;
+	private Hero hero;
 
 	/**
 	 * Instantiates a new model.
 	 */
 	public Model() {
-		this.helloWorld = new HelloWorld();
+		this.hero = new Hero();
 	}
 
 	/**
@@ -33,8 +34,8 @@ public final class Model extends Observable implements IModel {
 	 *
 	 * @see contract.IModel#getMessage()
 	 */
-	public HelloWorld getHelloWorld() {
-		return this.helloWorld;
+	public Hero getHero() {
+		return this.hero;
 	}
 
 	/**
@@ -44,7 +45,7 @@ public final class Model extends Observable implements IModel {
      *            the new hello world
      */
 	private void setHelloWorld(final HelloWorld helloWorld) {
-		this.helloWorld = helloWorld;
+		this.hero = hero;
 		this.setChanged();
 		this.notifyObservers();
 	}

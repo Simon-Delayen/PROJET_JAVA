@@ -1,9 +1,13 @@
 package model.element.mobil;
 
 public class Hero extends Mobil{
-	Hero(int x, int y) {
-		this.x = x;
-		this.y = y;
+	public Hero(final int x, final int y) {
+		this.setx(x);
+		this.sety(y);
+	}
+	
+	public Hero() {
+		this(0,0);
 	}
 	
 	public void displayHero() {

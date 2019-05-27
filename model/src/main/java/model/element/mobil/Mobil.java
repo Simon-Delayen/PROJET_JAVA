@@ -24,4 +24,13 @@ public class Mobil {
 		this.y = y;
 	}
 
+	public void moveUP() {}
+	
+	public void moveRIGHT() {}
+	
+	public void moveDOWN() {}
+	
+	public void moveLEFT() {}
+	
+	public void alive() {}
 }

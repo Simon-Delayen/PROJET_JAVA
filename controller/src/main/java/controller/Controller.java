@@ -10,9 +10,21 @@ import contract.view.IView;
  */
 public final class Controller implements IController {
 
-	public static int speed = 16;
+	public static final int speed = 16;
 	private UserOrder stackOrder;
-	private IModelFacade model;
+	/*private IModelFacade model;*/
+	
+	/** The view. */
+	private IView view;
+
+	/** The model. */
+	private IModel model;
+	
+	private Mobil Hero;
+	
+	private UserOrder lastHeroOrder;
+	
+	
 	
 	public ControllerFacade(IViewFacade view, IModelFacade model) {}
 	
@@ -28,52 +40,49 @@ public final class Controller implements IController {
 	
 	private void setModel (IModelFacade model) {}
 	
-	private UserOrder getStackOrder() {}
+	private UserOrder getStackOrder() {/*
+	return this.stackOrder;*/}
 	
-	private void setStackOrder(UserOrder stackOrder) {}
+	/*private void setStackOrder(UserOrder stackOrder) {}*/
 	
 	private void clear StackOtder() {}
 	
 	public boolean CheckCollision(String direction) {}
 	
-	private UserOrder getStackOrder() {
-		return this.stackOrder;}
+	
 	@Override
-	public void orderPerform(UserOrder userOrder) throws IOExecption{
-		this.setStackOrder(userOrder);}
+	public void orderPerform(UserOrder userOrder) throws IOExecption{/*
+		this.setStackOrder(userOrder);*/}
 		
-	public void setStackOrder(final UserOrder stackOrder) {
-		this.stackOrder = stackOrder;}
+	public void setStackOrder(final UserOrder stackOrder) {}/*
+		this.stackOrder = stackOrder;*/
 	
 	switch (this.getStackOrder()) { //this case execute the method associated to the user order (move, shot, nothing)
-    case RIGHT:
-        /*this.heros.moveRight();
-        lastHerosOrder=UserOrder.RIGHT;*/
-        break;
-    case LEFT:
-       /* this.heros.moveLeft();
-        lastHerosOrder=UserOrder.LEFT;*/
-        break;
     case UP:
-       /* this.heros.moveUp();
-        lastHerosOrder=UserOrder.UP;*/
+        this.Hero.moveUp();
+        lastHeroOrder=UserOrder.UP;
+        break;
+    case RIGHT:
+        this.Hero.moveRight();
+        lastHeroOrder=UserOrder.RIGHT;
         break;
     case DOWN:
-       /* this.heros.moveDown();
-        lastHerosOrder=UserOrder.DOWN;*/
+        this.Hero.moveDown();
+        lastHeroOrder=UserOrder.DOWN;
         break;
-    case NOP:
-    	/*default:
-    	this.heros.doNothing();*/
-    	break;
-}
+    case LEFT:
+        this.Hero.moveLeft();
+        lastHeroOrder=UserOrder.LEFT;
+        break;
+	}
+    /*case NOP:
+    	default:
+    	this.Hero.doNothing();
+    	break;*/
+
     
 	
-	/** The view. */
-	private IView		view;
-
-	/** The model. */
-	private IModel	model;
+	
 
 	/**
 	 * Instantiates a new controller.
@@ -171,5 +180,3 @@ public final class Controller implements IController {
 	}*/
 		
 	}
-
-}

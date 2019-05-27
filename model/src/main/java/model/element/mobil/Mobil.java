@@ -70,4 +70,13 @@ public class Mobil extends Element {
 		this.position = position;
 	}
 
+	public void moveUP() {}
+	
+	public void moveRIGHT() {}
+	
+	public void moveDOWN() {}
+	
+	public void moveLEFT() {}
+	
+	public void alive() {}
 }

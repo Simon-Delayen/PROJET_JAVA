@@ -57,6 +57,4 @@ public interface ILevel extends IModel {
      * @return Elements
      */
     IElement getEarth();
-    IElement getDoor();
-
 }

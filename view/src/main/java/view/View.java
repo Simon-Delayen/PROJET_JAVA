@@ -96,21 +96,18 @@ public final class View implements IView, Runnable {
 	private static final int squareNumberHeight = 16;
 
 	/** The Constant squareSize to make the window bigger or smaller but keeping the proportions . */
-	private static final int squareSize = 50;
+	private static final int squareSize = 30;
 
 	/** The Constant closeView its the window launch by the thread. */
 	private Rectangle closeView;
 
 	/** The level. */
-	private ILevel           level;
+	private ILevel level;
 
 	/** The order performer. */
 	private IOrderPerformer orderPerformer;
 
 	BoardFrame boardFrame;
-
-	Image Earth;
-	ImageIcon iEarth;
 
 	/**
 	 * Instantiates a new View.
@@ -162,12 +159,12 @@ public final class View implements IView, Runnable {
 
 	public void EarthUpdate() {
 		try {
-			getLevel().getEarth().getImage().getGraphics().drawImage(ImageIO.read(new File("C:\\Users\\KAWAK\\Documents\\GitHub\\PROJET_JAVA\\model\\src\\main\\resources\\Background.png")),0,0, null); //this update the picture of the gate from close to open
-			} catch (IOException e) {
+			if (getLevel().getEarth() != null) //if the level get a crystal then we set it to black, else we didn't do anything
+				getLevel().getEarth().getImage().getGraphics().drawImage(ImageIO.read(new File("C:\\Users\\KAWAK\\Documents\\GitHub\\PROJET_JAVA\\model\\src\\main\\resources\\Backgroung.png")),0,0, null);//this update the picture of the earth to background
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-
 
 	/**
 	 * Key code to user order.

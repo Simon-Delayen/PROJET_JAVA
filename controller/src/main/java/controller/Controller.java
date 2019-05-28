@@ -72,31 +72,29 @@ public final class Controller implements IOrderPerformer {
 		//---------------------------------------------------------------------------------------------------
 		//		This part prepare the variable and element of the level depending on each level
 		//---------------------------------------------------------------------------------------------------
-		// when the player lorann is load on the map is not alive so we set it alive after everything is load
+		// when the player hero is load on the map is not alive so we set it alive after everything is load
 		hero = getModel().getLevel().getHero();
 		hero.alive();
 
-		//Store the gate and crystal in the controller
-		door = getModel().getLevel().getDoor();
+		//Store the earth in the controller
 		earth = getModel().getLevel().getEarth();
 
-		//if the level didn't get a crystal then we open the gate on level start
-		if(getModel().getLevel().getEarth() == null) {
-			getModel().getLevel().getEarth().setPermeability(Permeability.KICK);
-			getView().EarthUpdate();
-		}
+		//if the level didn't get a earth
+		//if(getModel().getLevel().getEarth() == null) {
+		//	getModel().getLevel().getEarth().setPermeability(Permeability.KICK);
+		//	getView().EarthUpdate();
+		//}
 
 		while (hero.isAlive() && win == false) {
 
 			Thread.sleep(speed); //make the thread sleep for a little time (in milliseconds)
 
-			//if player is on the earth, the earth is kick
+			//if player is on the earth
 			if(hero.isOnEarth()) {
-				earth.setPermeability(Permeability.KICK);
-				back.setPermeability(Permeability.PENETRABLE);
+				//update the earth permeability
+				earth.setPermeability(Permeability.PENETRABLE);
 				getView().EarthUpdate();
 			}
-
 			switch (this.getStackOrder()) { //this case execute the method associated to the user order (move, nothing)
 				case RIGHT:
 					this.hero.moveRight();

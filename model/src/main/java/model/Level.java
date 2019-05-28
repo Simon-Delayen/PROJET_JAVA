@@ -31,6 +31,9 @@ public class Level extends Observable implements ILevel{
     /** The door */
     private IElement door;
 
+    /** The back */
+    private IElement back;
+
     /**
      * Instantiates a new level with the content of the db.
      *
@@ -178,5 +181,13 @@ public class Level extends Observable implements ILevel{
 
     public void setDoor(IElement door) {
         this.door = door;
+    }
+
+    public IElement getBack() {
+        return back;
+    }
+
+    public void setBack(IElement back) {
+        this.back = back;
     }
 }

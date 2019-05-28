@@ -1,6 +1,8 @@
 package model.element.mobil;
 
 import java.io.IOException;
+import java.lang.Math;
+
 
 import contract.model.ISprite;
 import model.element.Sprite;
@@ -9,6 +11,8 @@ import contract.model.Permeability;
 public class Enemy extends Mobil implements ISprite{
 	
 	private static final Sprite sprite = new Sprite('@', "monstre .png");
+	boolean win = false;
+	int nb; 
 
 	
 	public Enemy (int x, int y ) throws IOException {
@@ -16,7 +20,7 @@ public class Enemy extends Mobil implements ISprite{
 		sprite.loadImage();
 		
 	}
-	
+/*	
 	@Override
 	public void moveLeft() {
 		super.moveLeft();
@@ -41,7 +45,7 @@ public class Enemy extends Mobil implements ISprite{
 		this.setSprite(sprite);
 	}
 
-
+*/
 	@Override
 	public void loadImage() throws IOException {
 		// TODO Auto-generated method stub
@@ -53,6 +57,40 @@ public class Enemy extends Mobil implements ISprite{
 	public char getConsoleImage() {
 		// TODO Auto-generated method stub
 		return 0;
+	}{
+
+	while (win == false) {
+	
+	nb = (int) (Math.random()*4);
+	//System.out.println(nb);
+	
+	switch (nb) {
+	
+	case 0 : 
+		super.moveLeft();
+		this.setSprite(sprite);
+		System.out.println(nb);
+		break;
+		
+	case 1 :
+		super.moveRight();
+		this.setSprite(sprite);
+		System.out.println(nb);
+		break;
+		
+	case 2 : 
+		super.moveUp();
+		this.setSprite(sprite);
+		System.out.println(nb);
+		break;
+		
+	case 3 : 
+		super.moveDown();
+		this.setSprite(sprite);
+		System.out.println(nb);	
+		break;
+		}
+	
 	}
 	
-}
+}}

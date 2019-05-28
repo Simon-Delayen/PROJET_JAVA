@@ -2,7 +2,6 @@ package model.element.mobile;
 
 import contract.model.ILevel;
 import contract.model.IMobile;
-import contract.model.ISprite;
 import contract.model.Permeability;
 import fr.exia.showboard.IBoard;
 import model.element.Element;

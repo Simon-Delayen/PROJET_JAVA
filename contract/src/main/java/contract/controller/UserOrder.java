@@ -5,5 +5,4 @@ public enum UserOrder {
 	DOWN,
 	LEFT,
 	RIGHT,
-	NOP,
 }

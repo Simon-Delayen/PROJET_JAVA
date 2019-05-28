@@ -17,14 +17,10 @@ public final class Controller implements IController, IOrderPerformer {
 	public static final int speed = 16;
 	private UserOrder stackOrder;
 	private IView view;
-<<<<<<< HEAD
 
 	/** The model. */
-	private IModelFacade model;
-	
-=======
-	private IModel model;
->>>>>>> 8ee99f7e63c49157ada6a57a3e2bad991effb6cf
+	//private IModelFacade model;
+
 	private IMobile Hero;
 	private UserOrder lastHeroOrder;
 	
@@ -42,16 +38,9 @@ public final class Controller implements IController, IOrderPerformer {
 		this.clearStackOrder();
 	}
 	
-<<<<<<< HEAD
-=======
-	public void ControllerFacade(IView view, IModelFacade model) {
+	/*public void ControllerFacade(IView view, IModelFacade model) {
 		
-	}
-	
-	public void play() {
-		
-	}
->>>>>>> 8ee99f7e63c49157ada6a57a3e2bad991effb6cf
+	}*/
 	
 	public void orderPerform(UserOrder userOrder) throws IOException {
 		this.setStackOrder(userOrder);
@@ -77,15 +66,8 @@ public final class Controller implements IController, IOrderPerformer {
 		return this.stackOrder;
 	}
 	
-<<<<<<< HEAD
-=======
-	
-	private void clearStackOrder() {
-		
-	}
-	
->>>>>>> 8ee99f7e63c49157ada6a57a3e2bad991effb6cf
 	public boolean CheckCollision(String direction) {
+		return false;
 		
 	}
 			
@@ -94,30 +76,31 @@ public final class Controller implements IController, IOrderPerformer {
 	}
 	
 	private void clearStackOrder() {
-		this.stackOrder = UserOrder.NOP;
+		/*this.stackOrder = UserOrder.NOP;*/
 	}
+	
 	public void play() throws InterruptedException, IOException{
 		switch (this.getStackOrder()) {
 		case UP:
 			this.Hero.moveUp();
-			lastHeroOrder=UserOrder.UP;
+			lastHeroOrder = UserOrder.UP;
 			break;
 		case RIGHT:
 			this.Hero.moveRight();
-			lastHeroOrder=UserOrder.RIGHT;
+			lastHeroOrder = UserOrder.RIGHT;
 			break;
 		case DOWN:
 			this.Hero.moveDown();
-			lastHeroOrder=UserOrder.DOWN;
+			lastHeroOrder = UserOrder.DOWN;
 			break;
 		case LEFT:
 			this.Hero.moveLeft();
-			lastHeroOrder=UserOrder.LEFT;
+			lastHeroOrder = UserOrder.LEFT;
 			break;
-		 case NOP:
+		 /*case NOP:
          default:
          	this.Hero.doNothing();
-         	break;
+         	break;*/
 		}
 	}
 
@@ -142,9 +125,9 @@ public final class Controller implements IController, IOrderPerformer {
 	 *
 	 * @see contract.IController#control()
 	 */
-	public void control() {
+	/*public void control() {
 		this.view.printMessage("Appuyer sur les touches 'E', 'F', 'D' ou 'I', pour afficher Hello world dans la langue d votre choix.");
-	}
+	}*/
 
 	/**
      * Sets the view.

@@ -68,4 +68,6 @@ public class Mobil extends Element {
 	public void setPosition(final Point position) {
 		this.position = position;
 	}
+	
+	
 }

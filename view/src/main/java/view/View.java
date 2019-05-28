@@ -2,20 +2,25 @@ package view;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.IOException;
 
 import javax.swing.SwingUtilities;
 
-import contract.controller.ControllerOrder;
+//import contract.controller.ControllerOrder;
 import contract.controller.IController;
 import contract.model.IModel;
 import contract.view.IView;
 import contract.controller.UserOrder;
+import contract.controller.IOrderPerformer;
+
 /**
  * The Class View.
  *
  * @author Jean-Aymeric Diet
  */
 public final class View implements IView, Runnable, KeyListener {
+	
+	private IOrderPerformer orderPerformer;
 
 	/** The frame. */
 	private final ViewFrame viewFrame;
@@ -36,31 +41,46 @@ public final class View implements IView, Runnable, KeyListener {
 	 *
 	 * @param keyCode
 	 *          the key code
+	 * @return the user order
 	 */
-	public static void keyCodeToUserOrder(final int keyCode) {
+	static UserOrder keyCodeToUserOrder(final int keyCode) {
 		UserOrder userOrder;
 			switch (keyCode) {
 				case KeyEvent.VK_UP:
 					userOrder = UserOrder.UP;
 					break;
-			case KeyEvent.VK_DOWN:
-				userOrder = UserOrder.DOWN;
-				break;
-			case KeyEvent.VK_LEFT:
-				userOrder = UserOrder.LEFT;
-				break;
-			case KeyEvent.VK_RIGHT:
-				userOrder = UserOrder.RIGHT;
-				break;
+				case KeyEvent.VK_DOWN:
+					userOrder = UserOrder.DOWN;
+					break;
+				case KeyEvent.VK_LEFT:
+					userOrder = UserOrder.LEFT;
+					break;
+				case KeyEvent.VK_RIGHT:
+					userOrder = UserOrder.RIGHT;
+					break;
 		}
+		return userOrder;
 	}
 
 	
 	
-	public void keyRealeased(KeyEvent e) {
-		
-	}
+	@Override
+    public final void keyPressed(final KeyEvent keyEvent) {
+        try { 
+        	//we get the keycode and send it to keycodeUserOrder to transform it into a userOrder
+        	//then we send the userOrder to orderPerfrom who will stack the order in stackOrder
+            this.getOrderPerformer().orderPerformer(keyCodeToUserOrder(keyEvent.getKeyCode()));
+        } catch (final IOException exception) {
+            exception.printStackTrace();
+        }
+    }
 	
+	@Override
+    public void keyReleased(final KeyEvent keyEvent) {
+        // Not used
+    }
+	
+	@Override
 	public void keyTyped(KeyEvent e) {}
 	/*
 	 * (non-Javadoc)
@@ -89,4 +109,16 @@ public final class View implements IView, Runnable, KeyListener {
 	public void setController(final IController controller) {
 		this.viewFrame.setController(controller);
 	}
+	
+	private IOrderPerformer getOrderPerformer() {
+        return this.orderPerformer;
+    }
+	/**
+	 * 
+	 * @param orderPerformer
+	 * 						the new order performer
+	 */
+	public final void setOrderPerformer(final IOrderPerformer orderPerformer) {
+        this.orderPerformer = orderPerformer;
+    }
 }

@@ -1,3 +1,4 @@
+
 package contract.model;
 
 import java.awt.Point;

@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7c9cb9b-94a3-49cb-b96e-35101caaf7c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/contract/src/main/java/contract/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract/src/main/java/contract/IView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract/src/main/java/contract/model/ILevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract/src/main/java/contract/model/ILevel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract/src/main/java/contract/model/IMobile.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract/src/main/java/contract/model/IMobile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract/src/main/java/contract/model/Permeability.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract/src/main/java/contract/model/Permeability.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/src/main/java/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/controller/src/main/java/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/element/mobile/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/element/mobile/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/element/mobile/Mobil.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/element/mobile/Mobil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/element/motionless/Earth.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/element/motionless/Earth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/src/main/java/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/view/src/main/java/view/View.java" afterDir="false" />
-    </list>
+    <list default="true" id="d7c9cb9b-94a3-49cb-b96e-35101caaf7c1" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/controller/target/" />
     <ignored path="$PROJECT_DIR$/model/target/" />
@@ -134,7 +123,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/model/src/main/java/model/element/mobile/Mobil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
+            <state relative-caret-position="522">
               <caret line="178" selection-start-line="178" selection-end-line="178" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -596,16 +585,15 @@
       <workItem from="1558853973926" duration="16004000" />
       <workItem from="1558937257740" duration="1285000" />
       <workItem from="1558938593980" duration="25220000" />
-      <workItem from="1558977477413" duration="10025000" />
+      <workItem from="1558977477413" duration="10057000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92170000" />
+    <option name="totallyTimeSpent" value="92202000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17718121" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -616,7 +604,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295129" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932885" visible="true" weight="0.25212464" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.25212464" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.26203966" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1124,7 +1112,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/model/src/main/java/model/element/mobile/Mobil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
+        <state relative-caret-position="522">
           <caret line="178" selection-start-line="178" selection-end-line="178" />
           <folding>
             <element signature="imports" expanded="true" />

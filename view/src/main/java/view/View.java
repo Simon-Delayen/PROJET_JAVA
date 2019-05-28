@@ -22,7 +22,7 @@ import fr.exia.showboard.BoardFrame;
  *
  * @author Jean-Aymeric Diet
  */
-public final class View implements IView, Runnable {
+public final class View implements IView, Runnable, KeyListener {
 
 	/** The frame. */
 //	private final ViewFrame viewFrame;
@@ -96,7 +96,7 @@ public final class View implements IView, Runnable {
 	private static final int squareNumberHeight = 16;
 
 	/** The Constant squareSize to make the window bigger or smaller but keeping the proportions . */
-	private static final int squareSize = 30;
+	private static final int squareSize = 40;
 
 	/** The Constant closeView its the window launch by the thread. */
 	private Rectangle closeView;
@@ -144,6 +144,7 @@ public final class View implements IView, Runnable {
 		boardFrame.setDimension(new Dimension(squareNumberWidth, squareNumberHeight)); // set the dimension of the panel to the level (square unity)
 		boardFrame.setDisplayFrame(this.getCloseView()); //say what to display in the frame
 		boardFrame.setSize(squareNumberWidth * squareSize, squareNumberHeight * squareSize); //set the size of there frame (pixel unity)
+		boardFrame.addKeyListener(this); //the window can listen to keyboard entry
 
 		for (int x = 0; x < squareNumberWidth; x++) { //this double for set each square to his sprite picture
 			for (int y = 0; y < squareNumberHeight; y++) {
@@ -157,14 +158,14 @@ public final class View implements IView, Runnable {
 		boardFrame.setVisible(true); //make the game appear in first plan
 	}
 
-	public void EarthUpdate() {
+	/*public void EarthUpdate() {
 		try {
 			if (getLevel().getEarth() != null) //if the level get a crystal then we set it to black, else we didn't do anything
 				getLevel().getEarth().getImage().getGraphics().drawImage(ImageIO.read(new File("C:\\Users\\KAWAK\\Documents\\GitHub\\PROJET_JAVA\\model\\src\\main\\resources\\Backgroung.png")),0,0, null);//this update the picture of the earth to background
-		} catch (IOException e) {
+				} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
+	}*/
 
 	/**
 	 * Key code to user order.
@@ -174,31 +175,31 @@ public final class View implements IView, Runnable {
 	 *            the key code
 	 * @return the user order
 	 */
-	static ControllerOrder keyCodeToUserOrder(final int keyCode) {
-		ControllerOrder userOrder;
+	static ControllerOrder keyCodeToControllerOrder(final int keyCode) {
+		ControllerOrder controllerOrder;
 
 		switch (keyCode) {
 			case KeyEvent.VK_RIGHT:
 			case KeyEvent.VK_D:
-				userOrder = ControllerOrder.RIGHT;
+				controllerOrder = ControllerOrder.RIGHT;
 				break;
 			case KeyEvent.VK_LEFT:
 			case KeyEvent.VK_Q:
-				userOrder = ControllerOrder.LEFT;
+				controllerOrder = ControllerOrder.LEFT;
 				break;
 			case KeyEvent.VK_UP:
 			case KeyEvent.VK_Z:
-				userOrder = ControllerOrder.UP;
+				controllerOrder = ControllerOrder.UP;
 				break;
 			case KeyEvent.VK_DOWN:
 			case KeyEvent.VK_S:
-				userOrder = ControllerOrder.DOWN;
+				controllerOrder = ControllerOrder.DOWN;
 				break;
 			default:
-				userOrder = ControllerOrder.NOP;
+				controllerOrder = ControllerOrder.NOP;
 				break;
 		}
-		return userOrder;
+		return controllerOrder;
 	}
 
 	/**
@@ -215,7 +216,7 @@ public final class View implements IView, Runnable {
 		try {
 			//we get the keycode and send it to keycodeUserOrder to transform it into a ControllerOrder
 			//then we send the userOrder to orderPerform who will stack the order in stackOrder
-			this.getOrderPerformer().orderPerform(keyCodeToUserOrder(keyEvent.getKeyCode()));
+			this.getOrderPerformer().orderPerform(keyCodeToControllerOrder(keyEvent.getKeyCode()));
 		} catch (final IOException exception) {
 			exception.printStackTrace();
 		}

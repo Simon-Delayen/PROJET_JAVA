@@ -11,25 +11,25 @@ import java.io.IOException;
 
 
 
-public class Hero extends Mobil implements ISprite, IMobile {
+public class Hero extends Mobil implements ISprite{
 
     /** The Constant SPRITE. */
-    private static final Sprite sprite = new Sprite('@', "pause.png");
+    private static final ISprite sprite = new Sprite('@', "pause.png");
 
     /** The Constant spriteTurnLeft. */
-    private static final Sprite spriteMoveLeft  = new Sprite('@', "gauche 1.png");
+    private static final ISprite spriteMoveLeft  = new Sprite('@', "gauche 1.png");
 
     /** The Constant spriteTurnRight. */
-    private static final Sprite spriteMoveRight = new Sprite('@', "droite 1.png");
+    private static final ISprite spriteMoveRight = new Sprite('@', "droite 1.png");
 
     /** The Constant spriteMoveUp. */
-    private static final Sprite spriteMoveUp  = new Sprite('@', "dos.png");
+    private static final ISprite spriteMoveUp  = new Sprite('@', "dos.png");
 
     /** The Constant spriteMoveDown. */
-    private static final Sprite spriteMoveDown = new Sprite('@', "descend 1.png");
+    private static final ISprite spriteMoveDown = new Sprite('@', "descend 1.png");
 
     /** The Constant spriteDie. */
-    private static final Sprite spriteDie  = new Sprite('@', "tomber.png");
+    private static final ISprite spriteDie  = new Sprite('@', "tomber.png");
 
     /** Delay to change the hero picture less rapidly than the thread is executed */
     private int delay = 1;

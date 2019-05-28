@@ -12,11 +12,6 @@ import java.io.IOException;
 public interface IController {
 
 	/**
-	 * Control.
-	 */
-	public void control();
-
-	/**
 	 * Play.
 	 *
 	 * @throws InterruptedException
@@ -34,9 +29,9 @@ public interface IController {
 	public void orderPerform(ControllerOrder controllerOrder);
 
 	/**
-	 * Gets the order peformer.
+	 * Gets the order performer.
 	 *
-	 * @return the order peformer
+	 * @return the order performer
 	 */
-	IOrderPerformer getOrderPeformer();
+	IOrderPerformer getOrderPerformer();
 }

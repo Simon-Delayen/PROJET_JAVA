@@ -8,7 +8,6 @@ import contract.controller.IOrderPerformer;
 import contract.model.IElement;
 import contract.model.IMobile;
 import contract.model.Permeability;
-import model.Model;
 
 import java.io.IOException;
 
@@ -74,22 +73,17 @@ public final class Controller implements IOrderPerformer {
 		//Store the earth in the controller
 		earth = getModel().getLevel().getEarth();
 
-		//if the level didn't get a earth
-		//if(getModel().getLevel().getEarth() == null) {
-		//	getModel().getLevel().getEarth().setPermeability(Permeability.KICK);
-		//	getView().EarthUpdate();
-		//}
 
 		while (hero.isAlive() && win == false) {
 
 			Thread.sleep(speed); //make the thread sleep for a little time (in milliseconds)
 
 			//if player is on the earth
-			if(hero.isOnEarth()) {
+			/*if(hero.isOnEarth()) {
 				//update the earth permeability
-				earth.setPermeability(Permeability.KICK);
+				earth.setPermeability(Permeability.PENETRABLE);
 				getView().EarthUpdate();
-			}
+			}*/
 			switch (this.getStackOrder()) { //this case execute the method associated to the user order (move, nothing)
 				case RIGHT:
 					this.hero.moveRight();

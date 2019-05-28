@@ -1,10 +1,8 @@
 package contract.model;
 
-import contract.IModel;
-
 import java.util.Observable;
 
-public interface ILevel extends IModel {
+public interface ILevel {
 
     /**
      * Gets the width.

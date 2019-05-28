@@ -5,7 +5,9 @@
 package main;
 
 import contract.ControllerOrder;
+import contract.IController;
 import contract.IModel;
+import contract.IView;
 import controller.Controller;
 import model.Model;
 import view.View;
@@ -27,8 +29,8 @@ public abstract class Main {
      *            the arguments
      */
     public static void main(final String[] args) throws IOException, InterruptedException, SQLException {
-        final Model model = new Model(2);                           // change le nombre au niveau désiré
-        final View view = new View(model.getLevel());                     // nous avons donné à la vue le niveau et tous les éléments contenus dans le niveau
+        final IModel model = new Model(2);                           // change le nombre au niveau désiré
+        final IView view = new View(model.getLevel());                     // nous avons donné à la vue le niveau et tous les éléments contenus dans le niveau
         final Controller controller = new Controller(view, model);        // le contrôleur a la vue et le modèle pour les contrôler
         view.setOrderPerformer(controller.getOrderPerformer());          // cela permet à la vue d'être mise à jour lorsqu'il y a un mouvement de joueur depuis le contrôleur
 

@@ -22,7 +22,7 @@ public class Level extends Observable implements ILevel{
     /** The on the level. */
     private IElement[][] onTheLevel;
 
-    /** The lorann. */
+    /** The hero. */
     private IMobile hero;
 
     /** The earth */
@@ -143,7 +143,6 @@ public class Level extends Observable implements ILevel{
     /**
      * Get the level
      */
-    @Override
     public ILevel getLevel() {
         return this;
     }

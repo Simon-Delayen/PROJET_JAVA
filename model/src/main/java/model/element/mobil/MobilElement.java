@@ -1,7 +1,9 @@
 package model.element.mobil;
 
 public class MobilElement extends Mobil {
+	
 	public MobilElement(int x, int y) {
+		super();
 		
 	}
 	

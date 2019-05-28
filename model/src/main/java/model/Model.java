@@ -44,12 +44,12 @@ public final class Model extends Observable implements IModel {
      * @param helloWorld
      *            the new hello world
      */
-	private void setHelloWorld(final Hero hero) {
+/*	private void setHelloWorld(final Hero hero) {
 		this.hero = hero;
 		this.setChanged();
 		this.notifyObservers();
 	}
-
+*/
 	/**
      * Load hello world.
      *
@@ -61,14 +61,14 @@ public final class Model extends Observable implements IModel {
 	 *
 	 * @see contract.IModel#getMessage(java.lang.String)
 	 */
-	public void loadHelloWorld(final String code) {
+	/*public void loadHelloWorld(final String code) {
 		try {
 			final DAOHelloWorld daoHelloWorld = new DAOHelloWorld(DBConnection.getInstance().getConnection());
 			this.setHelloWorld(daoHelloWorld.find(code));
 		} catch (final SQLException e) {
 			e.printStackTrace();
 		}
-	}
+	}*/
 
 	/**
      * Gets the observable.

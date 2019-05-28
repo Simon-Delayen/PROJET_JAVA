@@ -1,4 +1,4 @@
-package view;
+package model.element.mobil;
 
 import static org.junit.Assert.*;
 
@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class ViewTest {
+public class EnemyTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -27,47 +27,37 @@ public class ViewTest {
 	}
 
 	@Test
-	public void testView() {
+	public void testMoveUp() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testKeyCodeToUserOrder() {
+	public void testMoveDown() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testKeyPressed() {
+	public void testMoveLeft() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testKeyReleased() {
+	public void testMoveRight() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testKeyTyped() {
+	public void testEnemy() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testPrintMessage() {
+	public void testLoadImage() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testRun() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetController() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetOrderPerformer() {
+	public void testGetConsoleImage() {
 		fail("Not yet implemented");
 	}
 

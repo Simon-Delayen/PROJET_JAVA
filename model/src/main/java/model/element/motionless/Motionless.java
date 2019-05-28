@@ -21,6 +21,4 @@ public class Motionless {
 			this.y = y;
 		}
 
-	}
-
 }

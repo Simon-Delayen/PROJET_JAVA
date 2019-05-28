@@ -32,17 +32,7 @@ public class ControllerTest {
 	}
 
 	@Test
-	public void testPlay() {
-		fail("Not yet implemented");
-	}
-
-	@Test
 	public void testOrderPerform() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testStackOtder() {
 		fail("Not yet implemented");
 	}
 
@@ -57,12 +47,17 @@ public class ControllerTest {
 	}
 
 	@Test
+	public void testPlay() {
+		fail("Not yet implemented");
+	}
+
+	@Test
 	public void testController() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testControl() {
+	public void testGetOrderPerformer() {
 		fail("Not yet implemented");
 	}
 

@@ -69,5 +69,4 @@ public class Mobil extends Element {
 		this.position = position;
 	}
 	
-	
 }

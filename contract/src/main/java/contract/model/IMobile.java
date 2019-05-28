@@ -11,7 +11,7 @@ public interface IMobile extends IPawn, IElement {
 	/**
      * Move up.
      */
-    void moveUp();
+	void moveUp();
 
     /**
      * Move left.

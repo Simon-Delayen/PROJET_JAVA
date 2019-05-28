@@ -8,6 +8,9 @@ import model.element.Sprite;
 
 public class Hero extends Mobil implements ISprite{
 	
+	/*int x;
+	int y;*/
+	
 	public boolean alive = true;
 	
 	private static final Sprite sprite = new Sprite('@', "pause.png");
@@ -38,6 +41,10 @@ public class Hero extends Mobil implements ISprite{
 
 	}
 	
+	/*public Hero(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}*/
 	public boolean isAlive() {
 		return alive;
 	}

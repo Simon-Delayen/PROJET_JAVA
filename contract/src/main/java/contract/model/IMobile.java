@@ -1,6 +1,6 @@
 package contract.model;
 
-import fr.exia.showboard.IPawn;
+import showboard.IPawn;
 
 import java.awt.*;
 
@@ -58,7 +58,7 @@ public interface IMobile extends IPawn, IElement{
     @Override
     int getY();
 
-    //Boolean isOnEarth();
+    Boolean isOnEarth();
 
     /**
      * GetPosition

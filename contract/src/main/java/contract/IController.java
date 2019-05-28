@@ -21,14 +21,6 @@ public interface IController {
 	void play() throws InterruptedException, IOException;
 
 	/**
-	 * Order perform.
-	 *
-	 * @param controllerOrder
-	 *          the controller order
-	 */
-	public void orderPerform(ControllerOrder controllerOrder);
-
-	/**
 	 * Gets the order performer.
 	 *
 	 * @return the order performer

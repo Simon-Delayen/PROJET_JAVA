@@ -14,7 +14,7 @@ import java.io.IOException;
 /**
  * The Class controller.
  */
-public final class Controller implements IOrderPerformer {
+public final class Controller implements IOrderPerformer, IController {
 
 	/** The game-thread refresh speed. */
 	private static final int speed = 50;
@@ -79,11 +79,11 @@ public final class Controller implements IOrderPerformer {
 			Thread.sleep(speed); //make the thread sleep for a little time (in milliseconds)
 
 			//if player is on the earth
-			/*if(hero.isOnEarth()) {
+			if(hero.isOnEarth()) {
 				//update the earth permeability
-				earth.setPermeability(Permeability.PENETRABLE);
+				earth.setPermeability(Permeability.KICK);
 				getView().EarthUpdate();
-			}*/
+			}
 			switch (this.getStackOrder()) { //this case execute the method associated to the user order (move, nothing)
 				case RIGHT:
 					this.hero.moveRight();
@@ -112,19 +112,6 @@ public final class Controller implements IOrderPerformer {
 	}
 
 	/**
-     * Control.
-     */
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see contract.IController#control()
-	 */
-	/*public void control() {
-		this.view.printMessage("Appuyer sur les touches 'E', 'F', 'D' ou 'I', pour afficher Hello world dans la langue d votre choix.");
-	}*/
-
-
-	/**
 	 * Sets the model.
 	 *
 	 * @param model
@@ -145,7 +132,7 @@ public final class Controller implements IOrderPerformer {
 	 *
 	 * @see contract.IController#orderPerform(contract.ControllerOrder)
 	 */
-	public void orderPerform(final ControllerOrder controllerOrder) {
+	public void orderPerform(final ControllerOrder controllerOrder) throws IOException{
 			this.setStackOrder(controllerOrder);
 
 	}

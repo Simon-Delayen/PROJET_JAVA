@@ -1,6 +1,6 @@
 package contract.model;
 
-import fr.exia.showboard.ISquare;
+import showboard.ISquare;
 
 import java.awt.*;
 
@@ -21,7 +21,7 @@ public interface IElement extends ISquare {
 
     /*
      * (non-Javadoc)
-     * @see fr.exia.showboard.ISquare#getImage()
+     * @see showboard.ISquare#getImage()
      */
     @Override
     Image getImage();

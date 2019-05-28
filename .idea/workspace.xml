@@ -1,43 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7c9cb9b-94a3-49cb-b96e-35101caaf7c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract/contract.iml" beforeDir="false" afterPath="$PROJECT_DIR$/contract/contract.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/contract/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract/src/main/java/contract/IController.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract/src/main/java/contract/IController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract/src/main/java/contract/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract/src/main/java/contract/IView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract/src/main/java/contract/model/IElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract/src/main/java/contract/model/IElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract/src/main/java/contract/model/ILevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract/src/main/java/contract/model/ILevel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract/src/main/java/contract/model/IMobile.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract/src/main/java/contract/model/IMobile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract/src/main/java/contract/model/Permeability.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract/src/main/java/contract/model/Permeability.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/controller.iml" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controller.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/controller/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/src/main/java/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/controller/src/main/java/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entity/entity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/entity/entity.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/masterpom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/masterpom.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model.iml" beforeDir="false" afterPath="$PROJECT_DIR$/model/model.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/model/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/DAOEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/DAOEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/DAOHelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/DAOHelloWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/Level.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/element/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/element/Element.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/element/mobile/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/element/mobile/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/element/mobile/Mobil.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/element/mobile/Mobil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/element/motionless/Back.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/element/motionless/Back.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/element/motionless/Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/element/motionless/Door.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/element/motionless/Earth.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/element/motionless/Earth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/element/motionless/MotionlessElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/element/motionless/MotionlessElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/element/motionless/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/element/motionless/Wall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/view/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/src/main/java/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/view/src/main/java/view/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/view.iml" beforeDir="false" afterPath="$PROJECT_DIR$/view/view.iml" afterDir="false" />
-    </list>
+    <list default="true" id="d7c9cb9b-94a3-49cb-b96e-35101caaf7c1" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/controller/target/" />
     <ignored path="$PROJECT_DIR$/model/target/" />
@@ -506,16 +470,15 @@
       <workItem from="1558937257740" duration="1285000" />
       <workItem from="1558938593980" duration="25220000" />
       <workItem from="1558977477413" duration="10057000" />
-      <workItem from="1559023308676" duration="21743000" />
+      <workItem from="1559023308676" duration="21788000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113945000" />
+    <option name="totallyTimeSpent" value="113990000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16901408" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -526,7 +489,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295129" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4986577" visible="true" weight="0.2446959" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4986577" weight="0.2446959" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.26203966" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />

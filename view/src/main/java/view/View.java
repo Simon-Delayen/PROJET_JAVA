@@ -12,7 +12,11 @@ import javax.swing.*;
 import contract.ControllerOrder;
 import contract.IController;
 import contract.IModel;
+import contract.model.IMobile;
 import contract.IView;
+import contract.model.ISprite;
+import contract.model.ILevel;
+import contract.model.IElement;
 import contract.controller.IOrderPerformer;
 import contract.model.ILevel;
 import fr.exia.showboard.BoardFrame;
@@ -22,72 +26,7 @@ import fr.exia.showboard.BoardFrame;
  *
  * @author Jean-Aymeric Diet
  */
-public final class View implements IView, Runnable {
-
-	/** The frame. */
-//	private final ViewFrame viewFrame;
-
-	/**
-	 * Instantiates a new view.
-	 *
-	 * @param model
-	 *          the model
-	 */
-//	public View(final ILevel level) throws IOException {
-//		this.viewFrame = new ViewFrame(level);
-//		SwingUtilities.invokeLater(this);
-//	}
-
-	/**
-	 * Key code to controller order.
-	 *
-	 * @param keyCode
-	 *          the key code
-	 * @return the controller order
-	 */
-//	protected static ControllerOrder keyCodeToControllerOrder(final int keyCode) {
-//		switch (keyCode) {
-//			case KeyEvent.VK_G:
-//				return ControllerOrder.English;
-//			case KeyEvent.VK_F:
-//				return ControllerOrder.Francais;
-//			case KeyEvent.VK_D:
-//				return ControllerOrder.Deutsch;
-//			case KeyEvent.VK_I:
-//				return ControllerOrder.Indonesia;
-//			default:
-//				return ControllerOrder.English;
-//		}
-//	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see contract.IView#printMessage(java.lang.String)
-	 */
-//	public void printMessage(final String message) {
-//		this.viewFrame.printMessage(message);
-//	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see java.lang.Runnable#run()
-	 */
-//	public void run() {
-//		this.viewFrame.setVisible(true);
-//	}
-
-	/**
-	 * Sets the controller.
-	 *
-	 * @param controller
-	 *          the new controller
-	 */
-//	public void setController(final IController controller) {
-//		this.viewFrame.setController(controller);
-//	}
-
+public final class View implements IView, Runnable, KeyListener {
 
 	/** The Constant width square number of the levels. */
 	private static final int squareNumberWidth = 16;
@@ -144,7 +83,8 @@ public final class View implements IView, Runnable {
 		boardFrame.setDimension(new Dimension(squareNumberWidth, squareNumberHeight)); // set the dimension of the panel to the level (square unity)
 		boardFrame.setDisplayFrame(this.getCloseView()); //say what to display in the frame
 		boardFrame.setSize(squareNumberWidth * squareSize, squareNumberHeight * squareSize); //set the size of there frame (pixel unity)
-
+		boardFrame.addKeyListener(this); //the window can listen to keyboard entry
+		
 		for (int x = 0; x < squareNumberWidth; x++) { //this double for set each square to his sprite picture
 			for (int y = 0; y < squareNumberHeight; y++) {
 				boardFrame.addSquare(this.level.getOnTheLevelXY(x, y), x, y);
@@ -174,31 +114,31 @@ public final class View implements IView, Runnable {
 	 *            the key code
 	 * @return the user order
 	 */
-	static ControllerOrder keyCodeToUserOrder(final int keyCode) {
-		ControllerOrder userOrder;
+	static ControllerOrder keyCodeToControllerOrder(final int keyCode) {
+		ControllerOrder controllerOrder;
 
 		switch (keyCode) {
 			case KeyEvent.VK_RIGHT:
 			case KeyEvent.VK_D:
-				userOrder = ControllerOrder.RIGHT;
+				controllerOrder = ControllerOrder.RIGHT;
 				break;
 			case KeyEvent.VK_LEFT:
 			case KeyEvent.VK_Q:
-				userOrder = ControllerOrder.LEFT;
+				controllerOrder = ControllerOrder.LEFT;
 				break;
 			case KeyEvent.VK_UP:
 			case KeyEvent.VK_Z:
-				userOrder = ControllerOrder.UP;
+				controllerOrder = ControllerOrder.UP;
 				break;
 			case KeyEvent.VK_DOWN:
 			case KeyEvent.VK_S:
-				userOrder = ControllerOrder.DOWN;
+				controllerOrder = ControllerOrder.DOWN;
 				break;
 			default:
-				userOrder = ControllerOrder.NOP;
+				controllerOrder = ControllerOrder.NOP;
 				break;
 		}
-		return userOrder;
+		return controllerOrder;
 	}
 
 	/**
@@ -215,7 +155,7 @@ public final class View implements IView, Runnable {
 		try {
 			//we get the keycode and send it to keycodeUserOrder to transform it into a ControllerOrder
 			//then we send the userOrder to orderPerform who will stack the order in stackOrder
-			this.getOrderPerformer().orderPerform(keyCodeToUserOrder(keyEvent.getKeyCode()));
+			this.getOrderPerformer().orderPerform(keyCodeToControllerOrder(keyEvent.getKeyCode()));
 		} catch (final IOException exception) {
 			exception.printStackTrace();
 		}

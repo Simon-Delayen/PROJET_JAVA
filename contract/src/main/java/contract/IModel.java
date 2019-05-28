@@ -12,13 +12,6 @@ import contract.model.ILevel;
 public interface IModel {
 
 	/**
-	 * Gets the observable.
-	 *
-	 * @return the observable
-	 */
-	Observable getObservable();
-
-	/**
 	 * Gets Level.
 	 *
 	 * @return Level

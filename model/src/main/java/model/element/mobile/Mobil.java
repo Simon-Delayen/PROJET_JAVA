@@ -6,6 +6,7 @@ import contract.model.Permeability;
 import fr.exia.showboard.IBoard;
 import model.element.Element;
 import model.element.Sprite;
+import contract.model.ISprite;
 
 import java.awt.*;
 
@@ -35,7 +36,7 @@ public class Mobil extends Element implements IMobile {
      * @param permeability
      *            the permeability
      */
-    public Mobil(final Sprite sprite, final ILevel level, final Permeability permeability) {
+    public Mobil(final ISprite sprite, final ILevel level, final Permeability permeability) {
         super(sprite, permeability);
         this.setLevel(this.level);
         this.position = new Point();
@@ -55,7 +56,7 @@ public class Mobil extends Element implements IMobile {
      * @param permeability
      *            the permeability
      */
-    Mobil(final int x, final int y, final Sprite sprite, final ILevel level, final Permeability permeability) {
+    Mobil(final int x, final int y, final ISprite sprite, final ILevel level, final Permeability permeability) {
         this(sprite, level, permeability);
         this.setX(x);
         this.setY(y);

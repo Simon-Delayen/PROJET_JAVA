@@ -1,16 +1,14 @@
 package controller;
 
+import java.io.IOException;
+
 import contract.ControllerOrder;
-import contract.IController;
 import contract.IModel;
 import contract.IView;
 import contract.controller.IOrderPerformer;
 import contract.model.IElement;
 import contract.model.IMobile;
 import contract.model.Permeability;
-import model.Model;
-
-import java.io.IOException;
 
 /**
  * The Class controller.
@@ -87,7 +85,7 @@ public final class Controller implements IOrderPerformer {
 			//if player is on the earth
 			if(hero.isOnEarth()) {
 				//update the earth permeability
-				earth.setPermeability(Permeability.KICK);
+				earth.setPermeability(Permeability.PENETRABLE);
 				getView().EarthUpdate();
 			}
 			switch (this.getStackOrder()) { //this case execute the method associated to the user order (move, nothing)

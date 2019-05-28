@@ -3,6 +3,7 @@ package model;
 import contract.model.IElement;
 import contract.model.ILevel;
 import contract.model.IMobile;
+import contract.model.ISprite;
 import model.element.mobile.Hero;
 import model.element.motionless.MotionlessFactory;
 
@@ -143,7 +144,6 @@ public class Level extends Observable implements ILevel{
     /**
      * Get the level
      */
-    @Override
     public ILevel getLevel() {
         return this;
     }

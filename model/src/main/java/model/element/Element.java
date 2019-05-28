@@ -9,7 +9,7 @@ import java.awt.*;
 public class Element implements IElement {
 
     /** The sprite. */
-    private Sprite       sprite;
+    private ISprite       sprite;
 
     private Permeability permeability;
 
@@ -19,7 +19,7 @@ public class Element implements IElement {
      * @param sprite
      *            the sprite
      */
-    public Element(final Sprite sprite, Permeability permeability) {
+    public Element(final ISprite sprite, Permeability permeability) {
         this.setSprite(sprite);
         this.setPermeability(permeability);
     }
@@ -28,7 +28,7 @@ public class Element implements IElement {
      * Get the sprite
      */
     @Override
-    public final Sprite getSprite() {
+    public final ISprite getSprite() {
         return this.sprite;
     }
 
@@ -38,7 +38,7 @@ public class Element implements IElement {
      * @param sprite2
      *            the new sprite
      */
-    protected final void setSprite(final Sprite sprite2) {
+    protected final void setSprite(final ISprite sprite2) {
         this.sprite = sprite2;
     }
 

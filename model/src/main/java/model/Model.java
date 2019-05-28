@@ -6,7 +6,6 @@ import java.util.Observable;
 
 import contract.IModel;
 import contract.model.ILevel;
-import entity.HelloWorld;
 
 /**
  * The Class Model.

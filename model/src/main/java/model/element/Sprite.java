@@ -1,8 +1,9 @@
 package model.element;
 
+import javax.imageio.ImageIO;
+
 import contract.model.ISprite;
 
-import javax.imageio.ImageIO;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;

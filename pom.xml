@@ -16,7 +16,6 @@
 		<module>controller</module>
 		<module>contract</module>
 		<module>model</module>
-		<module>entity</module>
 	</modules>
 	<dependencies>
 		<dependency>
@@ -24,6 +23,13 @@
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>showboard</groupId>
+			<artifactId>fr.exia.showboard</artifactId>
+			<version>4.12</version>
+			<scope>system</scope>
+			<systemPath>C:\Users\Draknays\Documents\CESI\Projet\Projet_5\PROJET_JAVA\lib\Showboard3.jar</systemPath>
 		</dependency>
 	</dependencies>
 	<build>

@@ -8,5 +8,10 @@
     <artifactId>contract</artifactId>
     <name>Contract</name>
     <dependencies>
+        <dependency>
+            <groupId>fr.exia</groupId>
+            <artifactId>showboard</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>

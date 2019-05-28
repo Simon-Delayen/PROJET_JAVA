@@ -11,6 +11,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Showboard3" level="project" />
     <orderEntry type="module" module-name="view" />
+    <orderEntry type="library" name="Maven: fr.exia:showboard:0.0.1-SNAPSHOT" level="project" />
     <orderEntry type="module" module-name="model" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.39" level="project" />
     <orderEntry type="module" module-name="controller" />

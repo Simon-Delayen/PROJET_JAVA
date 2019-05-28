@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Showboard3">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../Showboard3/out/artifacts/Showboard3_jar/Showboard3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Showboard3.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

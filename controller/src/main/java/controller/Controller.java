@@ -28,17 +28,23 @@ public final class Controller implements IOrderPerformer, IController {
 	/** The stack order. */
 	private ControllerOrder stackOrder;
 
-	/** Store the lastLorannOrder */
+	/** Store the lastHeroOrder */
 	private ControllerOrder lastHeroOrder;
 
-	/** The Lorann. */
+	/** The hero. */
 	private IMobile hero;
 
 	/** The Earth. */
 	private IElement earth;
 
-	/** The Lorann. */
+	/** The rock. */
 	private IMobile rock;
+
+	/** The diamond. */
+	private IElement diamond;
+
+	/** The gate. */
+	private IElement door;
 
 
 	/** The boolean to stop game if player finish the level */
@@ -72,17 +78,34 @@ public final class Controller implements IOrderPerformer, IController {
 		// when the player hero is load on the map is not alive so we set it alive after everything is load
 		hero = getModel().getLevel().getHero();
 		hero.alive();
-		rock = getModel().getLevel().getRock();
-		rock.fix();
+		rock = (IMobile) getModel().getLevel().getRock();
 
-		//Store the earth, rock in the controller
+
+		//Store the earth, door and diamond in the controller
 		earth = getModel().getLevel().getEarth();
+		door = getModel().getLevel().getDoor();
+		diamond = getModel().getLevel().getDiamond();
 
-
+		//if the level didn't get a diamond then we open the door on level start
+		if(getModel().getLevel().getDiamond() == null) {
+			getModel().getLevel().getDoor().setPermeability(Permeability.OPENDOOR);
+			getView().OpenDoorUpdate();
+		}
 
 		while (hero.isAlive() && win == false) {
 
 			Thread.sleep(speed); //make the thread sleep for a little time (in milliseconds)
+
+			//if player is on the diamond the we open the door
+			if(hero.isOnDiamond()) {
+				//update the gate permeability from KILLING to OPENDOOR
+				door.setPermeability(Permeability.OPENDOOR);
+				diamond.setPermeability(Permeability.PENETRABLE);
+				getView().OpenDoorUpdate();
+			}
+
+			//if the hero is on the gate when it's open then we stop the game and say you win
+			if(hero.isOnOpenDoor()) win = true;
 
 			//if player is on the earth
 			if(hero.isOnEarth()) {
@@ -90,6 +113,13 @@ public final class Controller implements IOrderPerformer, IController {
 				earth.setPermeability(Permeability.KICK);
 				getView().EarthUpdate();
 			}
+
+			//if the level didn't get a crystal then we open the gate on level start
+			if(getModel().getLevel().getDiamond() == null) {
+				getModel().getLevel().getDoor().setPermeability(Permeability.OPENDOOR);
+				getView().OpenDoorUpdate();
+			}
+
 			switch (this.getStackOrder()) { //this case execute the method associated to the user order (move, nothing)
 				case RIGHT:
 					this.hero.moveRight();
@@ -114,6 +144,15 @@ public final class Controller implements IOrderPerformer, IController {
 			}
 
 			this.clearStackOrder(); // this reset the controller order to NOP so it will not continue to move
+
+		}
+		if (win != true) {
+			hero.die();
+
+			this.getView().printMessage("You loose"); //when the main loop is break this display the message you loose on a popup
+		}
+		else {
+			this.getView().printMessage("You win");
 		}
 	}
 

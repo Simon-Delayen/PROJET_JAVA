@@ -35,6 +35,11 @@ public interface ILevel {
     void setMobilHasChanged();
 
     /**
+     * Sets the mobile has fall.
+     */
+    void setMobilHasFall();
+
+    /**
      * Gets the observable.
      *
      * @return the observable
@@ -55,11 +60,8 @@ public interface ILevel {
      * @return Elements
      */
     IElement getEarth();
-
-    /**
-     * Get Elements that need to be update during the game
-     *
-     * @return Elements
-     */
     IElement getRock();
+    IElement getDoor();
+    IElement getDiamond();
+
 }

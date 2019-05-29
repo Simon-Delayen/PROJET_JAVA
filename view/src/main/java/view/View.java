@@ -44,6 +44,9 @@ public final class View implements IView, Runnable, KeyListener {
 
 	BoardFrame boardFrame;
 
+	Image Door;
+	ImageIcon iDoor;
+
 	/**
 	 * Instantiates a new View.
 	 * It will create the window, a frame and a kind of plate with square to place element of the level
@@ -88,17 +91,32 @@ public final class View implements IView, Runnable, KeyListener {
 		}
 
 		boardFrame.addPawn(getLevel().getHero()); //this place ('spawn') the mobile element Hero over a square
-		boardFrame.addPawn(getLevel().getHero());
 
 		this.getLevel().getObservable().addObserver(boardFrame.getObserver()); //the view is registered to be observed by the level
 		boardFrame.setVisible(true); //make the game appear in first plan
 	}
 
+	/**
+	 * Function to change the picture of the door and diamond when the hero take the diamond
+	 */
+	public void OpenDoorUpdate() {
+		try {
+			getLevel().getDoor().getImage().getGraphics().drawImage(ImageIO.read(new File("C:\\Users\\KAWAK\\Documents\\GitHub\\PROJET_JAVA\\model\\src\\main\\resources\\door_open.png")),0,0, null);
+			//getLevel().getDoor().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("Door_open.jpg")),0,0, null); //this update the picture of the gate from close to open
+			if (getLevel().getDiamond() != null) //if the level get a crystal then we set it to black, else we didn't do anything
+				//getLevel().getDiamond().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("Background.jpg")),0,0, null);//this update the picture of the crystal to black
+				getLevel().getDoor().getImage().getGraphics().drawImage(ImageIO.read(new File("C:\\Users\\KAWAK\\Documents\\GitHub\\PROJET_JAVA\\model\\src\\main\\resources\\Background.jpg")),0,0, null);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 	public void EarthUpdate() {
 		try {
-			if (getLevel().getEarth() != null) //if the level get a crystal then we set it to black, else we didn't do anything
-				getLevel().getEarth().getImage().getGraphics().drawImage(ImageIO.read(new File("C:\\Users\\KAWAK\\Documents\\GitHub\\PROJET_JAVA\\model\\src\\main\\resources\\Backgroung.png")),0,0, null);//this update the picture of the earth to background
-				} catch (IOException e) {
+			if (getLevel().getEarth() != null) //if the level get a earth then we set it to black, else we didn't do anything
+				//getLevel().getEarth().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("Background.jpg")),0,0, null);//this update the picture of the earth to background
+				getLevel().getDoor().getImage().getGraphics().drawImage(ImageIO.read(new File("C:\\Users\\KAWAK\\Documents\\GitHub\\PROJET_JAVA\\model\\src\\main\\resources\\Background.jpg")),0,0, null);
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}

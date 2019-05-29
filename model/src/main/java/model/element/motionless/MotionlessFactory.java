@@ -14,11 +14,15 @@ public abstract class MotionlessFactory {
     /** The Constant Door. */
     private static final Door door = new Door();
 
+    /** The Constant Diamond. */
+    private static final Diamond diamond = new Diamond();
+
     private static MotionlessElement[] motionlessElements  = {
             wall,
             back,
             door,
-            earth
+            earth,
+            diamond,
     };
 
     /**
@@ -46,6 +50,15 @@ public abstract class MotionlessFactory {
  */
 public static MotionlessElement createEarth() {
         return earth;
+        }
+
+/**
+ * Creates a new diamond MotionlessElements object.
+ *
+ * @return the motionless element
+ */
+public static MotionlessElement reateDiamond() {
+        return diamond;
         }
 
     /**

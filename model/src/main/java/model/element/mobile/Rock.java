@@ -7,7 +7,7 @@ import model.element.Sprite;
 
 import java.io.IOException;
 
-public class Rock {
+public class Rock extends Mobil implements ISprite{
 
     /** The Constant SPRITE. */
     private static final ISprite sprite = new Sprite('R', "rock.png");

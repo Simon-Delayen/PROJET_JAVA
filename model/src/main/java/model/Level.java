@@ -34,8 +34,11 @@ public class Level extends Observable implements ILevel{
     /** The back */
     private IElement back;
 
-    /** The back */
+    /** The rock */
     private IElement rock;
+
+    /** The diamond */
+    private IElement diamond;
 
     /**
      * Instantiates a new level with the content of the db.
@@ -85,6 +88,11 @@ public class Level extends Observable implements ILevel{
                             result.getString(DAOHelloWorld.getColumnSprite()).charAt(0)),result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY()));
                     setDoor(this.getOnTheLevelXY(result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY())));
                     break;
+                case 'D'://if character correspond to the crystal we put it in the variable crystall
+                    this.setOnTheLevelXY(MotionlessFactory.getFromFileSymbol(
+                            result.getString(DAOHelloWorld.getColumnSprite()).charAt(0)),result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY()));
+                    setDiamond(this.getOnTheLevelXY(result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY())));
+                    break;
                 case ':'://if character correspond to the earth we put it in the variable earth
                     this.setOnTheLevelXY(MotionlessFactory.getFromFileSymbol(
                             result.getString(DAOHelloWorld.getColumnSprite()).charAt(0)),result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY()));
@@ -125,6 +133,11 @@ public class Level extends Observable implements ILevel{
      */
     @Override
     public void setMobilHasChanged() {
+        this.setChanged();
+        this.notifyObservers();
+    }
+
+    public void setMobilHasFall() {
         this.setChanged();
         this.notifyObservers();
     }
@@ -200,4 +213,13 @@ public class Level extends Observable implements ILevel{
     public void setRock(IElement rock) {
         this.rock = rock;
     }
+
+    public IElement getDiamond() {
+        return diamond;
+    }
+
+    public void setDiamond(IElement diamond) {
+        this.diamond = diamond;
+    }
+
 }

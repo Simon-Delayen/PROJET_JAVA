@@ -20,4 +20,5 @@ public interface IView {
 	void setOrderPerformer(IOrderPerformer orderPerformer);
 
 	void EarthUpdate();
+	void OpenDoorUpdate();
 }

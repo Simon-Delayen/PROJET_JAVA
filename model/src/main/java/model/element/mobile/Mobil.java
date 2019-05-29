@@ -110,23 +110,15 @@ public class Mobil extends Element implements IMobile {
         this.setX(this.getX());
     }
 
-    public void fix() {
-        this.setX(this.getX() + 1);
-        this.setHasMoved();
+    public void fall() {
+        this.setX(this.getY() - 1);
+        this.setHasFall();
         //If the player is blocked we is moved to his previous position
         if (this.isBlocked()) {
-            this.setX(this.getX() - 1);
+            this.setX(this.getY() - 1);
         }
     }
 
-    public void fix() {
-        this.setX(this.getX() + 1);
-        this.setHasMoved();
-        //If the player is blocked we is moved to his previous position
-        if (this.isBlocked()) {
-            this.setX(this.getX() - 1);
-        }
-    }
 
     /**
      * Sets the has moved.
@@ -226,14 +218,6 @@ public class Mobil extends Element implements IMobile {
     }
 
     /**
-     * fix
-     */
-    public void fall(){
-        this.fix = false;
-        this.setHasFall();
-    }
-
-    /**
      * get if mobile element his in a collision
      */
     //@Override
@@ -244,5 +228,15 @@ public class Mobil extends Element implements IMobile {
     @Override
     public Boolean isOnEarth() {
         return this.getLevel().getOnTheLevelXY(this.getX(), this.getY()).getPermeability() == Permeability.KICK;
+    }
+
+    @Override
+    public Boolean isOnDiamond() {
+        return this.getLevel().getOnTheLevelXY(this.getX(), this.getY()).getPermeability() == Permeability.OPENNING;
+    }
+
+    @Override
+    public Boolean isOnOpenDoor() {
+        return this.getLevel().getOnTheLevelXY(this.getX(), this.getY()).getPermeability() == Permeability.OPENDOOR;
     }
 }

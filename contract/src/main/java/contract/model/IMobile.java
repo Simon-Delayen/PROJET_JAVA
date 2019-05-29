@@ -68,7 +68,14 @@ public interface IMobile extends IPawn, IElement{
     @Override
     int getY();
 
+    /**
+     * Checks if something happened.
+     *
+     * @return the boolean
+     */
     Boolean isOnEarth();
+    Boolean isOnDiamond();
+    Boolean isOnOpenDoor();
 
     /**
      * GetPosition

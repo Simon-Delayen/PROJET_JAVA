@@ -51,7 +51,7 @@ public final class Controller implements IOrderPerformer, IController {
 	private IElement earth;
 
 	/** The rock. */
-	private IMobile rock;
+	private IElement rock;
 
 	/** The diamond. */
 	private IElement diamond;
@@ -91,14 +91,13 @@ public final class Controller implements IOrderPerformer, IController {
 		// when the player hero is load on the map is not alive so we set it alive after everything is load
 		hero = getModel().getLevel().getHero();
 		hero.alive();
-		rock = getModel().getLevel().getRock();
-		rock.doNothing();
 
 
 		//Store the earth, door and diamond in the controller
 		earth = getModel().getLevel().getEarth();
 		door = getModel().getLevel().getDoor();
 		diamond = getModel().getLevel().getDiamond();
+		rock = getModel().getLevel().getRock();
 
 		//if a monster 1,2,3,4 from level exist then we stored it in monster 1,2,3,4
 		if(getModel().getLevel().getMonster1instance() != false) {
@@ -134,6 +133,7 @@ public final class Controller implements IOrderPerformer, IController {
 				door.setPermeability(Permeability.OPENDOOR);
 				diamond.setPermeability(Permeability.PENETRABLE);
 				getView().OpenDoorUpdate();
+
 			}
 
 			//if the hero is on the gate when it's open then we stop the game and say you win

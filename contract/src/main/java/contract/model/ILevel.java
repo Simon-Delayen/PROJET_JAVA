@@ -52,7 +52,6 @@ public interface ILevel {
      * @return the hero
      */
     IMobile getHero();
-    IMobile getRock();
 
     /**
      * Gets the monsters instance.
@@ -78,5 +77,6 @@ public interface ILevel {
     IElement getEarth();
     IElement getDoor();
     IElement getDiamond();
+    IElement getRock();
 
 }

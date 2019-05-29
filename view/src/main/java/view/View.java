@@ -92,7 +92,6 @@ public final class View implements IView, Runnable, KeyListener {
 		if(getLevel().getMonster2instance() != false) {boardFrame.addPawn(getLevel().getMonster2());} //if instance of monster2 is not false then spawn it on level
 
 		boardFrame.addPawn(getLevel().getHero()); //this place ('spawn') the mobile element Hero over a square
-		boardFrame.addPawn(getLevel().getRock());
 
 		this.getLevel().getObservable().addObserver(boardFrame.getObserver()); //the view is registered to be observed by the level
 		boardFrame.setVisible(true); //make the game appear in first plan
@@ -103,11 +102,11 @@ public final class View implements IView, Runnable, KeyListener {
 	 */
 	public void OpenDoorUpdate() {
 		try {
-			getLevel().getDoor().getImage().getGraphics().drawImage(ImageIO.read(new File("C:\\Users\\KAWAK\\Documents\\GitHub\\PROJET_JAVA\\model\\src\\main\\resources\\door_open.png")),0,0, null);
-			//getLevel().getDoor().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("Door_open.jpg")),0,0, null); //this update the picture of the door from close to open
+			//getLevel().getDoor().getImage().getGraphics().drawImage(ImageIO.read(new File("C:\\Users\\KAWAK\\Documents\\GitHub\\PROJET_JAVA\\model\\src\\main\\resources\\door_open.png")),0,0, null);
+			getLevel().getDoor().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("door_open.png")),0,0, null); //this update the picture of the door from close to open
 			if (getLevel().getDiamond() != null) //if the level get a crystal then we set it to black, else we didn't do anything
-				//getLevel().getDiamond().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("Background.jpg")),0,0, null);//this update the picture of the diamond to black
-				getLevel().getDoor().getImage().getGraphics().drawImage(ImageIO.read(new File("C:\\Users\\KAWAK\\Documents\\GitHub\\PROJET_JAVA\\model\\src\\main\\resources\\Background.jpg")),0,0, null);
+				getLevel().getDiamond().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("Background.jpg")),0,0, null);//this update the picture of the diamond to black
+				//getLevel().getDoor().getImage().getGraphics().drawImage(ImageIO.read(new File("C:\\Users\\KAWAK\\Documents\\GitHub\\PROJET_JAVA\\model\\src\\main\\resources\\Background.jpg")),0,0, null);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -116,8 +115,8 @@ public final class View implements IView, Runnable, KeyListener {
 	public void EarthUpdate() {
 		try {
 			if (getLevel().getEarth() != null) //if the level get a earth then we set it to black, else we didn't do anything
-				//getLevel().getEarth().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("Background.jpg")),0,0, null);//this update the picture of the earth to background
-				getLevel().getDoor().getImage().getGraphics().drawImage(ImageIO.read(new File("C:\\Users\\KAWAK\\Documents\\GitHub\\PROJET_JAVA\\model\\src\\main\\resources\\Background.jpg")),0,0, null);
+				getLevel().getEarth().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("Background.jpg")),0,0, null);//this update the picture of the earth to background
+				//getLevel().getDoor().getImage().getGraphics().drawImage(ImageIO.read(new File("C:\\Users\\KAWAK\\Documents\\GitHub\\PROJET_JAVA\\model\\src\\main\\resources\\Background.jpg")),0,0, null);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

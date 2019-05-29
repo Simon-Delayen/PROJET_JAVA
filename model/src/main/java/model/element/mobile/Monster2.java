@@ -13,7 +13,7 @@ public class Monster2 extends Mobil implements ISprite {
     /**
      * The Constant SPRITE.
      */
-    private static final ISprite sprite = new Sprite('2', "monster 2.png");
+    private static final ISprite sprite = new Sprite('2', "monstre 2.png");
 
     /**
      * The Constant spriteDie.
@@ -103,7 +103,7 @@ public class Monster2 extends Mobil implements ISprite {
 
     }
 
-    //@Override
+    @Override
     public char getImageWindows() {
         // TODO Auto-generated method stub
         return 0;

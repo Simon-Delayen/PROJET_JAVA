@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class Monster1 extends Mobil implements ISprite {
     /** The Constant SPRITE. */
-    private static final ISprite sprite = new Sprite('1', "monster 2.png");
+    private static final ISprite sprite = new Sprite('1', "monstre 1.png");
 
     /** The Constant spriteDie. */
     private static final ISprite spriteDie  = new Sprite('1', "noimage.png");
@@ -94,13 +94,13 @@ public class Monster1 extends Mobil implements ISprite {
 
     }
 
-    //@Override
+    @Override
     public void loadImage() throws IOException {
         // TODO Auto-generated method stub
 
     }
 
-    //@Override
+    @Override
     public char getImageWindows() {
         // TODO Auto-generated method stub
         return 0;

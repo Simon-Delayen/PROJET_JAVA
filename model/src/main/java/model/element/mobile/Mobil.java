@@ -20,6 +20,9 @@ public class Mobil extends Element implements IMobile {
     /** The alive. */
     protected Boolean alive;
 
+    /** The alive. */
+    protected Boolean fix;
+
     /** The level. */
     private ILevel  level;
 
@@ -107,11 +110,36 @@ public class Mobil extends Element implements IMobile {
         this.setX(this.getX());
     }
 
-    /*
+    public void fix() {
+        this.setX(this.getX() + 1);
+        this.setHasMoved();
+        //If the player is blocked we is moved to his previous position
+        if (this.isBlocked()) {
+            this.setX(this.getX() - 1);
+        }
+    }
+
+    public void fix() {
+        this.setX(this.getX() + 1);
+        this.setHasMoved();
+        //If the player is blocked we is moved to his previous position
+        if (this.isBlocked()) {
+            this.setX(this.getX() - 1);
+        }
+    }
+
+    /**
      * Sets the has moved.
-     */
+     **/
     protected void setHasMoved() {
         this.getLevel().setMobilHasChanged();
+    }
+
+    /**
+     * Sets the has fall.
+     **/
+    protected void setHasFall() {
+        this.getLevel().setMobilHasFall();
     }
 
     public final int getX() {

@@ -1,5 +1,6 @@
 package model.element.motionless;
 
+import contract.model.ISprite;
 import contract.model.Permeability;
 import model.element.Sprite;
 import contract.model.ISprite;

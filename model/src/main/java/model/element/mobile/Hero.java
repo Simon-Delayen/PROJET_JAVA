@@ -11,7 +11,8 @@ import java.io.IOException;
 
 
 
-public class Hero extends Mobil implements ISprite {
+
+public class Hero extends Mobil implements ISprite{
 
     /** The Constant SPRITE. */
     private static final ISprite sprite = new Sprite('@', "pause.png");
@@ -86,6 +87,7 @@ public class Hero extends Mobil implements ISprite {
         super.die();
         this.setSprite(spriteDie);
     }
+
 
     public final void doNothing() {
         super.doNothing();

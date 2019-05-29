@@ -2,11 +2,10 @@ package model.element.mobile;
 
 import contract.model.ILevel;
 import contract.model.IMobile;
-import contract.model.Permeability;
-import fr.exia.showboard.IBoard;
-import model.element.Element;
-import model.element.Sprite;
 import contract.model.ISprite;
+import contract.model.Permeability;
+import showboard.IBoard;
+import model.element.Element;
 
 import java.awt.*;
 
@@ -19,6 +18,9 @@ public class Mobil extends Element implements IMobile {
 
     /** The alive. */
     protected Boolean alive;
+
+    /** The alive. */
+    protected Boolean fix;
 
     /** The level. */
     private ILevel  level;
@@ -38,7 +40,7 @@ public class Mobil extends Element implements IMobile {
      */
     public Mobil(final ISprite sprite, final ILevel level, final Permeability permeability) {
         super(sprite, permeability);
-        this.setLevel(this.level);
+        this.setLevel(level);
         this.position = new Point();
     }
 
@@ -63,56 +65,97 @@ public class Mobil extends Element implements IMobile {
     }
 
     public void moveUp() {
-        this.setY(getY() - 1);
+        this.setY(this.getY() - 1);
         this.setHasMoved();
+        //If the player is blocked we is moved to his previous position
+        if (this.isBlocked()) {
+            this.setY(this.getY() + 1);
+        }
     }
 
 
     public void moveDown() {
-        this.setY(getY() + 1);
+        this.setY(this.getY() + 1);
         this.setHasMoved();
+        //If the player is blocked we is moved to his previous position
+        if (this.isBlocked()) {
+            this.setY(this.getY() - 1);
+        }
     }
 
 
     public void moveLeft() {
         this.setX(this.getX() - 1);
         this.setHasMoved();
+        //If the player is blocked we is moved to his previous position
+        if (this.isBlocked()) {
+            this.setX(this.getX() + 1);
+        }
 
     }
 
 
     public void moveRight() {
-        this.setX(getX() + 1);
+        this.setX(this.getX() + 1);
         this.setHasMoved();
+        //If the player is blocked we is moved to his previous position
+        if (this.isBlocked()) {
+            this.setX(this.getX() - 1);
+        }
     }
 
     public void doNothing() {
-        this.setY(getY());
-        this.setX(getX());
+        this.setY(this.getY());
+        this.setX(this.getX());
     }
 
-    /*
+    public void fix() {
+        this.setX(this.getX() + 1);
+        this.setHasMoved();
+        //If the player is blocked we is moved to his previous position
+        if (this.isBlocked()) {
+            this.setX(this.getX() - 1);
+        }
+    }
+
+    public void fix() {
+        this.setX(this.getX() + 1);
+        this.setHasMoved();
+        //If the player is blocked we is moved to his previous position
+        if (this.isBlocked()) {
+            this.setX(this.getX() - 1);
+        }
+    }
+
+    /**
      * Sets the has moved.
-     */
+     **/
     protected void setHasMoved() {
         this.getLevel().setMobilHasChanged();
     }
 
-    public int getX() {
+    /**
+     * Sets the has fall.
+     **/
+    protected void setHasFall() {
+        this.getLevel().setMobilHasFall();
+    }
+
+    public final int getX() {
         return this.getPosition().x;
     }
 
-    public void setX(int x) {
+    public final void setX(int x) {
         this.getPosition().x = x;
     }
 
 
 
-    public int getY() {
+    public final int getY() {
         return this.getPosition().y;
     }
 
-    public void setY(int y) {
+    public final void setY(int y) {
         this.getPosition().y = y;
     }
 
@@ -172,6 +215,29 @@ public class Mobil extends Element implements IMobile {
     public void die() {
         this.alive = false;
         this.setHasMoved();
+    }
+
+    /**
+     * fix
+     */
+    public void fix(){
+        this.fix = true;
+    }
+
+    /**
+     * fix
+     */
+    public void fall(){
+        this.fix = false;
+        this.setHasFall();
+    }
+
+    /**
+     * get if mobile element his in a collision
+     */
+    //@Override
+    public Boolean isBlocked() {
+        return this.getLevel().getOnTheLevelXY(this.getX(), this.getY()).getPermeability() == Permeability.BLOCKING;
     }
 
     @Override

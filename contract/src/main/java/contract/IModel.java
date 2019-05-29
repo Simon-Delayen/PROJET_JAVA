@@ -1,7 +1,5 @@
 package contract;
 
-import java.util.Observable;
-
 import contract.model.ILevel;
 
 /**

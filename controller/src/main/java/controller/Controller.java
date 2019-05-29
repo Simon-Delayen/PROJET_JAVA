@@ -10,10 +10,13 @@ import contract.model.IElement;
 import contract.model.IMobile;
 import contract.model.Permeability;
 
+
+import java.io.IOException;
+
 /**
  * The Class controller.
  */
-public final class Controller implements IOrderPerformer {
+public final class Controller implements IOrderPerformer, IController {
 
 	/** The game-thread refresh speed. */
 	private static final int speed = 50;
@@ -35,6 +38,9 @@ public final class Controller implements IOrderPerformer {
 
 	/** The Earth. */
 	private IElement earth;
+
+	/** The Lorann. */
+	private IMobile rock;
 
 
 	/** The boolean to stop game if player finish the level */
@@ -68,15 +74,13 @@ public final class Controller implements IOrderPerformer {
 		// when the player hero is load on the map is not alive so we set it alive after everything is load
 		hero = getModel().getLevel().getHero();
 		hero.alive();
+		rock = getModel().getLevel().getRock();
+		rock.fix();
 
-		//Store the earth in the controller
+		//Store the earth, rock in the controller
 		earth = getModel().getLevel().getEarth();
 
-		//if the level didn't get a earth
-		//if(getModel().getLevel().getEarth() == null) {
-		//	getModel().getLevel().getEarth().setPermeability(Permeability.KICK);
-		//	getView().EarthUpdate();
-		//}
+
 
 		while (hero.isAlive() && win == false) {
 
@@ -116,19 +120,6 @@ public final class Controller implements IOrderPerformer {
 	}
 
 	/**
-     * Control.
-     */
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see contract.IController#control()
-	 */
-	/*public void control() {
-		this.view.printMessage("Appuyer sur les touches 'E', 'F', 'D' ou 'I', pour afficher Hello world dans la langue d votre choix.");
-	}*/
-
-
-	/**
 	 * Sets the model.
 	 *
 	 * @param model
@@ -149,7 +140,7 @@ public final class Controller implements IOrderPerformer {
 	 *
 	 * @see contract.IController#orderPerform(contract.ControllerOrder)
 	 */
-	public void orderPerform(final ControllerOrder controllerOrder) {
+	public void orderPerform(final ControllerOrder controllerOrder) throws IOException{
 			this.setStackOrder(controllerOrder);
 
 	}

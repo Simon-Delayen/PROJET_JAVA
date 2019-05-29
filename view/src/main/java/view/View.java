@@ -19,7 +19,7 @@ import contract.model.ILevel;
 import contract.model.IElement;
 import contract.controller.IOrderPerformer;
 import contract.model.ILevel;
-import fr.exia.showboard.BoardFrame;
+import showboard.BoardFrame;
 
 /**
  * The Class View.
@@ -35,7 +35,7 @@ public final class View implements IView, Runnable, KeyListener {
 	private static final int squareNumberHeight = 16;
 
 	/** The Constant squareSize to make the window bigger or smaller but keeping the proportions . */
-	private static final int squareSize = 30;
+	private static final int squareSize = 40;
 
 	/** The Constant closeView its the window launch by the thread. */
 	private Rectangle closeView;
@@ -91,7 +91,8 @@ public final class View implements IView, Runnable, KeyListener {
 			}
 		}
 
-		boardFrame.addPawn(getLevel().getHero()); //this place ('spawn') the mobile element Lorann over a square
+		boardFrame.addPawn(getLevel().getHero()); //this place ('spawn') the mobile element Hero over a square
+		boardFrame.addPawn(getLevel().getHero());
 
 		this.getLevel().getObservable().addObserver(boardFrame.getObserver()); //the view is registered to be observed by the level
 		boardFrame.setVisible(true); //make the game appear in first plan
@@ -101,7 +102,7 @@ public final class View implements IView, Runnable, KeyListener {
 		try {
 			if (getLevel().getEarth() != null) //if the level get a crystal then we set it to black, else we didn't do anything
 				getLevel().getEarth().getImage().getGraphics().drawImage(ImageIO.read(new File("C:\\Users\\KAWAK\\Documents\\GitHub\\PROJET_JAVA\\model\\src\\main\\resources\\Backgroung.png")),0,0, null);//this update the picture of the earth to background
-		} catch (IOException e) {
+				} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}

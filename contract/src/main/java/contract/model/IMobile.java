@@ -1,6 +1,6 @@
 package contract.model;
 
-import fr.exia.showboard.IPawn;
+import showboard.IPawn;
 
 import java.awt.*;
 
@@ -46,6 +46,16 @@ public interface IMobile extends IPawn, IElement{
      * Set player alive
      */
     void alive();
+
+    /**
+     * Set player alive
+     */
+    void fix();
+
+    /**
+     * Set player alive
+     */
+    void fall();
 
     @Override
     int getX();

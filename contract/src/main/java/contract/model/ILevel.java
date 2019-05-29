@@ -1,7 +1,5 @@
 package contract.model;
 
-import contract.IModel;
-
 import java.util.Observable;
 
 public interface ILevel {
@@ -57,4 +55,11 @@ public interface ILevel {
      * @return Elements
      */
     IElement getEarth();
+
+    /**
+     * Get Elements that need to be update during the game
+     *
+     * @return Elements
+     */
+    IElement getRock();
 }

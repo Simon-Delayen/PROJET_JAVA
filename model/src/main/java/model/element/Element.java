@@ -19,7 +19,8 @@ public class Element implements IElement {
      * @param sprite
      *            the sprite
      */
-    public Element(final ISprite sprite, Permeability permeability) {
+
+    public Element(final ISprite sprite, final Permeability permeability) {
         this.setSprite(sprite);
         this.setPermeability(permeability);
     }
@@ -53,7 +54,7 @@ public class Element implements IElement {
         return this.permeability;
     }
 
-    public void setPermeability(Permeability permeability) {
+    public void setPermeability(final Permeability permeability) {
         this.permeability = permeability;
     }
 }

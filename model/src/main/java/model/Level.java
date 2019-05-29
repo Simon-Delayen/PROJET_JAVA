@@ -4,6 +4,7 @@ import contract.model.IElement;
 import contract.model.ILevel;
 import contract.model.IMobile;
 import model.element.mobile.Hero;
+import model.element.mobile.Rock;
 import model.element.motionless.MotionlessFactory;
 
 import java.io.IOException;
@@ -35,7 +36,7 @@ public class Level extends Observable implements ILevel{
     private IElement back;
 
     /** The rock */
-    private IElement rock;
+    private IMobile rock;
 
     /** The diamond */
     private IElement diamond;
@@ -83,12 +84,14 @@ public class Level extends Observable implements ILevel{
                 case '@'://if character correspond to hero (@) then we create hero
                     setHero(new Hero(result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY()),this));
                     break;
+                case 'R'://if character correspond to rock (R) then we create rock
+                    setRock(new Rock(result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY()),this));
                 case 'H'://if character correspond to the door we put the door in the variable door
                     this.setOnTheLevelXY(MotionlessFactory.getFromFileSymbol(
                             result.getString(DAOHelloWorld.getColumnSprite()).charAt(0)),result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY()));
                     setDoor(this.getOnTheLevelXY(result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY())));
                     break;
-                case 'D'://if character correspond to the crystal we put it in the variable crystall
+                case 'D'://if character correspond to the crystal we put it in the variable diamond
                     this.setOnTheLevelXY(MotionlessFactory.getFromFileSymbol(
                             result.getString(DAOHelloWorld.getColumnSprite()).charAt(0)),result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY()));
                     setDiamond(this.getOnTheLevelXY(result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY())));
@@ -137,10 +140,10 @@ public class Level extends Observable implements ILevel{
         this.notifyObservers();
     }
 
-    public void setMobilHasFall() {
+    /*public void setMobilHasFall() {
         this.setChanged();
         this.notifyObservers();
-    }
+    }*/
 
     /**
      * Sets the on the level XY.
@@ -182,6 +185,14 @@ public class Level extends Observable implements ILevel{
         this.hero = hero;
     }
 
+    public IMobile getRock() {
+        return rock;
+    }
+
+    public void setRock(IMobile rock) {
+        this.rock = rock;
+    }
+
     public IElement getEarth() {
         return earth;
     }
@@ -204,14 +215,6 @@ public class Level extends Observable implements ILevel{
 
     public void setBack(IElement back) {
         this.back = back;
-    }
-
-    public IElement getRock() {
-        return rock;
-    }
-
-    public void setRock(IElement rock) {
-        this.rock = rock;
     }
 
     public IElement getDiamond() {

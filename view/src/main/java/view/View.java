@@ -31,7 +31,7 @@ public final class View implements IView, Runnable, KeyListener {
 	private static final int squareNumberHeight = 16;
 
 	/** The Constant squareSize to make the window bigger or smaller but keeping the proportions . */
-	private static final int squareSize = 40;
+	private static final int squareSize = 100;
 
 	/** The Constant closeView its the window launch by the thread. */
 	private Rectangle closeView;
@@ -91,6 +91,7 @@ public final class View implements IView, Runnable, KeyListener {
 		}
 
 		boardFrame.addPawn(getLevel().getHero()); //this place ('spawn') the mobile element Hero over a square
+		boardFrame.addPawn(getLevel().getRock());
 
 		this.getLevel().getObservable().addObserver(boardFrame.getObserver()); //the view is registered to be observed by the level
 		boardFrame.setVisible(true); //make the game appear in first plan

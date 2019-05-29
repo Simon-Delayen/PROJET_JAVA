@@ -50,12 +50,7 @@ public interface IMobile extends IPawn, IElement{
     /**
      * Set player alive
      */
-    void fix();
-
-    /**
-     * Set player alive
-     */
-    void fall();
+    //void fall();
 
     @Override
     int getX();

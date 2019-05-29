@@ -78,7 +78,8 @@ public final class Controller implements IOrderPerformer, IController {
 		// when the player hero is load on the map is not alive so we set it alive after everything is load
 		hero = getModel().getLevel().getHero();
 		hero.alive();
-		rock = (IMobile) getModel().getLevel().getRock();
+		rock = getModel().getLevel().getRock();
+		rock.doNothing();
 
 
 		//Store the earth, door and diamond in the controller

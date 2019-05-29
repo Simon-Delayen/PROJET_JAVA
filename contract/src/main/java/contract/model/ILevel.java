@@ -37,7 +37,7 @@ public interface ILevel {
     /**
      * Sets the mobile has fall.
      */
-    void setMobilHasFall();
+    //void setMobilHasFall();
 
     /**
      * Gets the observable.
@@ -52,6 +52,7 @@ public interface ILevel {
      * @return the lorann
      */
     IMobile getHero();
+    IMobile getRock();
 
 
     /**
@@ -60,7 +61,6 @@ public interface ILevel {
      * @return Elements
      */
     IElement getEarth();
-    IElement getRock();
     IElement getDoor();
     IElement getDiamond();
 

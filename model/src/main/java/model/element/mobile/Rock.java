@@ -30,17 +30,17 @@ public class Rock extends Mobil implements ISprite{
     }
 
 
-    //@Override
-    public void fix() {
-        super.fix();
+    @Override
+    public void doNothing() {
+        super.doNothing();
         this.setSprite(sprite);
     }
 
     //@Override
-    public void fall() {
+    /*public void fall() {
         super.fall();
         this.setSprite(sprite);
-    }
+    }*/
 
     //@Override
     public void loadImage() throws IOException {

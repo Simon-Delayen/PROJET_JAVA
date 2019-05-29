@@ -110,14 +110,14 @@ public class Mobil extends Element implements IMobile {
         this.setX(this.getX());
     }
 
-    public void fall() {
+    /*public void fall() {
         this.setX(this.getY() - 1);
         this.setHasFall();
         //If the player is blocked we is moved to his previous position
         if (this.isBlocked()) {
             this.setX(this.getY() - 1);
         }
-    }
+    }*/
 
 
     /**
@@ -130,9 +130,9 @@ public class Mobil extends Element implements IMobile {
     /**
      * Sets the has fall.
      **/
-    protected void setHasFall() {
+   /* protected void setHasFall() {
         this.getLevel().setMobilHasFall();
-    }
+    }*/
 
     public final int getX() {
         return this.getPosition().x;

@@ -10,8 +10,6 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 
 import contract.ControllerOrder;
-import contract.IController;
-import contract.IModel;
 import contract.IView;
 import contract.controller.IOrderPerformer;
 import contract.model.ILevel;

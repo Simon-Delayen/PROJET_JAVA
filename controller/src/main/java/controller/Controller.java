@@ -35,14 +35,11 @@ public final class Controller implements IOrderPerformer, IController {
 	/** The monster of type 2. */
 	private IMobile monster2;
 
-	/** Array of monster */
-	private ArrayList monsters;
-
 	/** The Monsters speed counter */
 	private int monsterDelay = 1;
 
 	/** The Monster speed */
-	private int monsterSpeed = 15;
+	private int monsterSpeed = 16;
 
 	/** Store the lastHeroOrder */
 	private ControllerOrder lastHeroOrder;
@@ -121,6 +118,12 @@ public final class Controller implements IOrderPerformer, IController {
 			getView().OpenDoorUpdate();
 		}
 
+		//if the level didn't get a diamond then we open the door on level start
+		if(getModel().getLevel().getDiamond() == null) {
+			getModel().getLevel().getDoor().setPermeability(Permeability.OPENDOOR);
+			getView().OpenDoorUpdate();
+		}
+
 		while (hero.isAlive() && win == false) {
 
 			Thread.sleep(speed); //make the thread sleep for a little time (in milliseconds)
@@ -146,12 +149,6 @@ public final class Controller implements IOrderPerformer, IController {
 				getView().EarthUpdate();
 			}
 
-			//if the level didn't get a diamond then we open the door on level start
-			if(getModel().getLevel().getDiamond() == null) {
-				getModel().getLevel().getDoor().setPermeability(Permeability.OPENDOOR);
-				getView().OpenDoorUpdate();
-			}
-
 			switch (this.getStackOrder()) { //this case execute the method associated to the user order (move, nothing)
 				case RIGHT:
 					this.hero.moveRight();
@@ -175,13 +172,17 @@ public final class Controller implements IOrderPerformer, IController {
 					break;
 			}
 
+			if(monster1!=null && monster1.isAlive()) MonsterIA(monster1);
+			if(monster2!=null && monster2.isAlive()) MonsterIA(monster2);
+
 			this.clearStackOrder(); // this reset the controller order to NOP so it will not continue to move
 
 		}
+
 		if (win != true) {
 			hero.die();
 
-			this.getView().printMessage("You loose"); //when the main loop is break this display the message you loose on a popup
+			this.getView().printMessage("Looser"); //when the main loop is break this display the message you loose on a popup
 		}
 		else {
 			this.getView().printMessage("You win");

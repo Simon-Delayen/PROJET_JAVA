@@ -34,6 +34,9 @@ public class Level extends Observable implements ILevel{
     /** The back */
     private IElement back;
 
+    /** The back */
+    private IElement rock;
+
     /**
      * Instantiates a new level with the content of the db.
      *
@@ -188,5 +191,13 @@ public class Level extends Observable implements ILevel{
 
     public void setBack(IElement back) {
         this.back = back;
+    }
+
+    public IElement getRock() {
+        return rock;
+    }
+
+    public void setRock(IElement rock) {
+        this.rock = rock;
     }
 }

@@ -55,4 +55,11 @@ public interface ILevel {
      * @return Elements
      */
     IElement getEarth();
+
+    /**
+     * Get Elements that need to be update during the game
+     *
+     * @return Elements
+     */
+    IElement getRock();
 }

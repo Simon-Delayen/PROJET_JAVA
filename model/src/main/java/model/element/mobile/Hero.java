@@ -87,6 +87,7 @@ public class Hero extends Mobil implements ISprite{
         this.setSprite(spriteDie);
     }
 
+
     public final void doNothing() {
         super.doNothing();
         this.setSprite(sprite);

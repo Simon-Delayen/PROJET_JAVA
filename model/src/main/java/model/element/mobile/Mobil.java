@@ -191,6 +191,21 @@ public class Mobil extends Element implements IMobile {
     }
 
     /**
+     * fix
+     */
+    public void fix(){
+        this.fix = true;
+    }
+
+    /**
+     * fix
+     */
+    public void fall(){
+        this.fix = false;
+        this.setHasFall();
+    }
+
+    /**
      * get if mobile element his in a collision
      */
     //@Override

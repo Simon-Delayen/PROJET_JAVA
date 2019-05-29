@@ -37,6 +37,9 @@ public final class Controller implements IOrderPerformer, IController {
 	/** The Earth. */
 	private IElement earth;
 
+	/** The Lorann. */
+	private IMobile rock;
+
 
 	/** The boolean to stop game if player finish the level */
 	private boolean win;
@@ -69,9 +72,12 @@ public final class Controller implements IOrderPerformer, IController {
 		// when the player hero is load on the map is not alive so we set it alive after everything is load
 		hero = getModel().getLevel().getHero();
 		hero.alive();
+		rock = getModel().getLevel().getRock();
+		rock.fix();
 
-		//Store the earth in the controller
+		//Store the earth, rock in the controller
 		earth = getModel().getLevel().getEarth();
+
 
 
 		while (hero.isAlive() && win == false) {

@@ -63,7 +63,7 @@ public final class Controller implements IOrderPerformer, IController {
 	private IElement door;
 
 
-	/** The boolean to stop game if player finish the level */
+	/** The boolean to stop game if hero finish the level */
 	private boolean win;
 
 	/**
@@ -127,7 +127,7 @@ public final class Controller implements IOrderPerformer, IController {
 
 			//if player is on the diamond the we open the door
 			if(hero.isOnDiamond()) {
-				//update the gate permeability from KILLING to OPENDOOR
+				//update the gate permeability from DEAD to OPENDOOR
 				door.setPermeability(Permeability.OPENDOOR);
 				diamond.setPermeability(Permeability.PENETRABLE);
 				getView().OpenDoorUpdate();
@@ -139,14 +139,14 @@ public final class Controller implements IOrderPerformer, IController {
 			//if the hero is on something that kill him then we stop the game and say you loose
 			if(hero.isDead()) hero.die();
 
-			//if player is on the earth
+			//if hero is on the earth
 			if(hero.isOnEarth()) {
 				//update the earth permeability
 				earth.setPermeability(Permeability.KICK);
 				getView().EarthUpdate();
 			}
 
-			//if the level didn't get a crystal then we open the gate on level start
+			//if the level didn't get a diamond then we open the door on level start
 			if(getModel().getLevel().getDiamond() == null) {
 				getModel().getLevel().getDoor().setPermeability(Permeability.OPENDOOR);
 				getView().OpenDoorUpdate();
@@ -192,7 +192,7 @@ public final class Controller implements IOrderPerformer, IController {
 	 * This function is a kind of IA for monster to go on Lorann
 	 */
 	private void MonsterIA(IMobile monster) {
-		//if the counter of delay match the mob wanted speed then we enter this if to move mob to the player
+		//if the counter of delay match the monster wanted speed then we enter this if to move monster to the hero
 		if(monsterDelay == monsterSpeed) {
 			monsterDelay=0;
 			//if(monster != null) {
@@ -214,7 +214,7 @@ public final class Controller implements IOrderPerformer, IController {
 		//if the counter doesn't match speed then we increment the counter
 		else monsterDelay++;
 
-		//go to the function that check if player is on a monster so he has to be killed
+		//go to the function that check if hero is on a monster so he has to be killed
 		MobKillChecker(monster);
 	}
 

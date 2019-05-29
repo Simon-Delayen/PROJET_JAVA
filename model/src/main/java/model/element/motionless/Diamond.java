@@ -9,7 +9,7 @@ public class Diamond extends MotionlessElement{
     private static final ISprite SPRITE = new Sprite('D', "diamond.png");
 
     /**
-     * Instantiates a new crystal.
+     * Instantiates a new diamond.
      */
     Diamond() {
         super(SPRITE, Permeability.OPENNING);

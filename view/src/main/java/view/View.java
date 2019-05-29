@@ -91,7 +91,7 @@ public final class View implements IView, Runnable, KeyListener {
 		}
 
 		if(getLevel().getMonster1instance() != false) {boardFrame.addPawn(getLevel().getMonster1());} //if instance of monster1 is not false then spawn it on level
-		if(getLevel().getMonster2instance() != false) {boardFrame.addPawn(getLevel().getMonster2());}
+		if(getLevel().getMonster2instance() != false) {boardFrame.addPawn(getLevel().getMonster2());} //if instance of monster2 is not false then spawn it on level
 
 		boardFrame.addPawn(getLevel().getHero()); //this place ('spawn') the mobile element Hero over a square
 		boardFrame.addPawn(getLevel().getRock());
@@ -106,9 +106,9 @@ public final class View implements IView, Runnable, KeyListener {
 	public void OpenDoorUpdate() {
 		try {
 			getLevel().getDoor().getImage().getGraphics().drawImage(ImageIO.read(new File("C:\\Users\\KAWAK\\Documents\\GitHub\\PROJET_JAVA\\model\\src\\main\\resources\\door_open.png")),0,0, null);
-			//getLevel().getDoor().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("Door_open.jpg")),0,0, null); //this update the picture of the gate from close to open
+			//getLevel().getDoor().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("Door_open.jpg")),0,0, null); //this update the picture of the door from close to open
 			if (getLevel().getDiamond() != null) //if the level get a crystal then we set it to black, else we didn't do anything
-				//getLevel().getDiamond().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("Background.jpg")),0,0, null);//this update the picture of the crystal to black
+				//getLevel().getDiamond().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("Background.jpg")),0,0, null);//this update the picture of the diamond to black
 				getLevel().getDoor().getImage().getGraphics().drawImage(ImageIO.read(new File("C:\\Users\\KAWAK\\Documents\\GitHub\\PROJET_JAVA\\model\\src\\main\\resources\\Background.jpg")),0,0, null);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -172,8 +172,8 @@ public final class View implements IView, Runnable, KeyListener {
 	 */
 	public final void keyPressed(final KeyEvent keyEvent) {
 		try {
-			//we get the keycode and send it to keycodeUserOrder to transform it into a ControllerOrder
-			//then we send the userOrder to orderPerform who will stack the order in stackOrder
+			//we get the keycode and send it to keycodeControllerOrder to transform it into a ControllerOrder
+			//then we send the controllerOrder to orderPerform who will stack the order in stackOrder
 			this.getOrderPerformer().orderPerform(keyCodeToControllerOrder(keyEvent.getKeyCode()));
 		} catch (final IOException exception) {
 			exception.printStackTrace();

@@ -12,7 +12,7 @@ public class Sprite implements ISprite {
     private Image image;
     /** The image name. */
     private String imageName;
-    /** The console image. */
+    /** The image windows. */
     private char imageWindows;
     /** The loaded image */
     private boolean imageLoaded;
@@ -83,7 +83,7 @@ public class Sprite implements ISprite {
      * Sets the image windows.
      *
      * @param imageWindows
-     *            the consoleImage to set
+     *            the image Windows to set
      */
     private void setImageWindows(final char imageWindows) {
         this.imageWindows = imageWindows;

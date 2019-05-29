@@ -38,17 +38,17 @@ public interface IMobile extends IPawn, IElement{
     Boolean isAlive();
 
     /**
-     * Kill the player
+     * Kill the hero
      */
     void die();
 
     /**
-     * Set player alive
+     * Set hero alive
      */
     void alive();
 
     /**
-     * Set player alive
+     * Set rock fall
      */
     //void fall();
 

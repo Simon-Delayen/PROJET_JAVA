@@ -13,7 +13,7 @@ public class Rock extends Mobil implements ISprite{
     private static final ISprite sprite = new Sprite('R', "rock.png");
 
     /**
-     * Instantiates a new Hero.
+     * Instantiates a new Rock.
      *
      * @param x
      *            the x

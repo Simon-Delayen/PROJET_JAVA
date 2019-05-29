@@ -68,7 +68,7 @@ public class Mobil extends Element implements IMobile {
     public void moveUp() {
         this.setY(this.getY() - 1);
         this.setHasMoved();
-        //If the player is blocked we is moved to his previous position
+        //If the hero is blocked we is moved to his previous position
         if (this.isBlocked()) {
             this.setY(this.getY() + 1);
         }
@@ -78,7 +78,7 @@ public class Mobil extends Element implements IMobile {
     public void moveDown() {
         this.setY(this.getY() + 1);
         this.setHasMoved();
-        //If the player is blocked we is moved to his previous position
+        //If the hero is blocked we is moved to his previous position
         if (this.isBlocked()) {
             this.setY(this.getY() - 1);
         }
@@ -88,7 +88,7 @@ public class Mobil extends Element implements IMobile {
     public void moveLeft() {
         this.setX(this.getX() - 1);
         this.setHasMoved();
-        //If the player is blocked we is moved to his previous position
+        //If the hero is blocked we is moved to his previous position
         if (this.isBlocked()) {
             this.setX(this.getX() + 1);
         }
@@ -99,7 +99,7 @@ public class Mobil extends Element implements IMobile {
     public void moveRight() {
         this.setX(this.getX() + 1);
         this.setHasMoved();
-        //If the player is blocked we is moved to his previous position
+        //If the hero is blocked we is moved to his previous position
         if (this.isBlocked()) {
             this.setX(this.getX() - 1);
         }
@@ -241,7 +241,7 @@ public class Mobil extends Element implements IMobile {
     }
 
     /**
-     * get if mobile element his killed
+     * get if mobile element his dead
      */
     @Override
     public Boolean isDead() {

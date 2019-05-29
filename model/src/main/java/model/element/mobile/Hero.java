@@ -31,9 +31,6 @@ public class Hero extends Mobil implements ISprite{
     /** The Constant spriteDie. */
     private static final ISprite spriteDie  = new Sprite('@', "tomber.png");
 
-    /** Delay to change the hero picture less rapidly than the thread is executed */
-    //private int delay = 1;
-
     /**
      * Instantiates a new Hero.
      *

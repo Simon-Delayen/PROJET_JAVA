@@ -9,7 +9,7 @@ public class Door extends MotionlessElement{
     private static final ISprite SPRITE = new Sprite('H', "door.png");
 
     /**
-     * Instantiates a new tile.
+     * Instantiates a new door.
      */
     Door() {
         super(SPRITE, Permeability.PENETRABLE);

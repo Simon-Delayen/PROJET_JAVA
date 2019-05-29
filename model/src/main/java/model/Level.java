@@ -32,7 +32,7 @@ public class Level extends Observable implements ILevel{
     private IMobile monster1;
     private boolean monster1instance;
 
-    /** The monster of type 1. */
+    /** The monster of type 2. */
     private IMobile monster2;
     private boolean monster2instance;
 
@@ -76,7 +76,7 @@ public class Level extends Observable implements ILevel{
      */
     private void loadLevel(final int idlevel) throws IOException, SQLException {
 
-        this.onTheLevel = new IElement[this.getWidth()][this.getHeight()]; //create a 16/14 board and set all compartement to null
+        this.onTheLevel = new IElement[this.getWidth()][this.getHeight()]; //create a 35/25 board and set all compartment to null
 
         for (int n=0; n<height; n++) //now set all compartment to the default square 'background' (background)
         {

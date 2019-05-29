@@ -47,9 +47,9 @@ public interface ILevel {
     Observable getObservable();
 
     /**
-     * Gets the lorann.
+     * Gets the hero.
      *
-     * @return the lorann
+     * @return the hero
      */
     IMobile getHero();
     IMobile getRock();

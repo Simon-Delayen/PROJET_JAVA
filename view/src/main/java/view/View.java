@@ -31,7 +31,7 @@ public final class View implements IView, Runnable, KeyListener {
 	private static final int squareNumberHeight = 16;
 
 	/** The Constant squareSize to make the window bigger or smaller but keeping the proportions . */
-	private static final int squareSize = 100;
+	private static final int squareSize = 40;
 
 	/** The Constant closeView its the window launch by the thread. */
 	private Rectangle closeView;
@@ -89,6 +89,9 @@ public final class View implements IView, Runnable, KeyListener {
 				boardFrame.addSquare(this.level.getOnTheLevelXY(x, y), x, y);
 			}
 		}
+
+		if(getLevel().getMonster1instance() != false) {boardFrame.addPawn(getLevel().getMonster1());} //if instance of monster1 is not false then spawn it on level
+		if(getLevel().getMonster2instance() != false) {boardFrame.addPawn(getLevel().getMonster2());}
 
 		boardFrame.addPawn(getLevel().getHero()); //this place ('spawn') the mobile element Hero over a square
 		boardFrame.addPawn(getLevel().getRock());

@@ -29,7 +29,7 @@ public abstract class Main {
      *            the arguments
      */
     public static void main(final String[] args) throws IOException, InterruptedException, SQLException {
-        final IModel model = new Model(5);                           // change le nombre au niveau désiré
+        final IModel model = new Model(2);                           // change le nombre au niveau désiré
         final IView view = new View(model.getLevel());                     // nous avons donné à la vue le niveau et tous les éléments contenus dans le niveau
         final Controller controller = new Controller(view, model);        // le contrôleur a la vue et le modèle pour les contrôler
         view.setOrderPerformer(controller.getOrderPerformer());          // cela permet à la vue d'être mise à jour lorsqu'il y a un mouvement de joueur depuis le contrôleur

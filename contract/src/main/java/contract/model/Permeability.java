@@ -5,5 +5,6 @@ public enum Permeability {
     KICK,
     BLOCKING,
     OPENNING,
-    OPENDOOR;
+    OPENDOOR,
+    DEAD;
 }

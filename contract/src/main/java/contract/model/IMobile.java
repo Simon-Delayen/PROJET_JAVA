@@ -68,6 +68,8 @@ public interface IMobile extends IPawn, IElement{
      *
      * @return the boolean
      */
+    Boolean isBlocked();
+    Boolean isDead();
     Boolean isOnEarth();
     Boolean isOnDiamond();
     Boolean isOnOpenDoor();

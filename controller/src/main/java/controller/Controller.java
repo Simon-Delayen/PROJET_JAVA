@@ -10,6 +10,7 @@ import contract.model.IMobile;
 import contract.model.Permeability;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * The Class controller.
@@ -27,6 +28,21 @@ public final class Controller implements IOrderPerformer, IController {
 
 	/** The stack order. */
 	private ControllerOrder stackOrder;
+
+	/** The monster of type 1. */
+	private IMobile monster1;
+
+	/** The monster of type 2. */
+	private IMobile monster2;
+
+	/** Array of monster */
+	private ArrayList monsters;
+
+	/** The Monsters speed counter */
+	private int monsterDelay = 1;
+
+	/** The Monster speed */
+	private int monsterSpeed = 15;
 
 	/** Store the lastHeroOrder */
 	private ControllerOrder lastHeroOrder;
@@ -87,6 +103,18 @@ public final class Controller implements IOrderPerformer, IController {
 		door = getModel().getLevel().getDoor();
 		diamond = getModel().getLevel().getDiamond();
 
+		//if a monster 1,2,3,4 from level exist then we stored it in monster 1,2,3,4
+		if(getModel().getLevel().getMonster1instance() != false) {
+			monster1 = getModel().getLevel().getMonster1();
+			monster1.alive();
+			monster1.doNothing();
+		}
+		if(getModel().getLevel().getMonster2instance() != false) {
+			monster2 = getModel().getLevel().getMonster2();
+			monster2.alive();
+			monster2.doNothing();
+		}
+
 		//if the level didn't get a diamond then we open the door on level start
 		if(getModel().getLevel().getDiamond() == null) {
 			getModel().getLevel().getDoor().setPermeability(Permeability.OPENDOOR);
@@ -107,6 +135,9 @@ public final class Controller implements IOrderPerformer, IController {
 
 			//if the hero is on the gate when it's open then we stop the game and say you win
 			if(hero.isOnOpenDoor()) win = true;
+
+			//if the hero is on something that kill him then we stop the game and say you loose
+			if(hero.isDead()) hero.die();
 
 			//if player is on the earth
 			if(hero.isOnEarth()) {
@@ -155,6 +186,40 @@ public final class Controller implements IOrderPerformer, IController {
 		else {
 			this.getView().printMessage("You win");
 		}
+	}
+
+	/**
+	 * This function is a kind of IA for monster to go on Lorann
+	 */
+	private void MonsterIA(IMobile monster) {
+		//if the counter of delay match the mob wanted speed then we enter this if to move mob to the player
+		if(monsterDelay == monsterSpeed) {
+			monsterDelay=0;
+			//if(monster != null) {
+			//move the monster to the hero
+			if(hero.getX() > monster.getX()) {
+				monster.moveRight();
+			}
+			if(hero.getX() < monster.getX()) {
+				monster.moveLeft();
+			}
+			if(hero.getY() < monster.getY()) {
+				monster.moveUp();
+			}
+			if(hero.getY() > monster.getY()) {
+				monster.moveDown();
+			}
+			//}
+		}
+		//if the counter doesn't match speed then we increment the counter
+		else monsterDelay++;
+
+		//go to the function that check if player is on a monster so he has to be killed
+		MobKillChecker(monster);
+	}
+
+	public void MobKillChecker(IMobile monster) {
+		if(hero.getX()==monster.getX() && hero.getY()==monster.getY()) {hero.die();}
 	}
 
 	/**

@@ -4,6 +4,8 @@ import contract.model.IElement;
 import contract.model.ILevel;
 import contract.model.IMobile;
 import model.element.mobile.Hero;
+import model.element.mobile.Monster1;
+import model.element.mobile.Monster2;
 import model.element.mobile.Rock;
 import model.element.motionless.MotionlessFactory;
 
@@ -25,6 +27,14 @@ public class Level extends Observable implements ILevel{
 
     /** The hero. */
     private IMobile hero;
+
+    /** The monster of type 1. */
+    private IMobile monster1;
+    private boolean monster1instance;
+
+    /** The monster of type 1. */
+    private IMobile monster2;
+    private boolean monster2instance;
 
     /** The earth */
     private IElement earth;
@@ -84,8 +94,17 @@ public class Level extends Observable implements ILevel{
                 case '@'://if character correspond to hero (@) then we create hero
                     setHero(new Hero(result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY()),this));
                     break;
+                case '1'://if character correspond to monster1 (1) then we create monster1
+                    setMonster1(new Monster1(result.getInt(DAOHelloWorld.getColumnX()), result.getInt(DAOHelloWorld.getColumnY()), this));
+                    setMonster1instance(true);
+                    break;
+                case '2'://if character correspond to monster2 (2) then we create monster2
+                    setMonster2(new Monster2(result.getInt(DAOHelloWorld.getColumnX()), result.getInt(DAOHelloWorld.getColumnY()), this));
+                    setMonster2instance(true);
+                    break;
                 case 'R'://if character correspond to rock (R) then we create rock
                     setRock(new Rock(result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY()),this));
+                    break;
                 case 'H'://if character correspond to the door we put the door in the variable door
                     this.setOnTheLevelXY(MotionlessFactory.getFromFileSymbol(
                             result.getString(DAOHelloWorld.getColumnSprite()).charAt(0)),result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY()));
@@ -191,6 +210,38 @@ public class Level extends Observable implements ILevel{
 
     public void setRock(IMobile rock) {
         this.rock = rock;
+    }
+
+    public IMobile getMonster1() {
+        return monster1;
+    }
+
+    public void setMonster1(IMobile monster1) {
+        this.monster1 = monster1;
+    }
+
+    public IMobile getMonster2() {
+        return monster2;
+    }
+
+    public void setMonster2(IMobile monster2) {
+        this.monster2 = monster2;
+    }
+
+    public boolean getMonster1instance() {
+        return monster1instance;
+    }
+
+    public void setMonster1instance(boolean monster1instance) {
+        this.monster1instance = monster1instance;
+    }
+
+    public boolean getMonster2instance() {
+        return monster2instance;
+    }
+
+    public void setMonster2instance(boolean monster2instance) {
+        this.monster2instance = monster2instance;
     }
 
     public IElement getEarth() {

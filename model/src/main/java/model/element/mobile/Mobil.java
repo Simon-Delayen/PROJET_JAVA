@@ -239,4 +239,12 @@ public class Mobil extends Element implements IMobile {
     public Boolean isOnOpenDoor() {
         return this.getLevel().getOnTheLevelXY(this.getX(), this.getY()).getPermeability() == Permeability.OPENDOOR;
     }
+
+    /**
+     * get if mobile element his killed
+     */
+    @Override
+    public Boolean isDead() {
+        return this.getLevel().getOnTheLevelXY(this.getX(), this.getY()).getPermeability() == Permeability.DEAD;
+    }
 }

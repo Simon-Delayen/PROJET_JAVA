@@ -54,6 +54,21 @@ public interface ILevel {
     IMobile getHero();
     IMobile getRock();
 
+    /**
+     * Gets the monsters instance.
+     *
+     * @return the monsters
+     */
+    IMobile getMonster1();
+    IMobile getMonster2();
+
+    /**
+     * Get if monsters are instantiate or no.
+     *
+     * @return the monsters instance
+     */
+    boolean getMonster1instance();
+    boolean getMonster2instance();
 
     /**
      * Get Elements that need to be update during the game

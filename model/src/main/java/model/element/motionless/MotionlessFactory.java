@@ -57,7 +57,7 @@ public static MotionlessElement createEarth() {
  *
  * @return the motionless element
  */
-public static MotionlessElement reateDiamond() {
+public static MotionlessElement createDiamond() {
         return diamond;
         }
 

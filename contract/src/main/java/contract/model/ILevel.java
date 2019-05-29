@@ -74,7 +74,7 @@ public interface ILevel {
      *
      * @return Elements
      */
-    IElement getEarth();
+    IElement getDirt();
     IElement getDoor();
     IElement getDiamond();
     IElement getRock();

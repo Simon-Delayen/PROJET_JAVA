@@ -9,7 +9,7 @@ public abstract class MotionlessFactory {
     private static final Back back = new Back();
 
     /** The Constant Earth. */
-    private static final Earth earth = new Earth();
+    private static final Dirt dirt = new Dirt();
 
     /** The Constant Door. */
     private static final Door door = new Door();
@@ -25,7 +25,7 @@ public abstract class MotionlessFactory {
             back,
             door,
             rock,
-            earth,
+            dirt,
             diamond,
     };
 
@@ -61,8 +61,8 @@ public abstract class MotionlessFactory {
  *
  * @return the motionless element
  */
-public static MotionlessElement createEarth() {
-        return earth;
+public static MotionlessElement createDirt() {
+        return dirt;
         }
 
 /**

@@ -5,28 +5,28 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class EarthTest {
-    private Earth earth;
+public class DirtTest {
+    private Dirt dirt;
 
     @Before
     public void setUp() throws Exception {
-        earth = new Earth();
+        dirt = new Dirt();
     }
 
 
     @Test
     public void testWallConstructor() {
-        assertNotNull(earth);
+        assertNotNull(dirt);
     }
 
     @Test
     public void testWallCharacter() {
-        assertEquals(earth.getSprite().getImageWindows(),':');
+        assertEquals(dirt.getSprite().getImageWindows(),':');
     }
 
     @Test
     public void testWallImage() {
-        assertEquals(earth.getImage(),earth.getSprite().getImage());
+        assertEquals(dirt.getImage(),dirt.getSprite().getImage());
     }
 
 

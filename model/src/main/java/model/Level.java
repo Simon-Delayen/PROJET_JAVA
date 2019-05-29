@@ -37,7 +37,7 @@ public class Level extends Observable implements ILevel{
     private boolean monster2instance;
 
     /** The earth */
-    private IElement earth;
+    private IElement dirt;
 
     /** The door */
     private IElement door;
@@ -120,7 +120,7 @@ public class Level extends Observable implements ILevel{
                 case ':'://if character correspond to the earth we put it in the variable earth
                     this.setOnTheLevelXY(MotionlessFactory.getFromFileSymbol(
                             result.getString(DAOHelloWorld.getColumnSprite()).charAt(0)),result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY()));
-                    setEarth(this.getOnTheLevelXY(result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY())));
+                    setDirt(this.getOnTheLevelXY(result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY())));
                     break;
                 default:
                     this.setOnTheLevelXY(MotionlessFactory.getFromFileSymbol(
@@ -246,12 +246,12 @@ public class Level extends Observable implements ILevel{
         this.monster2instance = monster2instance;
     }
 
-    public IElement getEarth() {
-        return earth;
+    public IElement getDirt() {
+        return dirt;
     }
 
-    public void setEarth(IElement earth) {
-        this.earth = earth;
+    public void setDirt(IElement dirt) {
+        this.dirt = dirt;
     }
 
     public IElement getDoor() {

@@ -4,7 +4,7 @@ import contract.model.ISprite;
 import contract.model.Permeability;
 import model.element.Sprite;
 
-public class Earth extends MotionlessElement {
+public class Dirt extends MotionlessElement {
 
     /** The Constant SPRITE. */
     private static final ISprite SPRITE = new Sprite(':', "earth.png");
@@ -12,7 +12,7 @@ public class Earth extends MotionlessElement {
     /**
      * Instantiates a new earth.
      */
-    Earth() {
-        super(SPRITE, Permeability.KICK);
+    Dirt() {
+        super(SPRITE, Permeability.BREAKABLE);
     }
 }

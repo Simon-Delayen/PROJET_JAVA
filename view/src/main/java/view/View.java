@@ -3,7 +3,6 @@ package view;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
@@ -102,21 +101,18 @@ public final class View implements IView, Runnable, KeyListener {
 	 */
 	public void OpenDoorUpdate() {
 		try {
-			//getLevel().getDoor().getImage().getGraphics().drawImage(ImageIO.read(new File("C:\\Users\\KAWAK\\Documents\\GitHub\\PROJET_JAVA\\model\\src\\main\\resources\\door_open.png")),0,0, null);
 			getLevel().getDoor().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("door_open.png")),0,0, null); //this update the picture of the door from close to open
-			if (getLevel().getDiamond() != null) //if the level get a crystal then we set it to black, else we didn't do anything
+			if (getLevel().getDiamond() != null) //if the level get a diamond then we set it to black, else we didn't do anything
 				getLevel().getDiamond().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("Background.jpg")),0,0, null);//this update the picture of the diamond to black
-				//getLevel().getDoor().getImage().getGraphics().drawImage(ImageIO.read(new File("C:\\Users\\KAWAK\\Documents\\GitHub\\PROJET_JAVA\\model\\src\\main\\resources\\Background.jpg")),0,0, null);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public void EarthUpdate() {
+	public void DirtUpdate() {
 		try {
-			if (getLevel().getEarth() != null) //if the level get a earth then we set it to black, else we didn't do anything
-				getLevel().getEarth().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("Background.jpg")),0,0, null);//this update the picture of the earth to background
-				//getLevel().getDoor().getImage().getGraphics().drawImage(ImageIO.read(new File("C:\\Users\\KAWAK\\Documents\\GitHub\\PROJET_JAVA\\model\\src\\main\\resources\\Background.jpg")),0,0, null);
+			if (getLevel().getDirt() != null) //if the level get a earth then we set it to black, else we didn't do anything
+				getLevel().getDirt().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("Background.jpg")),0,0, null);//this update the picture of the earth to background
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

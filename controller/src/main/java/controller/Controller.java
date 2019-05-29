@@ -10,7 +10,6 @@ import contract.model.IMobile;
 import contract.model.Permeability;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 /**
  * The Class controller.
@@ -48,7 +47,7 @@ public final class Controller implements IOrderPerformer, IController {
 	private IMobile hero;
 
 	/** The Earth. */
-	private IElement earth;
+	private IElement dirt;
 
 	/** The rock. */
 	private IElement rock;
@@ -94,7 +93,7 @@ public final class Controller implements IOrderPerformer, IController {
 
 
 		//Store the earth, door and diamond in the controller
-		earth = getModel().getLevel().getEarth();
+		dirt = getModel().getLevel().getDirt();
 		door = getModel().getLevel().getDoor();
 		diamond = getModel().getLevel().getDiamond();
 		rock = getModel().getLevel().getRock();
@@ -143,10 +142,10 @@ public final class Controller implements IOrderPerformer, IController {
 			if(hero.isDead()) hero.die();
 
 			//if hero is on the earth
-			if(hero.isOnEarth()) {
+			if(hero.isBreakable()) {
 				//update the earth permeability
-				earth.setPermeability(Permeability.KICK);
-				getView().EarthUpdate();
+				dirt.setPermeability(Permeability.BREAKABLE);
+				getView().DirtUpdate();
 			}
 
 			switch (this.getStackOrder()) { //this case execute the method associated to the user order (move, nothing)

@@ -93,10 +93,9 @@ public final class Controller implements IOrderPerformer, IController {
 
 
 		//Store the earth, door and diamond in the controller
-		dirt = getModel().getLevel().getDirt();
 		door = getModel().getLevel().getDoor();
 		diamond = getModel().getLevel().getDiamond();
-		rock = getModel().getLevel().getRock();
+		dirt = getModel().getLevel().getDirt();
 
 		//if a monster 1,2,3,4 from level exist then we stored it in monster 1,2,3,4
 		if(getModel().getLevel().getMonster1instance() != false) {
@@ -108,12 +107,6 @@ public final class Controller implements IOrderPerformer, IController {
 			monster2 = getModel().getLevel().getMonster2();
 			monster2.alive();
 			monster2.doNothing();
-		}
-
-		//if the level didn't get a diamond then we open the door on level start
-		if(getModel().getLevel().getDiamond() == null) {
-			getModel().getLevel().getDoor().setPermeability(Permeability.OPENDOOR);
-			getView().OpenDoorUpdate();
 		}
 
 		//if the level didn't get a diamond then we open the door on level start
@@ -141,12 +134,6 @@ public final class Controller implements IOrderPerformer, IController {
 			//if the hero is on something that kill him then we stop the game and say you loose
 			if(hero.isDead()) hero.die();
 
-			//if hero is on the earth
-			if(hero.isBreakable()) {
-				//update the earth permeability
-				dirt.setPermeability(Permeability.BREAKABLE);
-				getView().DirtUpdate();
-			}
 
 			switch (this.getStackOrder()) { //this case execute the method associated to the user order (move, nothing)
 				case RIGHT:

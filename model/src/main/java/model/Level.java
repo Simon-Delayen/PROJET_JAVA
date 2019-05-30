@@ -161,11 +161,6 @@ public class Level extends Observable implements ILevel{
         this.notifyObservers();
     }
 
-    /*public void setMobilHasFall() {
-        this.setChanged();
-        this.notifyObservers();
-    }*/
-
     /**
      * Sets the on the level XY.
      *

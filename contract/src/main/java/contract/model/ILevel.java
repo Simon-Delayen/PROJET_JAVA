@@ -35,11 +35,6 @@ public interface ILevel {
     void setMobilHasChanged();
 
     /**
-     * Sets the mobile has fall.
-     */
-    //void setMobilHasFall();
-
-    /**
      * Gets the observable.
      *
      * @return the observable

@@ -19,7 +19,5 @@ public interface IView {
 
 	void setOrderPerformer(IOrderPerformer orderPerformer);
 
-	void DirtUpdate();
-
 	void OpenDoorUpdate();
 }

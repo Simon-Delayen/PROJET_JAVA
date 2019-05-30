@@ -47,11 +47,6 @@ public interface IMobile extends IPawn, IElement{
      */
     void alive();
 
-    /**
-     * Set rock fall
-     */
-    //void fall();
-
     @Override
     int getX();
 
@@ -70,7 +65,6 @@ public interface IMobile extends IPawn, IElement{
      */
     Boolean isBlocked();
     Boolean isDead();
-    Boolean isBreakable();
     Boolean isOnDiamond();
     Boolean isOnOpenDoor();
 

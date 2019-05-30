@@ -41,8 +41,8 @@ public final class View implements IView, Runnable, KeyListener {
 
 	BoardFrame boardFrame;
 
-	Image Door;
-	ImageIcon iDoor;
+	//Image Door;
+	//ImageIcon iDoor;
 
 	/**
 	 * Instantiates a new View.
@@ -104,15 +104,7 @@ public final class View implements IView, Runnable, KeyListener {
 			getLevel().getDoor().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("door_open.png")),0,0, null); //this update the picture of the door from close to open
 			if (getLevel().getDiamond() != null) //if the level get a diamond then we set it to black, else we didn't do anything
 				getLevel().getDiamond().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("Background.jpg")),0,0, null);//this update the picture of the diamond to black
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
-	public void DirtUpdate() {
-		try {
-			if (getLevel().getDirt() != null) //if the level get a earth then we set it to black, else we didn't do anything
-				getLevel().getDirt().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("Background.jpg")),0,0, null);//this update the picture of the earth to background
+				getLevel().getDirt().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("Background.jpg")),0,0, null);//this update the picture of the diamond to black
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

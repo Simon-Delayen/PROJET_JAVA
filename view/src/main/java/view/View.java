@@ -21,22 +21,34 @@ import showboard.BoardFrame;
  */
 public final class View implements IView, Runnable, KeyListener {
 
-	/** The Constant width square number of the levels. */
+	/**
+	 * The Constant width square number of the levels.
+	 */
 	private static final int squareNumberWidth = 16;
 
-	/** The Constant height square number of the levels. */
+	/**
+	 * The Constant height square number of the levels.
+	 */
 	private static final int squareNumberHeight = 16;
 
-	/** The Constant squareSize to make the window bigger or smaller but keeping the proportions . */
+	/**
+	 * The Constant squareSize to make the window bigger or smaller but keeping the proportions .
+	 */
 	private static final int squareSize = 40;
 
-	/** The Constant closeView its the window launch by the thread. */
+	/**
+	 * The Constant closeView its the window launch by the thread.
+	 */
 	private Rectangle closeView;
 
-	/** The level. */
+	/**
+	 * The level.
+	 */
 	private ILevel level;
 
-	/** The order performer. */
+	/**
+	 * The order performer.
+	 */
 	private IOrderPerformer orderPerformer;
 
 	BoardFrame boardFrame;
@@ -49,10 +61,8 @@ public final class View implements IView, Runnable, KeyListener {
 	 * It will create the window, a frame and a kind of plate with square to place element of the level
 	 * All of this his load and shown by the thread
 	 *
-	 * @param level
-	 *            the level
-	 * @throws IOException
-	 *             Signals that an I/O exception has occurred.
+	 * @param level the level
+	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	public View(final ILevel level) throws IOException {
 		this.setLevel(level); //create in memory the level (x,y,picture)
@@ -87,8 +97,12 @@ public final class View implements IView, Runnable, KeyListener {
 			}
 		}
 
-		if(getLevel().getMonster1instance() != false) {boardFrame.addPawn(getLevel().getMonster1());} //if instance of monster1 is not false then spawn it on level
-		if(getLevel().getMonster2instance() != false) {boardFrame.addPawn(getLevel().getMonster2());} //if instance of monster2 is not false then spawn it on level
+		if (getLevel().getMonster1instance() != false) {
+			boardFrame.addPawn(getLevel().getMonster1());
+		} //if instance of monster1 is not false then spawn it on level
+		if (getLevel().getMonster2instance() != false) {
+			boardFrame.addPawn(getLevel().getMonster2());
+		} //if instance of monster2 is not false then spawn it on level
 
 		boardFrame.addPawn(getLevel().getHero()); //this place ('spawn') the mobile element Hero over a square
 
@@ -101,10 +115,9 @@ public final class View implements IView, Runnable, KeyListener {
 	 */
 	public void OpenDoorUpdate() {
 		try {
-			getLevel().getDoor().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("door_open.png")),0,0, null); //this update the picture of the door from close to open
+			getLevel().getDoor().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("door_open.png")), 0, 0, null); //this update the picture of the door from close to open
 			if (getLevel().getDiamond() != null) //if the level get a diamond then we set it to black, else we didn't do anything
-				getLevel().getDiamond().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("Background.jpg")),0,0, null);//this update the picture of the diamond to black
-				getLevel().getDirt().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("Background.jpg")),0,0, null);//this update the picture of the diamond to black
+				getLevel().getDiamond().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("Background.jpg")), 0, 0, null);//this update the picture of the diamond to black
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -114,8 +127,7 @@ public final class View implements IView, Runnable, KeyListener {
 	 * Key code to user order.
 	 * It choose the right user order in function of the keycode
 	 *
-	 * @param keyCode
-	 *            the key code
+	 * @param keyCode the key code
 	 * @return the user order
 	 */
 	static ControllerOrder keyCodeToControllerOrder(final int keyCode) {
@@ -184,10 +196,8 @@ public final class View implements IView, Runnable, KeyListener {
 	/**
 	 * Sets the level.
 	 *
-	 * @param level
-	 *            the new level
-	 * @throws IOException
-	 *             Signals that an I/O exception has occurred.
+	 * @param level the new level
+	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	private void setLevel(final ILevel level) throws IOException {
 		this.level = level;
@@ -210,8 +220,7 @@ public final class View implements IView, Runnable, KeyListener {
 	/**
 	 * Sets the close view.
 	 *
-	 * @param closeView
-	 *            the new close view
+	 * @param closeView the new close view
 	 */
 	private void setCloseView(final Rectangle closeView) {
 		this.closeView = closeView;
@@ -229,11 +238,11 @@ public final class View implements IView, Runnable, KeyListener {
 	/**
 	 * Sets the order performer.
 	 *
-	 * @param orderPerformer
-	 *            the new order performer
+	 * @param orderPerformer the new order performer
 	 */
 	public final void setOrderPerformer(final IOrderPerformer orderPerformer) {
 		this.orderPerformer = orderPerformer;
 	}
+
 
 }

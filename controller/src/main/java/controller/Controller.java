@@ -127,8 +127,11 @@ public final class Controller implements IOrderPerformer, IController {
 				door.setPermeability(Permeability.OPENDOOR);
 				diamond.setPermeability(Permeability.PENETRABLE);
 				getView().OpenDoorUpdate();
-
 			}
+			/*if (hero.isBreakable()) {
+				dirt.setPermeability((Permeability.BREAKABLE));
+				getView().dirtUpdate();
+			}*/
 
 			//if the hero is on the gate when it's open then we stop the game and say you win
 			if(hero.isOnOpenDoor()) win = true;
@@ -183,7 +186,7 @@ public final class Controller implements IOrderPerformer, IController {
 	 * @param monster
 	 *          the new monster
 	 */
-	private void MonsterIA(IMobile monster) {
+	private void MonsterIA(IMobile monster) throws IOException {
 		//if the counter of delay match the monster wanted speed then we enter this if to move monster to the hero
 		if(monsterDelay == monsterSpeed) {
 			monsterDelay=0;

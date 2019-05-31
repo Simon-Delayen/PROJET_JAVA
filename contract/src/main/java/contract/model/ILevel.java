@@ -73,5 +73,6 @@ public interface ILevel {
     IElement getDoor();
     IElement getDiamond();
     IElement getRock();
+    IElement getBack();
 
 }

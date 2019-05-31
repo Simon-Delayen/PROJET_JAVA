@@ -7,7 +7,9 @@ import contract.model.Permeability;
 import showboard.IBoard;
 import model.element.Element;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.io.IOException;
 
 public class Mobil extends Element implements IMobile {
 
@@ -67,6 +69,7 @@ public class Mobil extends Element implements IMobile {
     public void moveUp() {
         this.setY(this.getY() - 1);
         this.setHasMoved();
+
         //If the hero is blocked we is moved to his previous position
         if (this.isBlocked()) {
             this.setY(this.getY() + 1);
@@ -198,6 +201,10 @@ public class Mobil extends Element implements IMobile {
     //@Override
     public Boolean isBlocked() {
         return this.getLevel().getOnTheLevelXY(this.getX(), this.getY()).getPermeability() == Permeability.BLOCKING;
+    }
+
+    public Boolean isBreakable() {
+        return this.getLevel().getOnTheLevelXY(this.getX(), this.getY()).getPermeability() == Permeability.BREAKABLE;
     }
 
     @Override

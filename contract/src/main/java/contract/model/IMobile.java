@@ -3,6 +3,7 @@ package contract.model;
 import showboard.IPawn;
 
 import java.awt.*;
+import java.io.IOException;
 
 public interface IMobile extends IPawn, IElement{
     /**
@@ -67,6 +68,7 @@ public interface IMobile extends IPawn, IElement{
     Boolean isDead();
     Boolean isOnDiamond();
     Boolean isOnOpenDoor();
+    Boolean isBreakable();
 
     /**
      * GetPosition

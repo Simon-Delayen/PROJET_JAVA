@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.*;
+import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.IOException;
@@ -12,6 +13,7 @@ import contract.ControllerOrder;
 import contract.IView;
 import contract.controller.IOrderPerformer;
 import contract.model.ILevel;
+import contract.model.IMobile;
 import showboard.BoardFrame;
 
 /**
@@ -123,6 +125,13 @@ public final class View implements IView, Runnable, KeyListener {
 		}
 	}
 
+	public void dirtUpdate() {
+		try {
+				getLevel().getDirt().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("Background.jpg")), getLevel().getHero().getX(), getLevel().getHero().getY(), null);//this update the picture of the dirt
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	/**
 	 * Key code to user order.
 	 * It choose the right user order in function of the keycode

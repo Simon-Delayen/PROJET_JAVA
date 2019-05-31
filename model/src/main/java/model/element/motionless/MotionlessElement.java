@@ -6,7 +6,20 @@ import contract.model.Permeability;
 import model.element.Element;
 import model.element.Sprite;
 
+import java.awt.*;
+
 public abstract class MotionlessElement extends Element {
+    private Point position;
+
+
+    public Point getPosition() {
+        return this.position;
+    }
+
+    public void setPosition(final Point position) {
+        this.position = position;
+    }
+
 
     /**
      * Instantiates a new motionless element.

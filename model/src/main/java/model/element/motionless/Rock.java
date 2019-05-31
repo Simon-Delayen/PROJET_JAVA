@@ -8,6 +8,8 @@ import model.element.Sprite;
 import java.io.IOException;
 
 public class Rock extends MotionlessElement implements ISprite{
+    int x;
+    int y;
 
     /** The Constant SPRITE. */
     private static final ISprite SPRITE = new Sprite('R', "rock.png");

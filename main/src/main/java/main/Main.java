@@ -27,6 +27,15 @@ public abstract class Main {
      *
      * @param args
      *            the arguments
+     *
+     * @throws IOException
+     * 				the IOException
+     *
+     * @throws InterruptedException
+     * 				the interrupted dException
+     *
+     * @throws SQLException
+     * 				the SQl Exception
      */
     public static void main(final String[] args) throws IOException, InterruptedException, SQLException {
         final IModel model = new Model(2);                           // change le nombre au niveau désiré

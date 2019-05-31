@@ -16,6 +16,15 @@ public class MainTest {
 
     /**
      * Test method
+     *
+     * @throws IOException
+     *  				the IOException
+     *
+     * @throws InterruptedException
+     * 				the interrupted dException
+     *
+     * @throws SQLException
+     * 				the SQl Exception
      */
     @Test
     public void testMain() throws IOException, SQLException, InterruptedException{

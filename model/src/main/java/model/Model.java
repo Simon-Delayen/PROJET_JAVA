@@ -46,6 +46,7 @@ public final class Model extends Observable implements IModel {
 	 * Sets the level.
 	 *
 	 * @param level
+	 * 			the level
 	 *
 	 */
 	private void setLevel(final ILevel level) {

@@ -14,9 +14,6 @@ public class Rock extends MotionlessElement implements ISprite{
 
     /**
      * Instantiates a new Rock.
-     *
-     * @throws IOException
-     *             Signals that an I/O exception has occurred.
      */
     Rock() {
         super(SPRITE, Permeability.BLOCKING);

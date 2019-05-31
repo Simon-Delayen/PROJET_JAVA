@@ -13,11 +13,14 @@ public class Element implements IElement {
 
     private Permeability permeability;
 
+
     /**
      * Instantiates a new element.
      *
      * @param sprite
      *            the sprite
+     * @param permeability
+     *            the permeability
      */
     public Element(final ISprite sprite, final Permeability permeability) {
         this.setSprite(sprite);

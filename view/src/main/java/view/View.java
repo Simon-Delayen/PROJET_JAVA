@@ -24,17 +24,17 @@ public final class View implements IView, Runnable, KeyListener {
 	/**
 	 * The Constant width square number of the levels.
 	 */
-	private static final int squareNumberWidth = 16;
+	private static final int squareNumberWidth = 36;
 
 	/**
 	 * The Constant height square number of the levels.
 	 */
-	private static final int squareNumberHeight = 16;
+	private static final int squareNumberHeight = 26;
 
 	/**
 	 * The Constant squareSize to make the window bigger or smaller but keeping the proportions .
 	 */
-	private static final int squareSize = 40;
+	private static final int squareSize = 50;
 
 	/**
 	 * The Constant closeView its the window launch by the thread.

@@ -17,33 +17,21 @@ public class WallTest {
         wall = new Wall();
     }
 
-    /**
-     * Test method for {@link model.element.motionless#WallConstructor()}.
-     */
     @Test
     public void testWallConstructor(){
         assertNotNull(wall);
     }
 
-    /**
-     * Test method for {@link model.element.motionless#WallCharacter()}.
-     */
     @Test
     public void testWallCharacter(){
         assertEquals(wall.getSprite().getImageWindows(), 'O');
     }
 
-    /**
-     * Test method for {@link model.element.motionless#WallImage()}.
-     */
     @Test
     public void testWallImage(){
         assertEquals(wall.getImage(),wall.getSprite().getImage());
     }
 
-    /**
-     * Test method for {@link model.element.motionless#WallPermeability()}.
-     */
     @Test
     public void testWallPermeability(){
         assertEquals(wall.getPermeability(), Permeability.BLOCKING);

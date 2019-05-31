@@ -17,6 +17,7 @@ public interface IController {
 	 * @throws InterruptedException
 	 *             the interrupted exception
 	 * @throws IOException
+	 * 				it's a Exception
 	 */
 	void play() throws InterruptedException, IOException;
 

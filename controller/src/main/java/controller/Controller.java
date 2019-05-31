@@ -78,7 +78,9 @@ public final class Controller implements IOrderPerformer, IController {
 
 	/**
 	 * Drive the game element movement, behavior and threading
+	 *
 	 * @throws IOException
+	 * 				the IOException
 	 */
 	@SuppressWarnings("unchecked")
 
@@ -176,7 +178,10 @@ public final class Controller implements IOrderPerformer, IController {
 	}
 
 	/**
-	 * This function is a kind of IA for monster to go on Lorann
+	 * This function is a kind of IA for monster to go on hero
+	 *
+	 * @param monster
+	 *          the new monster
 	 */
 	private void MonsterIA(IMobile monster) {
 		//if the counter of delay match the monster wanted speed then we enter this if to move monster to the hero

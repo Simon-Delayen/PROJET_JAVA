@@ -26,8 +26,8 @@ public class ControllerTest {
      */
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
-        model = new Model(2);
-        view = new View(model.getLevel());
+       // model = new Model(2);
+       // view = new View(model.getLevel());
     }
 
     /**

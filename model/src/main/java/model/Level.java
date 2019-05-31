@@ -17,10 +17,10 @@ import java.util.Observable;
 public class Level extends Observable implements ILevel{
 
     /** The width. */
-    public int width = 16;
+    public int width = 36;
 
     /** The height. */
-    public int height = 16;
+    public int height = 26;
 
     /** The on the level. */
     private IElement[][] onTheLevel;
@@ -59,6 +59,7 @@ public class Level extends Observable implements ILevel{
      * @throws IOException
      *             Signals that an I/O exception has occurred.
      * @throws SQLException
+     *              it's a SQLException
      */
     Level(final int idlevel) throws IOException, SQLException {
         super();
@@ -73,6 +74,7 @@ public class Level extends Observable implements ILevel{
      * @throws IOException
      *             Signals that an I/O exception has occurred.
      * @throws SQLException
+     *              it's a SQLException
      */
     private void loadLevel(final int idlevel) throws IOException, SQLException {
 
@@ -177,6 +179,8 @@ public class Level extends Observable implements ILevel{
 
     /**
      * Get the level
+     *
+     * @return the level
      */
     public ILevel getLevel() {
         return this;
@@ -184,6 +188,8 @@ public class Level extends Observable implements ILevel{
 
     /**
      * Get the observable
+     *
+     * @return the observable
      */
     public Observable getObservable() {
         return this;

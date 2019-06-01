@@ -1,10 +1,10 @@
 package model.element.mobile;
 
 import contract.model.ILevel;
-import contract.model.IMobile;
 import contract.model.ISprite;
 import contract.model.Permeability;
 import model.element.Sprite;
+import model.element.sound.Sound;
 
 
 import java.io.IOException;
@@ -58,6 +58,7 @@ public class Hero extends Mobil implements ISprite{
     public void moveLeft() {
         super.moveLeft();
         this.setSprite(spriteMoveLeft);
+        Sound.playTempSound("\\resources\\boulderdash.wav");
     }
 
     @Override

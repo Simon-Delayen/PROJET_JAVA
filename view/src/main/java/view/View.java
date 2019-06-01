@@ -36,7 +36,7 @@ public final class View implements IView, Runnable, KeyListener {
 	/**
 	 * The Constant squareSize to make the window bigger or smaller but keeping the proportions .
 	 */
-	private static final int squareSize = 50;
+	private static final int squareSize = 30;
 
 	/**
 	 * The Constant closeView its the window launch by the thread.

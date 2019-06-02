@@ -4,7 +4,6 @@ import contract.model.ILevel;
 import contract.model.ISprite;
 import contract.model.Permeability;
 import model.element.Sprite;
-import model.element.sound.Sound;
 
 
 import java.io.IOException;
@@ -54,38 +53,61 @@ public class Hero extends Mobil implements ISprite{
 
     }
 
+    /*
+     * (non-Javadoc)
+     * @see fr.exia.insanevehicles.model.element.mobile.Mobile#moveLeft()
+     */
     @Override
     public void moveLeft() {
         super.moveLeft();
         this.setSprite(spriteMoveLeft);
-        Sound.playTempSound("\\resources\\boulderdash.wav");
     }
 
+    /*
+     * (non-Javadoc)
+     * @see fr.exia.insanevehicles.model.element.mobile.Mobile#moveRight()
+     */
     @Override
     public void moveRight() {
         super.moveRight();
         this.setSprite(spriteMoveRight);
     }
 
+    /*
+     * (non-Javadoc)
+     * @see fr.exia.insanevehicles.model.element.mobile.Mobile#moveUp()
+     */
     @Override
     public void moveUp() {
         super.moveUp();
         this.setSprite(spriteMoveUp);
     }
 
+    /*
+     * (non-Javadoc)
+     * @see fr.exia.insanevehicles.model.element.mobile.Mobile#moveDown()
+     */
     @Override
     public void moveDown() {
         super.moveDown();
         this.setSprite(spriteMoveDown);
     }
 
+    /*
+     * (non-Javadoc)
+     * @see fr.exia.insanevehicles.model.element.mobile.Mobile#die()
+     */
     @Override
     public final void die() {
         super.die();
         this.setSprite(spriteDie);
     }
 
-
+    /*
+     * (non-Javadoc)
+     * @see fr.exia.insanevehicles.model.element.mobile.Mobile#doNothing()
+     */
+    @Override
     public final void doNothing() {
         super.doNothing();
         this.setSprite(sprite);
@@ -97,7 +119,7 @@ public class Hero extends Mobil implements ISprite{
 
     }
 
-
+    @Override
     public char getImageWindows() {
         // TODO Auto-generated method stub
         return 0;

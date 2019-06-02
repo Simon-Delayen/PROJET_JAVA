@@ -8,13 +8,13 @@ public abstract class MotionlessFactory {
     /** The Constant Back(black background). */
     private static final Back back = new Back();
 
-    /** The Constant Earth. */
+    /** The Constant Dirt. */
     private static final Dirt dirt = new Dirt();
 
     /** The Constant Door. */
     private static final Door door = new Door();
 
-    /** The Constant Door. */
+    /** The Constant Rock. */
     private static final Rock rock = new Rock();
 
     /** The Constant Diamond. */
@@ -56,21 +56,21 @@ public abstract class MotionlessFactory {
         return door;
     }
 
-/**
- * Creates a new earth MotionlessElements object.
- *
- * @return the motionless element
- */
-public static MotionlessElement createDirt() {
+    /**
+     * Creates a new dirt MotionlessElements object.
+     *
+     * @return the motionless element
+     */
+    public static MotionlessElement createDirt() {
         return dirt;
         }
 
-/**
- * Creates a new diamond MotionlessElements object.
- *
- * @return the motionless element
- */
-public static MotionlessElement createDiamond() {
+    /**
+     * Creates a new diamond MotionlessElements object.
+     *
+     * @return the motionless element
+     */
+    public static MotionlessElement createDiamond() {
         return diamond;
         }
 

@@ -11,9 +11,6 @@ import java.sql.SQLException;
  *
  * @author Jean-Aymeric Diet
  */
- //*/ @param <E>
- //*          the element type
- //*/
 abstract class DAOEntity {
 
 	/**

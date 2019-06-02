@@ -46,26 +46,53 @@ class DAOHelloWorld extends DAOEntity {
 		return result;
 	}
 
+	/**
+	 * Getter for position X
+	 */
 	public static int getColumnX() {
 		return ColumnX;
 	}
 
+	/**
+	 * Setter for position X
+	 *
+	 * @param x
+	 * 	the x position
+	 */
 	public static void setColumnX(int columnX) {
 		ColumnX = columnX;
 	}
 
+	/**
+	 * Getter for position Y
+	 */
 	public static int getColumnY() {
 		return ColumnY;
 	}
 
+	/**
+	 * Setter for position Y
+	 *
+	 * @param y
+	 * 	the y position
+	 */
 	public static void setColumnY(int columnY) {
 		ColumnY = columnY;
 	}
 
+	/**
+	 * Getter for sprite
+	 */
 	public static int getColumnSprite() {
 		return ColumnSprite;
 	}
 
+	/**
+	 * Setter for sprite
+	 *
+	 * @param sprite
+	 * 	the sprite
+	 */
 	public static void setColumnSprite(int columnSprite) {
 		ColumnSprite = columnSprite;
 	}

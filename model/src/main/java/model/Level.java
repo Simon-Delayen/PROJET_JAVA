@@ -36,7 +36,7 @@ public class Level extends Observable implements ILevel{
     private IMobile monster2;
     private boolean monster2instance;
 
-    /** The earth */
+    /** The dirt */
     private IElement dirt;
 
     /** The door */
@@ -54,8 +54,8 @@ public class Level extends Observable implements ILevel{
     /**
      * Instantiates a new level with the content of the db.
      *
-     * @param idlevel
-     *            the idlevel where the map of the road is
+     * @param fileName
+     *            the fileName where the map of the road is
      * @throws IOException
      *             Signals that an I/O exception has occurred.
      * @throws SQLException
@@ -69,8 +69,8 @@ public class Level extends Observable implements ILevel{
     /**
      * Loads the level stored all motion less position, instantiate all mobile element.
      *
-     * @param idlevel
-     *            the idlevel
+     * @param fileName
+     *            the fileName
      * @throws IOException
      *             Signals that an I/O exception has occurred.
      * @throws SQLException

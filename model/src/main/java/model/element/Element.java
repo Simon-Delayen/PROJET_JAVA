@@ -11,8 +11,8 @@ public class Element implements IElement {
     /** The sprite. */
     private ISprite       sprite;
 
+    /** The permeability. */
     private Permeability permeability;
-
 
     /**
      * Instantiates a new element.
@@ -52,10 +52,19 @@ public class Element implements IElement {
         return this.getSprite().getImage();
     }
 
+    /**
+     * get the permeability of the sprite
+     */
     public Permeability getPermeability() {
         return this.permeability;
     }
 
+    /**
+     * Sets the permeability.
+     *
+     * @param permeability
+     *            the permeability
+     */
     public void setPermeability(final Permeability permeability) {
         this.permeability = permeability;
     }

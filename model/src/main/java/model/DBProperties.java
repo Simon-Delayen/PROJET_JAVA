@@ -16,13 +16,13 @@ class DBProperties {
 	private static DBProperties instance;
 
 	/** The login. */
-	private static String                  user     = "root";
+	private static String user = "root";
 
 	/** The password. */
-	private static String                  password = "";
+	private static String password = "";
 
 	/** The url. */
-	private static String                  url      = "jdbc:mysql://localhost:3306/jpublankproject?useSSL=false";
+	private static String url = "jdbc:mysql://localhost:3306/jpublankproject?useSSL=false";
 
 	/** The connection. */
 	private Connection connection;
@@ -31,16 +31,16 @@ class DBProperties {
 	private Statement statement;
 
 	/**
-	 * Instantiates a new boulder dash BDD connector.
+	 * Instantiates a new DBProperties.
 	 */
 	private DBProperties() {
 		this.open();
 	}
 
 	/**
-	 * Gets the single instance of BoulderDashBDDConnector.
+	 * Gets the single instance of DBProperties.
 	 *
-	 * @return single instance of BoulderDashBDDConnector
+	 * @return single instance of DBProperties
 	 */
 	public static DBProperties getInstance() {
 		if (instance == null) {

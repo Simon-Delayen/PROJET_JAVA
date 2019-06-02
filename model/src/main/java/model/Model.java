@@ -22,8 +22,8 @@ public final class Model extends Observable implements IModel {
 	 * this load and stored the level from the DB
 	 * this load the player and monsters
 	 *
-	 * @param idlevel
-	 *            the idlevel to know the level to load
+	 * @param fileName
+	 *            the fileName to know the level to load
 	 *
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.

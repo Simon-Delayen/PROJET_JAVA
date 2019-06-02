@@ -1,4 +1,4 @@
-package model.element.sound;
+package view;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -6,14 +6,14 @@ import javax.sound.sampled.Clip;
 
 public class Sound {
 
-    private Clip c;
+    private Clip clip;
 
     public Sound(String son){
 
         try{
-            AudioInputStream ai = AudioSystem.getAudioInputStream(getClass().getResource(son));
-            c = AudioSystem.getClip();
-            c.open(ai);
+            AudioInputStream audio = AudioSystem.getAudioInputStream(getClass().getResource(son));
+            clip = AudioSystem.getClip();
+            clip.open(audio);
         }
         catch(Exception e){
             e.printStackTrace();
@@ -21,17 +21,20 @@ public class Sound {
     }
 
     public Clip getClip(){
-        return c;
+        return clip;
     }
 
 
     public void play(){
-        c.start();
+        clip.start();
     }
 
-    public static void playTempSound(String son){
+    public void stop(){
+        clip.stop();
+    }
+
+    public static void playSound(String son){
         Sound s = new Sound(son);
         s.play();
     }
-
 }

@@ -4,12 +4,12 @@ import contract.controller.IOrderPerformer;
 
 import java.io.IOException;
 
-/**
- * The Interface IController.
- *
- * @author Jean-Aymeric Diet
- */
-public interface IController {
+	/**
+	 * The Interface IController.
+	 *
+	 * @author Jean-Aymeric Diet
+	 */
+	public interface IController {
 
 	/**
 	 * Play.

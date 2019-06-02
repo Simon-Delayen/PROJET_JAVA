@@ -2,12 +2,12 @@ package contract;
 
 import contract.model.ILevel;
 
-/**
- * The Interface IModel.
- *
- * @author Jean-Aymeric Diet
- */
-public interface IModel {
+	/**
+	 * The Interface IModel.
+	 *
+	 * @author Jean-Aymeric Diet
+	 */
+	public interface IModel {
 
 	/**
 	 * Gets Level.

@@ -4,18 +4,16 @@ import contract.model.ILevel;
 import contract.model.IMobile;
 import contract.model.ISprite;
 import contract.model.Permeability;
+
 import showboard.IBoard;
 import model.element.Element;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
-import java.io.IOException;
+
 
 public class Mobil extends Element implements IMobile {
 
-    /**
-     * The x.
-     */
+    /** The x. */
     private Point position;
 
     /** The alive. */
@@ -66,17 +64,18 @@ public class Mobil extends Element implements IMobile {
         this.setY(y);
     }
 
+    /** All Movement function */
+    @Override
     public void moveUp() {
         this.setY(this.getY() - 1);
         this.setHasMoved();
-
         //If the hero is blocked we is moved to his previous position
         if (this.isBlocked()) {
             this.setY(this.getY() + 1);
         }
     }
 
-
+    @Override
     public void moveDown() {
         this.setY(this.getY() + 1);
         this.setHasMoved();
@@ -86,7 +85,7 @@ public class Mobil extends Element implements IMobile {
         }
     }
 
-
+    @Override
     public void moveLeft() {
         this.setX(this.getX() - 1);
         this.setHasMoved();
@@ -97,7 +96,7 @@ public class Mobil extends Element implements IMobile {
 
     }
 
-
+    @Override
     public void moveRight() {
         this.setX(this.getX() + 1);
         this.setHasMoved();
@@ -107,6 +106,7 @@ public class Mobil extends Element implements IMobile {
         }
     }
 
+    @Override
     public void doNothing() {
         this.setY(this.getY());
         this.setX(this.getX());
@@ -119,20 +119,38 @@ public class Mobil extends Element implements IMobile {
         this.getLevel().setMobilHasChanged();
     }
 
+    /**
+     * Getter for Mobile position X
+     */
+    @Override
     public final int getX() {
         return this.getPosition().x;
     }
 
+    /**
+     * Setter for Mobile position X
+     *
+     * @param x
+     * 	the x position
+     */
     public final void setX(int x) {
         this.getPosition().x = x;
     }
 
-
-
+    /**
+     * Getter for Mobile position Y
+     */
+    @Override
     public final int getY() {
         return this.getPosition().y;
     }
 
+    /**
+     * Setter for Mobile position Y
+     *
+     * @param y
+     * 		the y position
+     */
     public final void setY(int y) {
         this.getPosition().y = y;
     }
@@ -156,10 +174,19 @@ public class Mobil extends Element implements IMobile {
         this.level = level;
     }
 
+    /**
+     * Get the position
+     */
     public Point getPosition() {
         return this.position;
     }
 
+    /**
+     * Sets the position.
+     *
+     * @param position
+     *            the position to set
+     */
     public void setPosition(final Point position) {
         this.position = position;
     }
@@ -176,6 +203,7 @@ public class Mobil extends Element implements IMobile {
     /**
      * Return the state of mobile element
      */
+    @Override
     public Boolean isAlive() {
         return this.alive;
     }
@@ -198,20 +226,30 @@ public class Mobil extends Element implements IMobile {
     /**
      * get if mobile element his in a collision
      */
-    //@Override
+    @Override
     public Boolean isBlocked() {
         return this.getLevel().getOnTheLevelXY(this.getX(), this.getY()).getPermeability() == Permeability.BLOCKING;
     }
 
+    /**
+     * get if element his breakable
+     */
+    @Override
     public Boolean isBreakable() {
         return this.getLevel().getOnTheLevelXY(this.getX(), this.getY()).getPermeability() == Permeability.BREAKABLE;
     }
 
+    /**
+     * get if mobile element his in a diamond
+     */
     @Override
     public Boolean isOnDiamond() {
         return this.getLevel().getOnTheLevelXY(this.getX(), this.getY()).getPermeability() == Permeability.OPENNING;
     }
 
+    /**
+     * get if mobile element his on a door
+     */
     @Override
     public Boolean isOnOpenDoor() {
         return this.getLevel().getOnTheLevelXY(this.getX(), this.getY()).getPermeability() == Permeability.OPENDOOR;

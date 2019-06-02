@@ -10,7 +10,7 @@ public interface IOrderPerformer {
      * Order perform.
      *
      * @param controllerOrder
-     *            the user order
+     *            the controller order
      * @throws IOException
      *             Signals that an I/O exception has occurred.
      */

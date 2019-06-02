@@ -46,7 +46,7 @@ public final class Controller implements IOrderPerformer, IController {
 	/** The hero. */
 	private IMobile hero;
 
-	/** The Earth. */
+	/** The dirt. */
 	private IElement dirt;
 
 	/** The rock. */
@@ -55,7 +55,7 @@ public final class Controller implements IOrderPerformer, IController {
 	/** The diamond. */
 	private IElement diamond;
 
-	/** The gate. */
+	/** The door. */
 	private IElement door;
 
 
@@ -89,17 +89,17 @@ public final class Controller implements IOrderPerformer, IController {
 		//---------------------------------------------------------------------------------------------------
 		//		This part prepare the variable and element of the level depending on each level
 		//---------------------------------------------------------------------------------------------------
-		// when the player hero is load on the map is not alive so we set it alive after everything is load
+		// when the hero is load on the map is not alive so we set it alive after everything is load
 		hero = getModel().getLevel().getHero();
 		hero.alive();
 
 
-		//Store the earth, door and diamond in the controller
+		//Store the dirt, door and diamond in the controller
 		door = getModel().getLevel().getDoor();
 		diamond = getModel().getLevel().getDiamond();
 		dirt = getModel().getLevel().getDirt();
 
-		//if a monster 1,2,3,4 from level exist then we stored it in monster 1,2,3,4
+		//if a monster 1,2 from level exist then we stored it in monster 1,2
 		if(getModel().getLevel().getMonster1instance() != false) {
 			monster1 = getModel().getLevel().getMonster1();
 			monster1.alive();
@@ -121,13 +121,14 @@ public final class Controller implements IOrderPerformer, IController {
 
 			Thread.sleep(speed); //make the thread sleep for a little time (in milliseconds)
 
-			//if player is on the diamond the we open the door
+			//if hero is on the diamond the we open the door
 			if(hero.isOnDiamond()) {
-				//update the gate permeability from DEAD to OPENDOOR
+				//update the door permeability from DEAD to OPENDOOR
 				door.setPermeability(Permeability.OPENDOOR);
 				diamond.setPermeability(Permeability.PENETRABLE);
 				getView().OpenDoorUpdate();
 			}
+
 			/*if (hero.isBreakable()) {
 				dirt.setPermeability((Permeability.BREAKABLE));
 				getView().dirtUpdate();
@@ -140,7 +141,7 @@ public final class Controller implements IOrderPerformer, IController {
 			if(hero.isDead()) hero.die();
 
 
-			switch (this.getStackOrder()) { //this case execute the method associated to the user order (move, nothing)
+			switch (this.getStackOrder()) { //this case execute the method associated to the controller order (move, nothing)
 				case RIGHT:
 					this.hero.moveRight();
 					lastHeroOrder = ControllerOrder.RIGHT;
@@ -240,7 +241,6 @@ public final class Controller implements IOrderPerformer, IController {
 	 */
 	public void orderPerform(final ControllerOrder controllerOrder) throws IOException{
 			this.setStackOrder(controllerOrder);
-
 	}
 
 	/**

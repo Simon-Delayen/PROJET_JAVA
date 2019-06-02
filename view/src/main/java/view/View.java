@@ -76,7 +76,7 @@ public final class View implements IView, Runnable, KeyListener {
 	}
 
 	/**
-	 * Display a message in a popup
+	 * Print a message in a popup
 	 */
 	@Override
 	public final void printMessage(final String message) {
@@ -86,7 +86,7 @@ public final class View implements IView, Runnable, KeyListener {
 	/**
 	 * Thread that run the window
 	 */
-	public final void run() { //this create a new BoardFrame its simply a panel in the window named Boulderdash
+	public final void run() { //this create a new BoardFrame its simply a panel in the window named Boulder dash
 		boardFrame = new BoardFrame("Boulderdash");
 		boardFrame.setDimension(new Dimension(squareNumberWidth, squareNumberHeight)); // set the dimension of the panel to the level (square unity)
 		boardFrame.setDisplayFrame(this.getCloseView()); //say what to display in the frame
@@ -118,7 +118,7 @@ public final class View implements IView, Runnable, KeyListener {
 	public void OpenDoorUpdate() {
 		try {
 			getLevel().getDoor().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("door_open.png")), 0, 0, null); //this update the picture of the door from close to open
-			if (getLevel().getDiamond() != null) //if the level get a diamond then we set it to black, else we didn't do anything
+			if (getLevel().getDiamond() != null) //if the level get a diamond then we set it to back, else we didn't do anything
 				getLevel().getDiamond().getImage().getGraphics().drawImage(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("Background.jpg")), 0, 0, null);//this update the picture of the diamond to black
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -133,11 +133,11 @@ public final class View implements IView, Runnable, KeyListener {
 		}
 	}
 	/**
-	 * Key code to user order.
-	 * It choose the right user order in function of the keycode
+	 * Key code to controller order.
+	 * It choose the right controller order in function of the keycode
 	 *
 	 * @param keyCode the key code
-	 * @return the user order
+	 * @return the controller order
 	 */
 	static ControllerOrder keyCodeToControllerOrder(final int keyCode) {
 		ControllerOrder controllerOrder;
@@ -146,6 +146,7 @@ public final class View implements IView, Runnable, KeyListener {
 			case KeyEvent.VK_RIGHT:
 			case KeyEvent.VK_D:
 				controllerOrder = ControllerOrder.RIGHT;
+				Sound.playSound("boulderdash.mp3");
 				break;
 			case KeyEvent.VK_LEFT:
 			case KeyEvent.VK_Q:
@@ -164,6 +165,7 @@ public final class View implements IView, Runnable, KeyListener {
 				break;
 		}
 		return controllerOrder;
+
 	}
 
 	/**
@@ -212,7 +214,7 @@ public final class View implements IView, Runnable, KeyListener {
 		this.level = level;
 		for (int x = 0; x < View.squareNumberWidth; x++) { //this double for made the level
 			for (int y = 0; y < View.squareNumberHeight; y++) {
-				this.getLevel().getOnTheLevelXY(x, y).getSprite().loadImage(); //it place in memory the picture corresponding to a postion X Y
+				this.getLevel().getOnTheLevelXY(x, y).getSprite().loadImage(); //it place in memory the picture corresponding to a position X Y
 			}
 		}
 	}

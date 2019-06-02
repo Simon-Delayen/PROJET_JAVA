@@ -26,5 +26,8 @@ public interface IElement extends ISquare {
     @Override
     Image getImage();
 
+    /**
+     * Sets the permeability
+     */
     void setPermeability(Permeability permeability);
 }

@@ -12,6 +12,12 @@ public interface ISprite {
      */
     Image getImage();
 
+    /**
+     * loadImage.
+     *
+     * @throws IOException
+     * 				it's a Exception
+     */
     void loadImage() throws IOException;
 
     /**

@@ -17,6 +17,12 @@ public interface IView {
 	 */
 	void printMessage(final String message);
 
+	/**
+	 * Interpreted order.
+	 *
+	 * @param orderPerformer
+	 *          the order performer
+	 */
 	void setOrderPerformer(IOrderPerformer orderPerformer);
 
 	void OpenDoorUpdate();

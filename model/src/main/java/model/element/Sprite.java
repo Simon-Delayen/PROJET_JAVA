@@ -7,12 +7,16 @@ import java.awt.Image;
 import java.io.IOException;
 
 public class Sprite implements ISprite {
+
     /** The image. */
     private Image image;
+
     /** The image name. */
     private String imageName;
+
     /** The image windows. */
     private char imageWindows;
+
     /** The loaded image */
     private boolean imageLoaded;
 

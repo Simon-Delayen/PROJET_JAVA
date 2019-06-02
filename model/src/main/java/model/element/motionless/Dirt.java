@@ -10,7 +10,7 @@ public class Dirt extends MotionlessElement {
     private static final ISprite SPRITE = new Sprite(':', "dirt.png");
 
     /**
-     * Instantiates a new earth.
+     * Instantiates a new dirt.
      */
     Dirt() {
         super(SPRITE, Permeability.BREAKABLE);

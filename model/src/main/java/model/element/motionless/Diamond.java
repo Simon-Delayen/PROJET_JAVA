@@ -5,6 +5,7 @@ import contract.model.Permeability;
 import model.element.Sprite;
 
 public class Diamond extends MotionlessElement{
+
     /** The Constant SPRITE. */
     private static final ISprite SPRITE = new Sprite('D', "diamond.png");
 

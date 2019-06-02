@@ -25,7 +25,7 @@ public class DiamondTest {
 
     @Test
     public void testDiamondCharacter(){
-        assertEquals(diamond.getSprite().getImageWindows(), 'X');
+        assertEquals(diamond.getSprite().getImageWindows(), 'D');
     }
 
     @Test

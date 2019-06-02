@@ -6,7 +6,6 @@ import contract.model.IMobile;
 import model.element.mobile.Hero;
 import model.element.mobile.Monster1;
 import model.element.mobile.Monster2;
-import model.element.motionless.Rock;
 import model.element.motionless.MotionlessFactory;
 
 import java.io.IOException;
@@ -54,8 +53,8 @@ public class Level extends Observable implements ILevel{
     /**
      * Instantiates a new level with the content of the db.
      *
-     * @param fileName
-     *            the fileName where the map of the road is
+     * @param idlevel
+     *            the idlevel where the map of the road is
      * @throws IOException
      *             Signals that an I/O exception has occurred.
      * @throws SQLException
@@ -69,8 +68,8 @@ public class Level extends Observable implements ILevel{
     /**
      * Loads the level stored all motion less position, instantiate all mobile element.
      *
-     * @param fileName
-     *            the fileName
+     * @param idlevel
+     *            the idlevel
      * @throws IOException
      *             Signals that an I/O exception has occurred.
      * @throws SQLException

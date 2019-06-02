@@ -28,6 +28,9 @@ public interface IElement extends ISquare {
 
     /**
      * Sets the permeability
+     *
+     * @param permeability
+     *           the permeability
      */
     void setPermeability(Permeability permeability);
 }

@@ -34,7 +34,7 @@ public class DoorTest {
 
     @Test
     public void testDoorPermeabilityWhenNotTaken(){
-        assertEquals(door.getPermeability(), Permeability.DEAD);
+        assertEquals(door.getPermeability(), Permeability.PENETRABLE);
     }
 
     @Test

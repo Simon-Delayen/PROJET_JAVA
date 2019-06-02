@@ -187,7 +187,7 @@ public final class Controller implements IOrderPerformer, IController {
 	 * @param monster
 	 *          the new monster
 	 */
-	private void MonsterIA(IMobile monster) throws IOException {
+	private void MonsterIA(IMobile monster) {
 		//if the counter of delay match the monster wanted speed then we enter this if to move monster to the hero
 		if(monsterDelay == monsterSpeed) {
 			monsterDelay=0;

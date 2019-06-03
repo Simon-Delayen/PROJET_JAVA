@@ -153,7 +153,7 @@ public final class Controller implements IOrderPerformer, IController {
 
 			switch (this.getStackOrder()) { //this case execute the method associated to the controller order (move, nothing)
 				case RIGHT:
-
+					//this.model.playSound("boulderdash.wav");
 					//this.hero.moveRight();
 					//lastHeroOrder = ControllerOrder.RIGHT;
 					position = new Point(getModel().getLevel().getHero().getX()+1, getModel().getLevel().getHero().getY());

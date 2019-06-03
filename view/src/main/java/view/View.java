@@ -147,7 +147,6 @@ public final class View implements IView, Runnable, KeyListener {
 			case KeyEvent.VK_RIGHT:
 			case KeyEvent.VK_D:
 				controllerOrder = ControllerOrder.RIGHT;
-				//Sound.playSound("boulderdash.mp3");
 				break;
 			case KeyEvent.VK_LEFT:
 			case KeyEvent.VK_Q:

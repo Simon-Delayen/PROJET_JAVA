@@ -108,17 +108,17 @@ public class Level extends Observable implements ILevel{
                             result.getString(DAOHelloWorld.getColumnSprite()).charAt(0)),result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY()));
                     setDoor(this.getOnTheLevelXY(result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY())));
                     break;
-                case 'R'://if character correspond to the door we put the door in the variable door
+                case 'R'://if character correspond to the rock we put the door in the variable rock
                     this.setOnTheLevelXY(MotionlessFactory.getFromFileSymbol(
                             result.getString(DAOHelloWorld.getColumnSprite()).charAt(0)),result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY()));
                     setRock(this.getOnTheLevelXY(result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY())));
                     break;
-                case 'D'://if character correspond to the crystal we put it in the variable diamond
+                case 'D'://if character correspond to the diamond we put it in the variable diamond
                     this.setOnTheLevelXY(MotionlessFactory.getFromFileSymbol(
                             result.getString(DAOHelloWorld.getColumnSprite()).charAt(0)),result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY()));
                     setDiamond(this.getOnTheLevelXY(result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY())));
                     break;
-                case ':'://if character correspond to the earth we put it in the variable earth
+                case ':'://if character correspond to the dirt we put it in the variable dirt
                     this.setOnTheLevelXY(MotionlessFactory.getFromFileSymbol(
                             result.getString(DAOHelloWorld.getColumnSprite()).charAt(0)),result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY()));
                     setDirt(this.getOnTheLevelXY(result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY())));

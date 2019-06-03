@@ -129,10 +129,10 @@ public final class Controller implements IOrderPerformer, IController {
 				getView().OpenDoorUpdate();
 			}
 
-			/*if (hero.isBreakable()) {
+			if (hero.isBreakable()) {
 				dirt.setPermeability((Permeability.BREAKABLE));
 				getView().dirtUpdate();
-			}*/
+			}
 
 			//if the hero is on the gate when it's open then we stop the game and say you win
 			if(hero.isOnOpenDoor()) win = true;

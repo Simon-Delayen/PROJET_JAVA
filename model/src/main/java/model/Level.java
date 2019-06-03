@@ -3,9 +3,12 @@ package model;
 import contract.model.IElement;
 import contract.model.ILevel;
 import contract.model.IMobile;
+import contract.model.Permeability;
 import model.element.mobile.Hero;
 import model.element.mobile.Monster1;
 import model.element.mobile.Monster2;
+import model.element.mobile.RockMobile;
+import model.element.motionless.Dirt;
 import model.element.motionless.MotionlessFactory;
 
 import java.io.IOException;
@@ -49,6 +52,9 @@ public class Level extends Observable implements ILevel{
 
     /** The diamond */
     private IElement diamond;
+
+    /** The RockMobile */
+    private IMobile rockMobile;
 
     /**
      * Instantiates a new level with the content of the db.
@@ -103,6 +109,9 @@ public class Level extends Observable implements ILevel{
                     setMonster2(new Monster2(result.getInt(DAOHelloWorld.getColumnX()), result.getInt(DAOHelloWorld.getColumnY()), this));
                     setMonster2instance(true);
                     break;
+                case 'J'://if character correspond to monster2 (2) then we create monster2
+                    setRockMobile(new RockMobile(result.getInt(DAOHelloWorld.getColumnX()), result.getInt(DAOHelloWorld.getColumnY()), this));
+                    break;
                 case 'H'://if character correspond to the door we put the door in the variable door
                     this.setOnTheLevelXY(MotionlessFactory.getFromFileSymbol(
                             result.getString(DAOHelloWorld.getColumnSprite()).charAt(0)),result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY()));
@@ -113,7 +122,7 @@ public class Level extends Observable implements ILevel{
                             result.getString(DAOHelloWorld.getColumnSprite()).charAt(0)),result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY()));
                     setRock(this.getOnTheLevelXY(result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY())));
                     break;
-                case 'D'://if character correspond to the diamond we put it in the variable diamond
+                case 'D'://if character correspond to the crystal we put it in the variable diamond
                     this.setOnTheLevelXY(MotionlessFactory.getFromFileSymbol(
                             result.getString(DAOHelloWorld.getColumnSprite()).charAt(0)),result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY()));
                     setDiamond(this.getOnTheLevelXY(result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY())));
@@ -151,6 +160,20 @@ public class Level extends Observable implements ILevel{
      */
     public final IElement getOnTheLevelXY(final int x, final int y) {
         return this.onTheLevel[x][y];
+    }
+
+    @Override
+    public void removeOnTheLevelXY(int x, int y) {
+        this.onTheLevel[x][y].setPermeability(Permeability.PENETRABLE);
+        this.onTheLevel[x][y].getSprite().setImageName("Background.png");
+        try {
+            this.onTheLevel[x][y].getSprite().loadImage();
+            System.out.println("coucou");
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("removed: x=" + x + ", y=" + y);
     }
 
     /**
@@ -204,6 +227,14 @@ public class Level extends Observable implements ILevel{
 
     public void setHero(IMobile hero) {
         this.hero = hero;
+    }
+
+    public IMobile getRockMobile() {
+        return rockMobile;
+    }
+
+    public void setRockMobile(IMobile rockMobile) {
+        this.rockMobile = rockMobile;
     }
 
     public IElement getRock() {

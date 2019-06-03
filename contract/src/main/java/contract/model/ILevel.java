@@ -29,6 +29,8 @@ public interface ILevel {
      */
     IElement getOnTheLevelXY(int x, int y);
 
+    void removeOnTheLevelXY(int x, int y);
+
     /**
      * Sets the mobile has changed.
      */
@@ -55,6 +57,7 @@ public interface ILevel {
      */
     IMobile getMonster1();
     IMobile getMonster2();
+    IMobile getRockMobile();
 
     /**
      * Get if monsters are instantiate or no.

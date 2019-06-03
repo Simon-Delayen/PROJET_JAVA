@@ -107,6 +107,7 @@ public final class View implements IView, Runnable, KeyListener {
 		} //if instance of monster2 is not false then spawn it on level
 
 		boardFrame.addPawn(getLevel().getHero()); //this place ('spawn') the mobile element Hero over a square
+		boardFrame.addPawn(getLevel().getRockMobile());
 
 		this.getLevel().getObservable().addObserver(boardFrame.getObserver()); //the view is registered to be observed by the level
 		boardFrame.setVisible(true); //make the game appear in first plan

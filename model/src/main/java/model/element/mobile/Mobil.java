@@ -112,6 +112,16 @@ public class Mobil extends Element implements IMobile {
         this.setX(this.getX());
     }
 
+
+    public void fall(){
+        this.setY(this.getY() + 1);
+        this.setHasMoved();
+        //If the hero is blocked we is moved to his previous position
+        if (this.isBlocked()) {
+            this.setY(this.getY() - 1);
+        }
+    }
+
     /**
      * Sets the has moved.
      **/

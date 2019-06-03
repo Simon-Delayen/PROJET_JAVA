@@ -27,6 +27,11 @@ public interface IMobile extends IPawn, IElement{
     void moveRight();
 
     /**
+     * Fall.
+     */
+    void fall();
+
+    /**
      * No move.
      */
     void doNothing();

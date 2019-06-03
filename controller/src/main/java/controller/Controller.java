@@ -9,6 +9,9 @@ import contract.model.IElement;
 import contract.model.IMobile;
 import contract.model.Permeability;
 
+import javax.swing.text.Position;
+import java.awt.*;
+import java.awt.geom.Point2D;
 import java.io.IOException;
 
 /**
@@ -18,6 +21,9 @@ public final class Controller implements IOrderPerformer, IController {
 
 	/** The game-thread refresh speed. */
 	private static final int speed = 50;
+
+	/** New position */
+	private Point position;
 
 	/** The view. */
 	private IView		view;
@@ -58,9 +64,11 @@ public final class Controller implements IOrderPerformer, IController {
 	/** The door. */
 	private IElement door;
 
-
 	/** The boolean to stop game if hero finish the level */
 	private boolean win;
+
+	/** The RockMobile. */
+	private IMobile rockMobile;
 
 	/**
 	 * Instantiates a new controller.
@@ -92,6 +100,7 @@ public final class Controller implements IOrderPerformer, IController {
 		// when the hero is load on the map is not alive so we set it alive after everything is load
 		hero = getModel().getLevel().getHero();
 		hero.alive();
+		rockMobile = getModel().getLevel().getRockMobile();
 
 
 		//Store the dirt, door and diamond in the controller
@@ -121,6 +130,8 @@ public final class Controller implements IOrderPerformer, IController {
 
 			Thread.sleep(speed); //make the thread sleep for a little time (in milliseconds)
 
+			gravity();
+
 			//if hero is on the diamond the we open the door
 			if(hero.isOnDiamond()) {
 				//update the door permeability from DEAD to OPENDOOR
@@ -140,11 +151,22 @@ public final class Controller implements IOrderPerformer, IController {
 			//if the hero is on something that kill him then we stop the game and say you loose
 			if(hero.isDead()) hero.die();
 
-
 			switch (this.getStackOrder()) { //this case execute the method associated to the controller order (move, nothing)
 				case RIGHT:
-					this.hero.moveRight();
-					lastHeroOrder = ControllerOrder.RIGHT;
+
+					//this.hero.moveRight();
+					//lastHeroOrder = ControllerOrder.RIGHT;
+					position = new Point(getModel().getLevel().getHero().getX()+1, getModel().getLevel().getHero().getY());
+
+							switch (getModel().getLevel().getOnTheLevelXY(position.x, position.y).getPermeability()) {
+								case BREAKABLE:
+									this.hero.moveRight();
+									this.getModel().getLevel().removeOnTheLevelXY(position.x, position.y);
+									break;
+								default:
+									this.hero.moveRight();
+									break;
+					}
 					break;
 				case LEFT:
 					this.hero.moveLeft();
@@ -180,6 +202,26 @@ public final class Controller implements IOrderPerformer, IController {
 			this.getView().printMessage("You win");
 		}
 	}
+
+	public void gravity(){
+		for(int h=0; h< getModel().getLevel().getHeight(); h++) {
+			for (int w = 0; w < getModel().getLevel().getWidth(); w++) {
+				position = new Point(rockMobile.getX(), rockMobile.getY() + 1);
+				IElement element = getModel().getLevel().getOnTheLevelXY(position.x, position.y);
+				if(element != null && element.getPermeability() == Permeability.PENETRABLE) {
+					getModel().getLevel().getRockMobile().fall();
+					try{
+					Thread.sleep((250));
+					}
+					catch(Exception e){
+						e.printStackTrace();
+					}
+				}
+			}
+
+		}
+	}
+
 
 	/**
 	 * This function is a kind of IA for monster to go on hero

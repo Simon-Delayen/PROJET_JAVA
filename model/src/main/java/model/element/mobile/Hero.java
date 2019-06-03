@@ -10,7 +10,7 @@ import java.io.IOException;
 
 
 
-public class Hero extends Mobil implements ISprite{
+public class Hero extends Mobil{
 
     /** The Constant SPRITE. */
     private static final ISprite sprite = new Sprite('@', "pause.png");
@@ -112,18 +112,5 @@ public class Hero extends Mobil implements ISprite{
         super.doNothing();
         this.setSprite(sprite);
     }
-
-    @Override
-    public void loadImage() throws IOException {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public char getImageWindows() {
-        // TODO Auto-generated method stub
-        return 0;
-    }
-
 
 }

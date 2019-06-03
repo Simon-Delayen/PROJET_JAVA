@@ -27,4 +27,6 @@ public interface ISprite {
      */
     char getImageWindows();
 
+    void setImageName(String imageName);
+
 }

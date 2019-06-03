@@ -30,7 +30,6 @@ public class Element implements IElement {
     /**
      * Get the sprite
      */
-    @Override
     public final ISprite getSprite() {
         return this.sprite;
     }

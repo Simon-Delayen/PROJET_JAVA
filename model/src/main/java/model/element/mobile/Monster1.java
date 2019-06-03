@@ -7,7 +7,7 @@ import model.element.Sprite;
 
 import java.io.IOException;
 
-public class Monster1 extends Mobil implements ISprite {
+public class Monster1 extends Mobil {
     /** The Constant SPRITE. */
     private static final ISprite sprite = new Sprite('1', "monstre 1.png");
 
@@ -92,17 +92,5 @@ public class Monster1 extends Mobil implements ISprite {
         this.setSprite(sprite);
 
 
-    }
-
-    @Override
-    public void loadImage() throws IOException {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public char getImageWindows() {
-        // TODO Auto-generated method stub
-        return 0;
     }
 }

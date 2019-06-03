@@ -107,7 +107,8 @@ public class Sprite implements ISprite {
      * @param imageName
      *            the imageName to set
      */
-    private void setImageName(final String imageName) {
+    @Override
+    public void setImageName(final String imageName) {
         this.imageName = imageName;
     }
 

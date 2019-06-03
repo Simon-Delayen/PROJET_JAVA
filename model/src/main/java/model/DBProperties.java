@@ -1,9 +1,6 @@
 package model;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.*;
-import java.util.Properties;
 
 /**
  * The Class DBProperties.

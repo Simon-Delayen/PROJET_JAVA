@@ -4,8 +4,6 @@
  */
 package main;
 
-import contract.ControllerOrder;
-import contract.IController;
 import contract.IModel;
 import contract.IView;
 import controller.Controller;
@@ -41,7 +39,7 @@ public abstract class Main {
      * 				the SQl Exception
      */
     public static void main(final String[] args) throws IOException, InterruptedException, SQLException {
-        final IModel model = new Model(1); //change the number to the wanted level
+        final IModel model = new Model(2); //change the number to the wanted level
         final IView view = new View(model.getLevel()); //we gave to the view the level and all element that the level contain
         final Controller controller = new Controller(view, model); //the controller got the view and model to control them
         view.setOrderPerformer(controller.getOrderPerformer()); //this enable the view be update when there is a player movement from the controller

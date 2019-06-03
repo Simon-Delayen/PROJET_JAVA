@@ -9,9 +9,7 @@ import contract.model.IElement;
 import contract.model.IMobile;
 import contract.model.Permeability;
 
-import javax.swing.text.Position;
 import java.awt.*;
-import java.awt.geom.Point2D;
 import java.io.IOException;
 
 /**
@@ -26,10 +24,10 @@ public final class Controller implements IOrderPerformer, IController {
 	private Point position;
 
 	/** The view. */
-	private IView		view;
+	private IView view;
 
 	/** The model. */
-	private IModel	model;
+	private IModel model;
 
 	/** The stack order. */
 	private ControllerOrder stackOrder;
@@ -46,17 +44,11 @@ public final class Controller implements IOrderPerformer, IController {
 	/** The Monster speed */
 	private int monsterSpeed = 16;
 
-	/** Store the lastHeroOrder */
-	private ControllerOrder lastHeroOrder;
-
 	/** The hero. */
 	private IMobile hero;
 
 	/** The dirt. */
 	private IElement dirt;
-
-	/** The rock. */
-	private IElement rock;
 
 	/** The diamond. */
 	private IElement diamond;
@@ -81,7 +73,7 @@ public final class Controller implements IOrderPerformer, IController {
 	public Controller(final IView view, final IModel model) {
 		this.setView(view);
 		this.setModel(model);
-		this.clearStackOrder(); 			//set the user order to NOP so we are sure that the player do not move on spawn
+		this.clearStackOrder(); //set the controller order to NOP so we are sure that the player do not move on spawn
 	}
 
 	/**
@@ -90,8 +82,6 @@ public final class Controller implements IOrderPerformer, IController {
 	 * @throws IOException
 	 * 				the IOException
 	 */
-	@SuppressWarnings("unchecked")
-
 	public void play() throws InterruptedException, IOException {
 
 		//---------------------------------------------------------------------------------------------------
@@ -140,11 +130,6 @@ public final class Controller implements IOrderPerformer, IController {
 				getView().OpenDoorUpdate();
 			}
 
-			if (hero.isBreakable()) {
-				dirt.setPermeability((Permeability.BREAKABLE));
-				getView().dirtUpdate();
-			}
-
 			//if the hero is on the gate when it's open then we stop the game and say you win
 			if(hero.isOnOpenDoor()) win = true;
 
@@ -154,8 +139,6 @@ public final class Controller implements IOrderPerformer, IController {
 			switch (this.getStackOrder()) { //this case execute the method associated to the controller order (move, nothing)
 				case RIGHT:
 					//this.model.playSound("boulderdash.wav");
-					//this.hero.moveRight();
-					//lastHeroOrder = ControllerOrder.RIGHT;
 					position = new Point(getModel().getLevel().getHero().getX()+1, getModel().getLevel().getHero().getY());
 
 							switch (getModel().getLevel().getOnTheLevelXY(position.x, position.y).getPermeability()) {
@@ -169,16 +152,46 @@ public final class Controller implements IOrderPerformer, IController {
 					}
 					break;
 				case LEFT:
-					this.hero.moveLeft();
-					lastHeroOrder = ControllerOrder.LEFT;
+					//this.model.playSound("boulderdash.wav");
+					position = new Point(getModel().getLevel().getHero().getX()-1, getModel().getLevel().getHero().getY());
+
+					switch (getModel().getLevel().getOnTheLevelXY(position.x, position.y).getPermeability()) {
+						case BREAKABLE:
+							this.hero.moveLeft();
+							this.getModel().getLevel().removeOnTheLevelXY(position.x, position.y);
+							break;
+						default:
+							this.hero.moveLeft();
+							break;
+					}
 					break;
 				case UP:
-					this.hero.moveUp();
-					lastHeroOrder = ControllerOrder.UP;
+					//this.model.playSound("boulderdash.wav");
+					position = new Point(getModel().getLevel().getHero().getX(), getModel().getLevel().getHero().getY()-1);
+
+					switch (getModel().getLevel().getOnTheLevelXY(position.x, position.y).getPermeability()) {
+						case BREAKABLE:
+							this.hero.moveUp();
+							this.getModel().getLevel().removeOnTheLevelXY(position.x, position.y);
+							break;
+						default:
+							this.hero.moveUp();
+							break;
+					}
 					break;
 				case DOWN:
-					this.hero.moveDown();
-					lastHeroOrder = ControllerOrder.DOWN;
+					//this.model.playSound("boulderdash.wav");
+					position = new Point(getModel().getLevel().getHero().getX(), getModel().getLevel().getHero().getY()+1);
+
+					switch (getModel().getLevel().getOnTheLevelXY(position.x, position.y).getPermeability()) {
+						case BREAKABLE:
+							this.hero.moveDown();
+							this.getModel().getLevel().removeOnTheLevelXY(position.x, position.y);
+							break;
+						default:
+							this.hero.moveDown();
+							break;
+					}
 					break;
 				case NOP:
 				default:
@@ -211,7 +224,7 @@ public final class Controller implements IOrderPerformer, IController {
 				if(element != null && element.getPermeability() == Permeability.PENETRABLE) {
 					getModel().getLevel().getRockMobile().fall();
 					try{
-					Thread.sleep((250));
+					Thread.sleep((1000));
 					}
 					catch(Exception e){
 						e.printStackTrace();

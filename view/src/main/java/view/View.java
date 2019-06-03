@@ -112,7 +112,7 @@ public final class View implements IView, Runnable, KeyListener {
 	
 	private IOrderPerformer getOrderPerformer() {
         return this.orderPerformer;
-    }
+
 	/**
 	 * 
 	 * @param orderPerformer
@@ -120,5 +120,49 @@ public final class View implements IView, Runnable, KeyListener {
 	 */
 	public final void setOrderPerformer(final IOrderPerformer orderPerformer) {
         this.orderPerformer = orderPerformer;
-    }
+    
+	
+	import java.applet.Applet;
+
+	import java.applet.AudioClip;
+
+	import java.io.File;
+
+	import java.net.MalformedURLException;
+
+	 
+
+	import javax.swing.JFrame;
+
+	 
+
+	@SuppressWarnings("serial")
+
+	public class Main extends JFrame{
+
+	 
+
+	                @SuppressWarnings("deprecation")
+
+	                public static void main(String[] args) {
+
+	                               // TODO Auto-generated method stub
+
+	                               //@SuppressWarnings("unused")
+
+	                               ViewFrame frame = new ViewFrame();
+
+	                              
+
+	                               Chrono f = new Chrono("Test du compte à rebours");
+
+	        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+	        f.add(new Chrono(60));
+
+	        f.setSize(700, 360);
+
+	        f.setVisible(true);
+
+	}
 }

@@ -1,8 +1,6 @@
 package model;
 
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
+import javax.sound.sampled.*;
 
 public class Audio {
 
@@ -18,6 +16,12 @@ public class Audio {
             Clip c = AudioSystem.getClip();
             c.open(audio);
             c.start();
+        }
+        catch (UnsupportedAudioFileException e) {
+        e.printStackTrace();
+        }
+        catch (LineUnavailableException e) {
+        e.printStackTrace();
         }
         catch(Exception e){
             e.printStackTrace();

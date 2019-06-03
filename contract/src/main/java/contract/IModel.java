@@ -16,6 +16,4 @@ import contract.model.ILevel;
 	 * @return Level
 	 */
 	ILevel getLevel();
-
-	IAudio get
 }

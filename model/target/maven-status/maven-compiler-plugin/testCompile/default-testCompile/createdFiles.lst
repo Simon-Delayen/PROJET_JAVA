@@ -1,0 +1,11 @@
+model\element\mobile\Monster2Test.class
+model\element\motionless\MotionlessFactoryTest.class
+model\element\motionless\DirtTest.class
+model\element\motionless\DiamondTest.class
+model\element\motionless\DoorTest.class
+model\element\mobile\HeroTest.class
+model\element\motionless\BackTest.class
+model\element\motionless\WallTest.class
+model\element\mobile\Monster1Test.class
+model\ModelTest.class
+model\element\motionless\MotionlessElementTest.class

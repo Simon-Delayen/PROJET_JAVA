@@ -562,9 +562,9 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.WallTest" />
+      <item itemvalue="JUnit.DiamondTest" />
       <item itemvalue="Maven.[clean]" />
       <item itemvalue="Maven.[compile]" />
-      <item itemvalue="JUnit.DiamondTest" />
     </list>
     <recent_temporary>
       <list>

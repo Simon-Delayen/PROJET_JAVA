@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.Observable;
 
 import contract.IModel;
+import contract.model.IAudio;
 import contract.model.ILevel;
 
 /**
@@ -41,6 +42,12 @@ public final class Model extends Observable implements IModel {
 	public final ILevel getLevel() {
 		return this.level;
 	}
+
+	@Override
+	public IAudio getAudio() {
+		return Audio.getInstance();
+	}
+
 
 	/**
 	 * Sets the level.

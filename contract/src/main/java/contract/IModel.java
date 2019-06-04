@@ -1,5 +1,6 @@
 package contract;
 
+import contract.model.IAudio;
 import contract.model.ILevel;
 
 	/**
@@ -15,4 +16,5 @@ import contract.model.ILevel;
 	 * @return Level
 	 */
 	ILevel getLevel();
+	IAudio getAudio();
 	}

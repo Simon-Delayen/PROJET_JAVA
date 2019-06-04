@@ -98,6 +98,8 @@ public final class Controller implements IOrderPerformer, IController {
 		diamond = getModel().getLevel().getDiamond();
 		dirt = getModel().getLevel().getDirt();
 
+		this.model.getAudio().playSound("Fond.wav");
+
 		//if a monster 1,2 from level exist then we stored it in monster 1,2
 		if(getModel().getLevel().getMonster1instance() != false) {
 			monster1 = getModel().getLevel().getMonster1();
@@ -127,6 +129,7 @@ public final class Controller implements IOrderPerformer, IController {
 				//update the door permeability from DEAD to OPENDOOR
 				door.setPermeability(Permeability.OPENDOOR);
 				diamond.setPermeability(Permeability.PENETRABLE);
+				this.model.getAudio().playSound("Diamond.wav");
 				getView().OpenDoorUpdate();
 			}
 
@@ -138,8 +141,8 @@ public final class Controller implements IOrderPerformer, IController {
 
 			switch (this.getStackOrder()) { //this case execute the method associated to the controller order (move, nothing)
 				case RIGHT:
-					//this.model.playSound("boulderdash.wav");
 					position = new Point(getModel().getLevel().getHero().getX()+1, getModel().getLevel().getHero().getY());
+					this.model.getAudio().playSound("boulderdash.wav");
 
 							switch (getModel().getLevel().getOnTheLevelXY(position.x, position.y).getPermeability()) {
 								case BREAKABLE:
@@ -152,7 +155,7 @@ public final class Controller implements IOrderPerformer, IController {
 					}
 					break;
 				case LEFT:
-					//this.model.playSound("boulderdash.wav");
+					this.model.getAudio().playSound("boulderdash.wav");
 					position = new Point(getModel().getLevel().getHero().getX()-1, getModel().getLevel().getHero().getY());
 
 					switch (getModel().getLevel().getOnTheLevelXY(position.x, position.y).getPermeability()) {
@@ -166,7 +169,7 @@ public final class Controller implements IOrderPerformer, IController {
 					}
 					break;
 				case UP:
-					//this.model.playSound("boulderdash.wav");
+					this.model.getAudio().playSound("boulderdash.wav");
 					position = new Point(getModel().getLevel().getHero().getX(), getModel().getLevel().getHero().getY()-1);
 
 					switch (getModel().getLevel().getOnTheLevelXY(position.x, position.y).getPermeability()) {
@@ -180,7 +183,7 @@ public final class Controller implements IOrderPerformer, IController {
 					}
 					break;
 				case DOWN:
-					//this.model.playSound("boulderdash.wav");
+					this.model.getAudio().playSound("boulderdash.wav");
 					position = new Point(getModel().getLevel().getHero().getX(), getModel().getLevel().getHero().getY()+1);
 
 					switch (getModel().getLevel().getOnTheLevelXY(position.x, position.y).getPermeability()) {
@@ -208,10 +211,11 @@ public final class Controller implements IOrderPerformer, IController {
 
 		if (win != true) {
 			hero.die();
-
+			this.model.getAudio().playSound("Died.wav");
 			this.getView().printMessage("Looser"); //when the main loop is break this display the message you loose on a popup
 		}
 		else {
+			this.model.getAudio().playSound("Win.wav");
 			this.getView().printMessage("You win");
 		}
 	}

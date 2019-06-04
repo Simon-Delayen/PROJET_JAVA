@@ -1,8 +1,17 @@
 package model;
 
-import javax.sound.sampled.*;
+import contract.model.IAudio;
 
-public class Audio {
+import javax.sound.sampled.*;
+import java.io.BufferedInputStream;
+import java.io.InputStream;
+
+public class Audio implements IAudio {
+    public static Audio instance;
+
+    private Audio(){
+
+    }
 
     /**
      * Method to play sound
@@ -12,7 +21,9 @@ public class Audio {
     public void playSound(String sound){
 
         try{
-            AudioInputStream audio = AudioSystem.getAudioInputStream(getClass().getResource(sound));
+            InputStream inputStream = getClass().getClassLoader().getResourceAsStream(sound);
+            inputStream = new BufferedInputStream(inputStream);
+            AudioInputStream audio = AudioSystem.getAudioInputStream(inputStream);
             Clip c = AudioSystem.getClip();
             c.open(audio);
             c.start();
@@ -32,11 +43,11 @@ public class Audio {
      * Method to get instance of audio
      * @return instance
      */
-    /*public static Audio getInstance(){
+    public static Audio getInstance(){
         if(instance == null) {
             instance = new Audio();
         }
         return instance;
-    }*/
+    }
 
 }

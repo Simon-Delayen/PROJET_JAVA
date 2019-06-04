@@ -8,7 +8,6 @@ import model.element.mobile.Hero;
 import model.element.mobile.Monster1;
 import model.element.mobile.Monster2;
 import model.element.mobile.RockMobile;
-import model.element.motionless.Dirt;
 import model.element.motionless.MotionlessFactory;
 
 import java.io.IOException;
@@ -109,7 +108,7 @@ public class Level extends Observable implements ILevel{
                     setMonster2(new Monster2(result.getInt(DAOHelloWorld.getColumnX()), result.getInt(DAOHelloWorld.getColumnY()), this));
                     setMonster2instance(true);
                     break;
-                case 'J'://if character correspond to monster2 (2) then we create monster2
+                case 'J'://if character correspond to rockMobile (J) then we create RockMobile
                     setRockMobile(new RockMobile(result.getInt(DAOHelloWorld.getColumnX()), result.getInt(DAOHelloWorld.getColumnY()), this));
                     break;
                 case 'H'://if character correspond to the door we put the door in the variable door
@@ -122,7 +121,7 @@ public class Level extends Observable implements ILevel{
                             result.getString(DAOHelloWorld.getColumnSprite()).charAt(0)),result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY()));
                     setRock(this.getOnTheLevelXY(result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY())));
                     break;
-                case 'D'://if character correspond to the crystal we put it in the variable diamond
+                case 'D'://if character correspond to the diamond we put it in the variable diamond
                     this.setOnTheLevelXY(MotionlessFactory.getFromFileSymbol(
                             result.getString(DAOHelloWorld.getColumnSprite()).charAt(0)),result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY()));
                     setDiamond(this.getOnTheLevelXY(result.getInt(DAOHelloWorld.getColumnX()),result.getInt(DAOHelloWorld.getColumnY())));
